@@ -1,6 +1,7 @@
 { pkgs }: {
-  deps = [
-    pkgs.twelf
-    pkgs.gnuplot
-  ];
+    deps = [
+      pkgs.gnuplot
+      pkgs.ncurses.dev
+      pkgs.gd
+    ];
 }
