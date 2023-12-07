@@ -2,6 +2,7 @@
         <head>
         <title>cmsite</title>
         <meta charset="utf-8">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -95,6 +96,7 @@ img.add_border {
 </head>
 <body>
 <div class='container'><nav>
+        
     <div class="site-wrap">
 
     <div class="site-mobile-menu">
@@ -140,4 +142,144 @@ img.add_border {
           </div>
           
         </header>
-    </nav><section><h1>SMap</h1><div id="tipue_search_content"></div><ul><li><a href='關於.html'>關於</a><li><a href='w13.html'>w13</a><li><a href='w12.html'>w12</a><li><a href='w10.html'>w10</a><li><a href='w8.html'>w8</a><li><a href='w6.html'>w6</a><ul><li><a href='美國.html'>美國</a><li><a href='鵬.html'>鵬</a></li></ul><li><a href='w5.html'>w5</a><li><a href='布萊頓.html'>布萊頓</a></li></ul></section></div></body></html>
+    <div id="tipue_search_content">美國 << <a href='美國.html'>Previous</a> <a href='w5.html'>Next</a> >> w5<br /><h1>鵬</h1>
+<p></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">#include &lt;stdio.h&gt;</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+#include &lt;gd.h&gt;</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+#include &lt;數學.h&gt;</span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+無效draw_roc_flag（gdImagePtr img）；</span></span><span></span>
+void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, int white, int red, int blue);<span></span>
+<span></span>
+int main() {<span></span>
+    // width 3: height 2<span></span>
+    int width = 1200;<span></span>
+    int height = (int)(width*2.0 / 3.0);<span></span>
+<span></span>
+    gdImagePtr img = gdImageCreateTrueColor(width, height);<span></span>
+    gdImageAlphaBlending(img, 0);<span></span>
+<span></span>
+    draw_roc_flag(img);<span></span>
+<span></span>
+    FILE *outputFile = fopen("./roc_flag.png", "wb");<span></span>
+    if (outputFile == NULL) {<span></span>
+        fprintf(stderr, "Error opening the output file.\n");<span></span>
+        return 1;<span></span>
+    }<span></span>
+    gdImagePngEx(img, outputFile, 9);<span></span>
+    fclose(outputFile);<span></span>
+    gdImageDestroy(img);<span></span>
+    return 0;<span></span>
+}<span></span>
+<span></span>
+void draw_roc_flag(gdImagePtr img) {<span></span>
+    int width = gdImageSX(img);<span></span>
+    int height = gdImageSY(img);<span></span>
+    int red, white, blue;<span></span>
+    int center_x = (int)(width/4);<span></span>
+    int center_y = (int)(height/4);<span></span>
+    int sun_radius = (int)(width/8);<span></span>
+<span></span>
+    // Colors for the flag<span></span>
+    red = gdImageColorAllocate(img, 242, 0, 0); // Red color<span></span>
+    white = gdImageColorAllocate(img, 255, 255, 255); // White stripes<span></span>
+    blue = gdImageColorAllocate(img, 0, 41, 204); // Blue<span></span>
+<span></span>
+    // 繪製紅色矩形區域<span></span>
+    gdImageFilledRectangle(img, 0, 0, width, height, red);<span></span>
+<span></span>
+    // 繪製藍色矩形區域<span></span>
+    gdImageFilledRectangle(img, 0, 0, (int)(width/2.0), (int)(height/2.0), blue);<span></span>
+<span></span>
+    // 繪製太陽<span></span>
+    draw_white_sun(img, center_x, center_y, sun_radius, white, red, blue);<span></span>
+}<span></span>
+void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, int white, int red, int blue) {<span></span>
+    float angle = 0;<span></span>
+    int numRays = 12; // 光芒的數量<span></span>
+<span></span>
+    gdPoint points[3]; // 三個頂點的陣列<span></span>
+<span></span>
+    for (int i = 0; i &lt; numRays; i++) {<span></span>
+        angle = i * (2 * M_PI / numRays);<span></span>
+        float x1 = center_x + cos(angle) * sun_radius;<span></span>
+        float y1 = center_y + sin(angle) * sun_radius;<span></span>
+<span></span>
+        // 調整兩個底邊頂點的位置<span></span>
+      float x2 = center_x + cos(angle + 0.35) * (sun_radius * 0.5);<span></span>
+      float y2 = center_y + sin(angle + 0.35) * (sun_radius * 0.5);<span></span>
+      float x3 = center_x + cos(angle - 0.35) * (sun_radius * 0.5);<span></span>
+      float y3 = center_y + sin(angle - 0.35) * (sun_radius * 0.5);<span></span>
+<span></span>
+        // 設定多邊形的三個頂點<span></span>
+        points[0].x = (int)x1;<span></span>
+        points[0].y = (int)y1;<span></span>
+        points[1].x = (int)x2;<span></span>
+        points[1].y = (int)y2;<span></span>
+        points[2].x = (int)x3;<span></span>
+        points[2].y = (int)y3;<span></span>
+<span></span>
+        gdImageFilledPolygon(img, points, 3, white);<span></span>
+    }<span></span>
+  //外圈<span></span>
+  gdImageFilledEllipse(img, center_x, center_y, sun_radius * 1.2, sun_radius * 1.2, blue);<span></span>
+  <span></span>
+    // 繪製太陽內部<span></span>
+    gdImageFilledEllipse(img, center_x, center_y, sun_radius * 1.1, sun_radius * 1.1, white);<span></span>
+}</pre>
+<p><img caption="false" height="367" src="./../images/roc_flag.png" width="550"/></p>
+<p></p>
+<p>clear</p>
+<p><br/>cd downloads<br/>cc gd_roc_flag.c -lgd -lm<br/>./a.out</p>
+<p></p>
+<br />美國 << <a href='美國.html'>Previous</a> <a href='w5.html'>Next</a> >> w5</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        
