@@ -1,0 +1,284 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>cmsite</title>
+        <meta charset="utf-8">
+<meta property="head" content="H2">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <!-- for Wink3 客製化關閉 -->
+        <!--
+        <link rel="stylesheet" type="text/css" href="./../cmsimde/static/winkPlayer.css" />
+        <script type="text/javascript" src="./../cmsimde/static/winkPlayer.js"></script>
+        -->
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPowerShell.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushMojo.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushRust.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container">
+                <div class="row align-items-center">
+                <h1>41223250 cp2023</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">41223250 cp2023</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">SMap</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li><a href='關於.html'>關於</a><li><a href='w13.html'>w13</a><li><a href='w12.html'>w12</a><li><a href='w10.html'>w10</a><li><a href='w8.html'>w8</a><li class='has-children'><a href='w7.html'>w7</a><ul class='dropdown'><li><a href='中國-1.html'>中國-1</a><li><a href='日本.html'>日本</a><li><a href='中國-2.html'>中國-2</a></li></ul><li class='has-children'><a href='w6.html'>w6</a><ul class='dropdown'><li><a href='美國.html'>美國</a><li><a href='台灣.html'>台灣</a></li></ul><li><a href='w5.html'>w5</a><li><a href='布萊頓.html'>布萊頓</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">w7 << <a href='w7.html'>Previous</a> <a href='日本.html'>Next</a> >> 日本<br /><h1>中國-1</h1>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">#include &lt;stdio.h&gt;</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+#include &lt;gd.h&gt;</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+#include &lt;數學.h&gt;</span></span><span></span>
+ <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+無效draw_chinese_flag(gdImagePtr img);</span></span><span></span>
+ <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+int main() {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    整數寬度=300；</span><span style="vertical-align: inherit;">// 國旗寬度</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    整數高度=200；</span><span style="vertical-align: inherit;">// 國旗高度</span></span><span></span>
+ <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImagePtr im = gdImageCreateTrueColor(寬度, 高度);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImageAlphaBlending(im, 0);</span></span><span></span>
+ <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    繪製中文標誌（im）；</span></span><span></span>
+ <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    FILE *outputFile = fopen("./../images/proc_flag.png", "wb");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    如果（輸出檔== NULL）{</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+        fprintf(stderr, "開啟輸出檔時發生錯誤。\n");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+        返回1；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    }</span></span><span></span>
+ <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImagePngEx(im, 輸出檔, 9);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    fclose(輸出檔);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImageDestroy(im);</span></span><span></span>
+ <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    返回0；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+}</span></span><span></span>
+ <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+//聲明draw_star函數</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+void draw_star(gdImagePtr img, int x, int y, int size, int color, double spin_angle);</span></span><span></span>
+ <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+無效draw_chinese_flag（gdImagePtr img）{</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    int 寬度 = gdImageSX(img);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    int 高度 = gdImageSY(img);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    int 紅色、黃色；</span></span><span></span>
+ <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    // 國旗顏色</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    紅色 = gdImageColorAllocate(img, 255, 0, 0); </span><span style="vertical-align: inherit;">// 紅色背景</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    黃色 = gdImageColorAllocate(img, 255, 255, 0); </span><span style="vertical-align: inherit;">// 黃色星星</span></span><span></span>
+ <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    // 畫紅色背景</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImageFilledRectangle(img, 0, 0, 寬度, 高度, 紅色);</span></span><span></span>
+ <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    // 設定星星的大小和位置</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    int star_size = (int)(0.28 * 高度);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    int star_x = (int)(0.165 * 寬度);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    int star_y = (int)(0.265 * 高度);</span></span><span></span>
+ <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    //畫大星星</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    draw_star(img, star_x, star_y, star_size, 黃色, 11.0);</span></span><span></span>
+ <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    // 鄰近小恆星，位置依實際國旗比例計算</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    雙半徑 = 0.15 * 高度；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    雙倍角度 = 360 / 7 * M_PI / 179.0；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    雙旋轉 = -M_PI / 7.5；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    int cx = (int)(0.32 * 寬度);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    int cy = (int)(0.27 * 高度);</span></span><span></span>
+ <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    for (int i = -1; i &lt; 3; i++) {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+        int x = (int)(cx + 半徑 * cos(i * 角度 + 旋轉));</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+        int y = (int)(cy + 半徑 * sin(i * 角度 + 旋轉));</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+        draw_star(img, x, y, 19, 黃色, M_PI / 5.0);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    }</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+}</span></span><span></span>
+ <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+void draw_star(gdImagePtr img, int x, int y, int 大小, int 顏色, 雙rotation_angle) {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdPoint點[10]；</span></span><span></span>
+ <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    // 計算星形的五個外點和五個內點</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    雙外半徑 = 大小 / 2；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    雙內半徑 = 大小 / 6；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    雙倍角度 = M_PI / 5.0；</span></span><span></span>
+ <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    for (int i = 0; i &lt; 10; i++) {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+        雙半徑 = (i % 2 == 0) ? </span><span style="vertical-align: inherit;">外半徑：內半徑；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+        雙 theta = 旋轉角度 + i * 角度；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+        點[i].x = x + 半徑 * cos(theta);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+        點[i].y = y + 半徑 * sin(theta);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    }</span></span><span></span>
+ <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    // 使用 gdImageFilledPolygon 較差星形</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImageFilledPolygon(img, 點, 10, 顏色);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+}</span></span></pre>
+<p></p>
+<p><img caption="false" height="267" src="data:image/png;base64,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" width="400"/></p>
+<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">清除</span></span></p>
+<p><br/><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">cd 下載</span></span><br/><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">cc gd_proc_flag.c -lgd -lm </span></span><br/><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">./a.out</span></span></p>
+<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"> </span></span></p>
+<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"></span></span></p><br />w7 << <a href='w7.html'>Previous</a> <a href='日本.html'>Next</a> >> 日本</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        

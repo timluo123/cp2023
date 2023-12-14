@@ -1,0 +1,251 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>cmsite</title>
+        <meta charset="utf-8">
+<meta property="head" content="H2">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <!-- for Wink3 客製化關閉 -->
+        <!--
+        <link rel="stylesheet" type="text/css" href="./../cmsimde/static/winkPlayer.css" />
+        <script type="text/javascript" src="./../cmsimde/static/winkPlayer.js"></script>
+        -->
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPowerShell.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushMojo.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushRust.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container">
+                <div class="row align-items-center">
+                <h1>41223250 cp2023</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">41223250 cp2023</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">SMap</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li><a href='關於.html'>關於</a><li><a href='w13.html'>w13</a><li><a href='w12.html'>w12</a><li><a href='w10.html'>w10</a><li><a href='w8.html'>w8</a><li class='has-children'><a href='w7.html'>w7</a><ul class='dropdown'><li><a href='中國-1.html'>中國-1</a><li><a href='日本.html'>日本</a><li><a href='中國-2.html'>中國-2</a></li></ul><li class='has-children'><a href='w6.html'>w6</a><ul class='dropdown'><li><a href='美國.html'>美國</a><li><a href='台灣.html'>台灣</a></li></ul><li><a href='w5.html'>w5</a><li><a href='布萊頓.html'>布萊頓</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">中國-1 << <a href='中國-1.html'>Previous</a> <a href='中國-2.html'>Next</a> >> 中國-2<br /><h1>日本</h1>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;gd.h&gt;
+#include &lt;math.h&gt;
+
+void draw_japan_flag(gdImagePtr img);
+void draw_red_circle(gdImagePtr img, int center_x, int center_y, int circle_radius, int red);
+
+int main() {
+    // 日本國旗的寬高比為2:3
+    int width = 1200;
+    int height = (int)(width * 2.0 / 3.0);
+
+    gdImagePtr img = gdImageCreateTrueColor(width, height);
+    gdImageAlphaBlending(img, 0);
+
+    draw_japan_flag(img);
+
+  FILE *outputFile = fopen("./../images/japan_flag.png", "wb");
+  if (outputFile == NULL) {
+      fprintf(stderr, "打开输出文件时出错。\n");
+      return 1;
+  }
+    gdImagePngEx(img, outputFile, 9);
+    fclose(outputFile);
+    gdImageDestroy(img);
+    return 0;
+}
+
+void draw_japan_flag(gdImagePtr img) {
+    int width = gdImageSX(img);
+    int height = gdImageSY(img);
+    int red;
+    int center_x = (int)(width / 2);
+    int center_y = (int)(height / 2);
+    int circle_radius = (int)(width / 5); // 取旗面寬度的1/5為圓的半徑
+
+    // 顏色
+    red = gdImageColorAllocate(img, 186, 12, 47); // 日本國旗的紅色
+
+    // 繪製白色矩形背景
+    gdImageFilledRectangle(img, 0, 0, width, height, gdImageColorAllocate(img, 255, 255, 255));
+
+    // 繪製紅色圓圈
+    draw_red_circle(img, center_x, center_y, circle_radius, red);
+}
+
+void draw_red_circle(gdImagePtr img, int center_x, int center_y, int circle_radius, int red) {
+    // 繪製紅色圓圈
+    gdImageFilledEllipse(img, center_x, center_y, circle_radius * 2, circle_radius * 2, red);
+}</pre>
+<p></p>
+<p><img caption="false" height="267" src="data:image/png;base64,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" width="400"/></p>
+<p></p>
+<p>clear</p>
+<p><br/>cd downloads<br/>cc gd_japan_flag.c -lgd -lm<br/>./a.out</p>
+<br />中國-1 << <a href='中國-1.html'>Previous</a> <a href='中國-2.html'>Next</a> >> 中國-2</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        
