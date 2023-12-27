@@ -1,351 +1,240 @@
 <h1>關於</h1>
-<p><a href="https://github.com/mdecycu/cmsite"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">https://github.com/mdecycu/cmsite</span></span></span></span></span></span></a></p>
-<h1><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">15</span></span></h1>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">(1)</span></span></span></span></span></span></span></span></p>
-<div><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">根據</span></span></span></span></span></span><a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EVcefUI2zPpAmP6lnLWLEAoBCBznMnvFpsNE-1VVFGvVZQ?e=goiPpP&amp;isSPOFile=1" rel="noreferrer noopener" tabindex="-1" target="_blank" title="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/evcefui2zppamp6lnlwleaobcbznmnvfpsne-1vvfgvvzq?e=goippp"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">roc_list_coord_flag.7z</span></span></span></span></span></span></a><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">方案內容所印出的六組ABED等相關中華民國國旗白日圖案中的菱形四個關鍵點，請直接在青天與滿地紅的圖案中，利用白色作為畫線顏色，將第一個兩個一組ABED等四點的座標，以直線相連。</span></span></span></span></span></span></div>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">#include &lt;stdio.h&gt;</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-#include &lt;gd.h&gt;</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-#include &lt;數學.h&gt;</span></span></span></span></span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-無效draw_roc_flag（gdImagePtr img）；</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-void draw_white_sun(gdImagePtr img, int x, int y, int size, int color);</span></span></span></span></span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-int main() {</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    //寬度3:高度2</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    整數寬度=1200；</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 國旗長寬比為3:2</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int 高度 = (int)(寬度 * 2.0 / 3.0);</span></span></span></span></span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImagePtr img = gdImageCreateTrueColor(寬度, 高度);</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImageAlphaBlending(img, 0);</span></span></span></span></span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    鄰近_roc_flag（img）；</span></span></span></span></span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    FILE *outputFile = fopen("roc_flag_in_gd.png", "wb");</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    如果（輸出檔== NULL）{</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        fprintf(stderr, "開啟輸出檔時發生錯誤。\n");</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        返回1；</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    }</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImagePngEx(img, 輸出檔, 9);</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    fclose(輸出檔);</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImageDestroy(img);</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    返回0；</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-}</span></span></span></span></span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-無效draw_roc_flag（gdImagePtr img）{</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int 寬度 = gdImageSX(img);</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int 高度 = gdImageSY(img);</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int 紅、白、藍；</span></span></span></span></span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    //白色日位於青天面積正中央，因此中心點座標為長寬各1/4處</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int center_x = (int)(寬度/4);</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int center_y = (int)(高度 / 4);</span></span></span></span></span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int sun_radius = (int)(寬度/8);</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int White_circle_dia = sun_radius;</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int 藍色圓形直徑 = 白色圓形直徑 + 白色圓形直徑 * 2 / 15;</span></span></span></span></span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    紅色 = gdImageColorAllocate(img, 255, 0, 0); </span></span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">// 紅色</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    白色 = gdImageColorAllocate(img, 255, 255, 255); </span></span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">// 白色</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    藍色 = gdImageColorAllocate(img, 0, 0, 149); </span></span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">// 藍色</span></span></span></span></span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImageFilledRectangle(img, 0, 0, 寬度, 高度, 紅色);</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImageFilledRectangle(img, 0, 0, (int)(寬度 / 2.0), (int)(高度 / 2.0), 藍色);</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    draw_white_sun(img, center_x, center_y, sun_radius, 白色);</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImageFilledEllipse(img, center_x, center_y, blue_circle_dia, blue_circle_dia, 藍色);</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImageFilledEllipse（img，center_x，center_y，white_circle_dia，white_circle_dia，白色）；</span></span></span></span></span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 在青天與滿地紅的圖案中以白色畫線彩虹連接菱形的四個關鍵點</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImageSetThickness(img, 10); </span></span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">//設定線條粗度為10</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImageLine(img, 429, 125, 279, 165, 白色);</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImageLine(img, 279, 165, 170, 274, 白色);</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImageLine(img, 170, 274, 170, 274, 白色);</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImageLine(img, 429, 125, 170, 274, 白色); </span></span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">// 第四條加入條連線</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-}</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-void draw_white_sun(gdImagePtr img, int x, int y, int size, int color) {</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 實作draw_white_sun函數的內容</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 可以在此處比較白日的內部模式</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-}</span></span></span></span></span></span></pre>
-<p><br/><br/></p>
-<p><video controls="controls" height="248" width="496">
-<source src="/images/完成4.mp4" type="video/mp4"/></video></p>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"> </span></span></span></span></span></span></span></span></p>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">(2)</span></span></span></span></span></span></span></span></p>
-<p>承上題, 請列出第二組 ABED 的四條直線與白日中的大圓所相交 (intersect) 的四個點座標.</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt; 
-#include &lt;gd.h&gt; 
-#include &lt;math.h&gt; 
-
-void draw_roc_flag(gdImagePtr img); 
-void draw_white_sun(gdImagePtr img, int x, int y, int size, int color); 
-
-int main() { 
-    // width 3: height 2 
-    int width = 1200; 
-    // 國旗長寬比為 3:2 
-    int height = (int)(width*2.0 / 3.0); 
-
-    gdImagePtr img = gdImageCreateTrueColor(width, height); 
-    gdImageAlphaBlending(img, 0); 
-
-    draw_roc_flag(img); 
-
-    FILE *outputFile = fopen("roc_flag_in_gd.png", "wb"); 
-    if (outputFile == NULL) { 
-        fprintf(stderr, "Error opening the output file.\n"); 
-        return 1; 
-    } 
-    gdImagePngEx(img, outputFile, 9); 
-    fclose(outputFile); 
-    gdImageDestroy(img); 
-    return 0; 
-} 
-void draw_roc_flag(gdImagePtr img) { 
-    int width = gdImageSX(img); 
-    int height = gdImageSY(img); 
-    int red, white, blue; 
-    // 白日位於青天面積正中央, 因此中心點座標為長寬各 1/4 處 
-    int center_x = (int)(width/4); 
-    int center_y = (int)(height/4); 
-    // gdImageFilledEllipse 需以長寬方向的 diameter 作圖 
-    // 由於中央白日圓形的半徑為青天寬度的 1/8 
-    // 因此中央白日圓形的直徑為青天寬度的 1/4, 也就是國旗寬度的 1/8 
-    // 而且白日十二道光芒的外圍圓形其半徑也是國旗寬度的1/8 
-    int sun_radius = (int)(width/8); 
-    // 中央白日圓形的直徑等於十二道光芒外圍圓形的半徑 
-    int white_circle_dia = sun_radius; 
-    // 中央藍色圓形半徑為中央白日的 1又 2/15 
-    int blue_circle_dia = white_circle_dia +  white_circle_dia*2/15; 
-    // 根據 https://www.moi.gov.tw/cp.aspx?n=10621 訂定國旗三種顏色值 
-    red = gdImageColorAllocate(img, 255, 0, 0); // 紅色 
-    white = gdImageColorAllocate(img, 255, 255, 255); // 白色 
-    blue = gdImageColorAllocate(img, 0, 0, 149); // 藍色 
-    // 根據畫布大小塗上紅色長方形區域 
-    gdImageFilledRectangle(img, 0, 0, width, height, red); 
-    // 青天面積為整面國旗的 1/4, 也是採用長方形塗色 
-    gdImageFilledRectangle(img, 0, 0, (int)(width/2.0), (int)(height/2.0), blue); 
-  {int x1 = 429; 
-   int y1 = 125; 
-   int x2 = 279; 
-   int y2 = 165; 
-   gdImageSetThickness(img, 10); // 設置線條寬度為10
-   gdImageLine(img, x1, y1, x2, y2, white); // 畫線
-   // 畫一條線連接兩個點 
-   gdImageLine(img, x1, y1, x2, y2, white); 
-  } 
-  {int x1 = 170; 
-     int y1 = 274; 
-     int x2 = 279; 
-     int y2 = 165; 
-
-     // 畫一條線連接兩個點 
-     gdImageLine(img, x1, y1, x2, y2, white); 
-  } 
-  { 
-    int x1 = 170; 
-     int y1 = 274; 
-     int x2 = 429; 
-     int y2 = 125; 
-
-     // 畫一條線連接兩個點 
-     gdImageLine(img, x1, y1, x2, y2, white); 
-  } 
-  // 利用一個藍色大圓與白色小圓畫出藍色環狀 
-  gdImageFilledEllipse(img, center_x, center_y, blue_circle_dia, blue_circle_dia, blue); 
-  gdImageFilledEllipse(img, center_x, center_y, white_circle_dia, white_circle_dia, white); 
-
-
-  // 定義座標結構 
-  typedef struct { 
-      double x; 
-      double y; 
-  } Point; 
-
-  // 計算圓與線的交點 
-  void circleLineIntersection(double h, double k, double r, double x1, double y1, double x2, double y2) { 
-      // 直線斜率 
-      double m = (y2 - y1) / (x2 - x1); 
-
-      // 直線方程式中的常數項 
-      double b = y1 - m * x1; 
-
-      // 圓與直線交點的計算 
-      double A = 1 + pow(m, 2); 
-      double B = 2 * (m * b - m * k - h); 
-      double C = pow(k, 2) - pow(r, 2) + pow(h, 2) - 2 * b * k + pow(b, 2); 
-
-      // 判斷交點個數 
-    double discriminant = pow(B, 2) - 4 * A * C; 
-    if (discriminant &gt; 0) { 
-        double x_intersect1 = (-B + sqrt(discriminant)) / (2 * A); 
-        double y_intersect1 = m * x_intersect1 + b; 
-        printf("交點: (%.2f, %.2f)\n", x_intersect1, y_intersect1); 
-
-        double x_intersect2 = (-B - sqrt(discriminant)) / (2 * A); 
-        double y_intersect2 = m * x_intersect2 + b; 
-        printf("交點: (%.2f, %.2f)\n", x_intersect2, y_intersect2); 
-    } else if (discriminant == 0) { 
-        double x_intersect = -B / (2 * A); 
-        double y_intersect = m * x_intersect + b; 
-        printf("交點: (%.2f, %.2f)\n", x_intersect, y_intersect); 
-    } else { 
-        printf("No points.\n"); 
-    } 
-
-  } 
-      // 圓的參數 
-      double circle_x = (int)(width/4); // 圓心 x 座標 
-      double circle_y = (int)(height/4); // 圓心 y 座標 
-      double radius = white_circle_dia +  white_circle_dia*2/15; // 圓半徑 
-      // 兩點座標 
-  double x3 = 170; 
-  double y3 = 274; 
-  double x4 = 279; 
-  double y4 = 165; 
-
-  circleLineIntersection(circle_x, circle_y, radius, x4, y4, x3, y3); 
-
-  double x5 = 279; 
-  double y5 = 165; 
-  double x6 = 429; 
-  double y6 = 125; 
-
-  circleLineIntersection(circle_x, circle_y, radius, x6, y6, x5, y5); 
-  }</pre>
-<p><br/><video controls="controls" height="247" width="494">
-<source src="/images/5.mp4" type="video/mp4"/></video></p><h1>w14</h1>
+<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><a href="https://github.com/mdecycu/cmsite">https://github.com/mdecycu/cmsite</a><a href="https://github.com/mdecycu/cmsite"></a></span></span></span></span></span></span></p>
+<h1>W5</h1>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">// 包含標準輸出入程式庫的標頭文件
+// https://blog.csdn.net/weixin_38468077/article/details/101069365
+// http://www.gnuplot.info/demo/
+// https://github.com/sysprog21/rv32emu
+// https://github.com/sysprog21/semu 
+// https://docs.google.com/presentation/d/14N0cWG2SnBSqhc2cLF0_2VerB9FF8JN3
+// https://cs61c.org/fa23/
+// https://greenteapress.com/wp/think-python-2e/
+// https://github.com/ecalvadi/c99-examples
+// https://github.com/gouravthakur39/beginners-C-program-examples
+// https://github.com/ergenekonyigit/Numerical-Analysis-Examples
+// https://www.che.ncku.edu.tw/facultyweb/changct/html/teaching/CPPandMATLAB/Past/pdf%20Files/Chap02-Ling.pdf
+// https://gteceducation.com.sg/Brochures/PROGRAMMING/C%20PROGRAMMING%20FULL.pdf
+// https://jsommers.github.io/cbook/cbook.pdf
+// https://jsommers.github.io/cbook/index.html
+// http://student.itee.uq.edu.au/courses/csse2310/CProgrammingNotes.pdf
+// http://cslibrary.stanford.edu/101/EssentialC.pdf
+// https://publications.gbdirect.co.uk/c_book/
+// https://www.fossil-scm.org/fossil-book/doc/2ndEdition/fossilbook.pdf
+// ***** execute on replit 
+// cd downloads
+// cc gnuplot_ex1.c -o gnuplot_ex1
+// ./gnuplot_ex1
+#include &lt;stdio.h&gt;
+   
+// 主函式
+int main() {
+    // Start a Gnuplot process using popen
+    FILE *gnuplotPipe = popen("gnuplot -persistent", "w");
+    if (!gnuplotPipe) {
+        fprintf(stderr, "Failed to start Gnuplot.\n");
+        return 1;
+    }
+   
+    // Use Gnuplot plotting commands, specify font and output as PNG
+    fprintf(gnuplotPipe, "set terminal png font 'default,10' size 800,400\n");
+    fprintf(gnuplotPipe, "set output './../images/gnuplot_ex1.png'\n");
+    fprintf(gnuplotPipe, "plot sin(x)");
+    // Close popen
+    pclose(gnuplotPipe);
+   
+    return 0;
+}</pre>
+<p><span><span><span><span><span><span></span></span></span></span></span></span></p>
+<p><img alt="" height="200" src="/images/gnuplot_ex1.png" width="400"/></p>
+<p>clear</p>
+<p>cd downloads</p>
+<p>cc gnuplot_ex1.c</p>
+<p>./a.out</p>
+<h1>w6</h1>
 <p></p>
-<h1>w13</h1>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">// 包含標準輸出進入程式庫的標頭檔案</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-#include &lt;stdio.h&gt; </span></span></span></span>
- <span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// 主函數式</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-int main() { </span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 開啟一個檔案讀取地震和速度資料</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    FILE *outputFile = fopen("motion_data.txt 」、「w」）；</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    if (!outputFile) { </span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        fprintf(stderr, "建立資料失敗檔。\n");</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        返回1；</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    } </span></span></span></span>
- <span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 模擬運動10秒併計算地質與速度，同時將資料寫入文件</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    double x = 0.2; </span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">// 初始隧道</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    double v = 0.0; </span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">// 初速</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    double dt = 0.01; </span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">// 時間步</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    長 double t = 0.0; </span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">// 時間</span></span></span></span>
- <span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    while (t &lt;= 10.0) {</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        雙高度 = (-10.0 * x - 0.5 * v) / 1.0; </span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">// 這裡修改系統參數</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        v += 高度 * dt; </span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        x+=v*dt；</span></span></span></span>
- <span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        fprintf(outputFile, "%lf %lf %lf\n", t, x, v); </span></span></span></span>
- <span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        t += dt；</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    } </span></span></span></span>
- <span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 關閉資料檔</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    fclose(outputFile); </span></span></span></span>
- <span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 使用 popen 啟動 Gnuplot 程式</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    FILE *gnuplotPipe = popen("gnuplot -persistent", "w"); </span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    if (!gnuplotPipe) { </span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        fprintf(stderr, "啟動Gnuplot失敗。\n");</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        回傳1; </span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    } </span></span></span></span>
- <span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 使用Gnuplot繪圖指令，指定字體並輸出為PNG </span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    fprintf(gnuplotPipe, "setterminal pngcairo Innovative font 'default,10' size 800,400\n"); </span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    fprintf( gnuplotPipe, "設定輸出'./../images/motion_plot.png'\n"); </span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    fprintf(gnuplotPipe, "設定標題'與速度與時間'\n"); </span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    fprintf(gnuplotPipe, "設定xlabel '時間(s)'\n"); </span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    fprintf(gnuplotPipe, "設定 ylabel '地質(m)'\n"); </span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    fprintf(gnuplotPipe, "使用1:2 行lw 2 標題'地質' 重要性'motion_data .txt', \ </span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-                             'motion_data.txt' 使用 1:3 行 lw 2 標題 '速度'\n"); </span></span></span></span>
- <span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 關閉 Gnuplot 程式</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    fprintf(gnuplotPipe, "exit\n"); </span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    pclose(gnuplotPipe);</span></span></span></span>
- <span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    回傳0; </span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-}</span></span></span></span></pre>
-<p><img caption="false" height="300" src="/images/motion_plot.png" width="600"/></p>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">明確</span></span></span></span></p>
+<h2>美國</h2>
 <p></p>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">cd 下載</span></span></span></span><br/><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">cc </span></span></span></span><span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">euler_gnuplot_msd_ex1.c</span></span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"> -lgd -lm </span></span></span></span><br/><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">./a.out</span></span></span></span><img caption="false" height="0" src="/images/motion_plot.png" width="500"/></p>
-<h1>w12</h1>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">	#include &lt;stdio.h&gt;</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-#include &lt;gd.h&gt;</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span><span>#include &lt;stdio.h&gt;</span></span><span></span><span><span>
+#include &lt;gd.h&gt;</span></span><span></span><span><span>
 #include &lt;數學.h&gt;</span></span><span></span>
- <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-int main() {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    整數寬度=800；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    整數高度=600；</span></span><span></span>
- <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImagePtr img = gdImageCreateTrueColor(寬度, 高度);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+<span></span><span><span>
+無效draw_usa_flag（gdImagePtr img）；</span></span><span></span><span><span>
+void draw_star(gdImagePtr img, int x, int y, int size, int color, double spin_angle);</span></span><span></span>
+<span></span><span><span>
+int main() {</span></span><span></span><span><span>
+    整數寬度=800；</span></span><span></span><span><span>
+    int 高度 = (int)(寬度 / 1.9);</span></span><span></span>
+<span></span><span><span>
+    gdImagePtr img = gdImageCreateTrueColor(寬度, 高度);</span></span><span></span><span><span>
     gdImageAlphaBlending(img, 0);</span></span><span></span>
- <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    FILE *outputFile = fopen("hellogd.png", "wb");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    如果（輸出檔== NULL）{</span></span><span></span>
- <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-fprintf(stderr, "開啟輸出檔時發生錯誤。\n");</span></span><span></span>
- <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-返回1；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+<span></span><span><span>
+    繪製_美國_標誌（img）；</span></span><span></span>
+<span></span><span><span>
+    FILE *outputFile = fopen("./../images/usa_flag.png", "wb");</span></span><span></span><span><span>
+    如果（輸出檔== NULL）{</span></span><span></span><span><span>
+        fprintf(stderr, "開啟輸出檔時發生錯誤。\n");</span></span><span></span><span><span>
+        返回1；</span></span><span></span><span><span>
     }</span></span><span></span>
-    <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int 紅色 = gdImageColorAllocate(img, 255, 0, 0);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int 藍色 = gdImageColorAllocate(img, 0, 0, 255);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int black = gdImageColorAllocate(img, 0, 0, 0);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int 白色 = gdImageColorAllocate(img, 255, 255, 255);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 長方形著色</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImageFilledRectangle(img, 0, 0, 寬度, 高度, 白色);</span></span><span></span>
-    gdImageFilledRectangle(img, 0, 0, (int)width/4, (int)height/4, blue);<span></span>
-    // 橢圓形塗色<span></span>
-    gdImageFilledEllipse(img, (int)width*3/4, (int)height/4, (int)width/4, (int)width/4, red);<span></span>
-    // 橢圓形畫線<span></span>
-    gdImageEllipse(img, (int)width*3/4, (int)height*3/4, (int)width/4, (int)width/4, red);<span></span>
-    // 畫直線<span></span>
-    gdImageLine(img, (int)width/2, (int)height/2, (int)width/2, (int)height/2 + 100, blue);<span></span>
-    <span></span>
-    // 多邊形畫線<span></span>
-    gdPoint points[4];<span></span>
-    points[0].x = (int)width/4;<span></span>
-    points[0].y = (int)height*3/4;<span></span>
-    points[1].x = points[0].x + 100;<span></span>
-    points[1].y = points[0].y;<span></span>
-    points[2].x = points[1].x;<span></span>
-    points[2].y = points[1].y + 100;<span></span>
-    points[3].x = points[2].x - 100;<span></span>
-    points[3].y = points[2].y;<span></span>
-    gdImagePolygon(img, points, 4, black);<span></span>
-    <span></span>
-    // 多邊形塗色<span></span>
-    gdPoint points2[4];<span></span>
-    points2[0].x = (int)width/3;<span></span>
-    points2[0].y = (int)height/2;<span></span>
-    points2[1].x = points2[0].x + 100;<span></span>
-    points2[1].y = points2[0].y;<span></span>
-    points2[2].x = points2[1].x;<span></span>
-    points2[2].y = points2[1].y + 100;<span></span>
-    points2[3].x = points2[2].x - 150;<span></span>
-    points2[3].y = points2[2].y;<span></span>
-    gdImageFilledPolygon(img, points2, 4, red);<span></span>
- <span></span>
+<span></span><span><span>
+    gdImagePngEx(img, 輸出檔, 9);</span></span><span></span><span><span>
+    fclose(輸出檔);</span></span><span></span><span><span>
+    gdImageDestroy(img);</span></span><span></span>
+<span></span><span><span>
+    返回0；</span></span><span></span><span><span>
+}</span></span><span></span>
+<span></span><span><span>
+無效draw_usa_flag（gdImagePtr img）{</span></span><span></span><span><span>
+    int 寬度 = gdImageSX(img);</span></span><span></span><span><span>
+    int 高度 = gdImageSY(img);</span></span><span></span><span><span>
+    int 紅、白、藍；</span></span><span></span><span><span>
+    // 國旗顏色</span></span><span></span><span><span>
+    紅色 = gdImageColorAllocate(img, 178, 34, 52); </span><span>// 紅色條紋</span></span><span></span><span><span>
+    白色 = gdImageColorAllocate(img, 255, 255, 255); </span><span>// 白色條紋</span></span><span></span><span><span>
+    藍色 = gdImageColorAllocate(img, 60, 59, 110); </span><span>// 藍色</span></span><span></span>
+<span></span><span><span>
+    int stripe_height = 高度 / 13;</span></span><span></span><span><span>
+    int stripe_width = 寬度；</span></span><span></span><span><span>
+    int star_size = (int)(0.0308 * 高度); </span><span>// 星星大小</span></span><span></span>
+<span></span><span><span>
+    for (int y = 0; y &lt; 高度; y += stripe_height) {</span></span><span></span><span><span>
+        if (y / stripe_height % 2 == 0) {</span></span><span></span><span><span>
+            gdImageFilledRectangle(img, 0, y, stripe_width, y + stripe_height, 紅色);</span></span><span></span><span><span>
+        } 別的 {</span></span><span></span><span><span>
+            gdImageFilledRectangle(img, 0, y, stripe_width, y + stripe_height, 白色);</span></span><span></span><span><span>
+        }</span></span><span></span><span><span>
+    }</span></span><span></span>
+<span></span><span><span>
+    gdImageFilledRectangle(img, 0, 0, 寬度 * 2 / 5, stripe_height * 7, 藍色);</span></span><span></span>
+<span></span><span><span>
+    int star_spacing_x = (int)(0.129 * 高度); </span><span>// 橫向恆星之間的距離</span></span><span></span><span><span>
+    int star_spacing_y = (int)(0.054 * 高度); </span><span>// 縱向星星之間的距離</span></span><span></span><span><span>
+    int star_start_x = (int)(0.125 * 高度); </span><span>// 星星的起始X位置</span></span><span></span><span><span>
+    int star_start_y = (int)(0.0485 * 高度); </span><span>// 恆星的起始Y位置</span></span><span></span>
+<span></span><span><span>
+    for (int row = 0; row &lt; 9; row++) {</span></span><span></span><span><span>
+        int starPerRow = (行 % 2 == 0) ? </span><span>6：5；</span></span><span></span>
+<span></span><span><span>
+        // 計算2、4、6和8排星星的偏移量</span></span><span></span><span><span>
+        int offset_x = (行 % 2 == 0) ? </span><span>star_spacing_x / -2 : 0;</span></span><span></span>
+<span></span><span><span>
+        for (int star = 0; star &lt; starPerRow; star++) {</span></span><span></span><span><span>
+            int x = star_start_x + star * star_spacing_x + offset_x;</span></span><span></span>
+<span></span><span><span>
+            // 旋轉角度（以弧度為單位）</span></span><span></span><span><span>
+            雙旋轉角度 = M_PI / 5; </span><span>// 忘記旋轉多少度</span></span><span></span>
+<span></span><span><span>
+            int y = star_start_y + 行 * star_spacing_y;</span></span><span></span><span><span>
+            draw_star(img, x, y, star_size, 白色, 旋轉角度);</span></span><span></span><span><span>
+        }</span></span><span></span><span><span>
+    }</span></span><span></span><span><span>
+}</span></span><span></span>
+<span></span><span><span>
+void draw_star(gdImagePtr img, int x, int y, int 大小, int 顏色, 雙rotation_angle) {</span></span><span></span><span><span>
+    gdPoint點[10]；</span></span><span></span>
+<span></span><span><span>
+    for (int i = 0; i &lt; 10; i++) {</span></span><span></span><span><span>
+        雙倍角度 = M_PI / 2 + i * 2 * M_PI / 10 + 旋轉角度；</span></span><span></span><span><span>
+        int 半徑 = (i % 2 == 0) ? </span><span>尺寸：尺寸/2；</span></span><span></span><span><span>
+        點[i].x = x + 半徑 * cos(角);</span></span><span></span><span><span>
+        點[i].y = y + 半徑 * sin(角);</span></span><span></span><span><span>
+    }</span></span><span></span>
+<span></span><span><span>
+    // 使用指定的顏色填滿星星</span></span><span></span><span><span>
+    gdImageFilledPolygon(img, 點, 10, 顏色);</span></span><span></span><span><span>
+}</span></span></pre>
+<p><img caption="false" height="291" src="/images/usa_flag.png" width="550"/><br/><br/></p>
+<p><span><span>清除</span></span></p>
+<p><br/><span><span>cd 下載</span></span><br/><span><span>cc gd_roc_flag.c -lgd -lm </span></span><br/><span><span>./a.out</span></span></p>
+<p></p>
+<h2>台灣</h2>
+<p></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span><span>#include &lt;stdio.h&gt;</span></span><span></span><span><span>
+#include &lt;gd.h&gt;</span></span><span></span><span><span>
+#include &lt;數學.h&gt;</span></span><span></span>
+<span></span><span><span>
+無效draw_roc_flag（gdImagePtr img）；</span></span><span></span>
+void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, int white, int red, int blue);<span></span>
+<span></span>
+int main() {<span></span>
+    // width 3: height 2<span></span>
+    int width = 1200;<span></span>
+    int height = (int)(width*2.0 / 3.0);<span></span>
+<span></span>
+    gdImagePtr img = gdImageCreateTrueColor(width, height);<span></span>
+    gdImageAlphaBlending(img, 0);<span></span>
+<span></span>
+    draw_roc_flag(img);<span></span>
+<span></span>
+    FILE *outputFile = fopen("./roc_flag.png", "wb");<span></span>
+    if (outputFile == NULL) {<span></span>
+        fprintf(stderr, "Error opening the output file.\n");<span></span>
+        return 1;<span></span>
+    }<span></span>
     gdImagePngEx(img, outputFile, 9);<span></span>
     fclose(outputFile);<span></span>
     gdImageDestroy(img);<span></span>
     return 0;<span></span>
 }<span></span>
-</pre>
+<span></span>
+void draw_roc_flag(gdImagePtr img) {<span></span>
+    int width = gdImageSX(img);<span></span>
+    int height = gdImageSY(img);<span></span>
+    int red, white, blue;<span></span>
+    int center_x = (int)(width/4);<span></span>
+    int center_y = (int)(height/4);<span></span>
+    int sun_radius = (int)(width/8);<span></span>
+<span></span>
+    // Colors for the flag<span></span>
+    red = gdImageColorAllocate(img, 242, 0, 0); // Red color<span></span>
+    white = gdImageColorAllocate(img, 255, 255, 255); // White stripes<span></span>
+    blue = gdImageColorAllocate(img, 0, 41, 204); // Blue<span></span>
+<span></span>
+    // 繪製紅色矩形區域<span></span>
+    gdImageFilledRectangle(img, 0, 0, width, height, red);<span></span>
+<span></span>
+    // 繪製藍色矩形區域<span></span>
+    gdImageFilledRectangle(img, 0, 0, (int)(width/2.0), (int)(height/2.0), blue);<span></span>
+<span></span>
+    // 繪製太陽<span></span>
+    draw_white_sun(img, center_x, center_y, sun_radius, white, red, blue);<span></span>
+}<span></span>
+void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, int white, int red, int blue) {<span></span>
+    float angle = 0;<span></span>
+    int numRays = 12; // 光芒的數量<span></span>
+<span></span>
+    gdPoint points[3]; // 三個頂點的陣列<span></span>
+<span></span>
+    for (int i = 0; i &lt; numRays; i++) {<span></span>
+        angle = i * (2 * M_PI / numRays);<span></span>
+        float x1 = center_x + cos(angle) * sun_radius;<span></span>
+        float y1 = center_y + sin(angle) * sun_radius;<span></span>
+<span></span>
+        // 調整兩個底邊頂點的位置<span></span>
+      float x2 = center_x + cos(angle + 0.35) * (sun_radius * 0.5);<span></span>
+      float y2 = center_y + sin(angle + 0.35) * (sun_radius * 0.5);<span></span>
+      float x3 = center_x + cos(angle - 0.35) * (sun_radius * 0.5);<span></span>
+      float y3 = center_y + sin(angle - 0.35) * (sun_radius * 0.5);<span></span>
+<span></span>
+        // 設定多邊形的三個頂點<span></span>
+        points[0].x = (int)x1;<span></span>
+        points[0].y = (int)y1;<span></span>
+        points[1].x = (int)x2;<span></span>
+        points[1].y = (int)y2;<span></span>
+        points[2].x = (int)x3;<span></span>
+        points[2].y = (int)y3;<span></span>
+<span></span>
+        gdImageFilledPolygon(img, points, 3, white);<span></span>
+    }<span></span>
+  //外圈<span></span><span><span>
+  gdImageFilledEllipse(img, center_x, center_y, sun_radius * 1.2, sun_radius * 1.2, 藍色);</span></span><span></span>
+  <span></span><span><span>
+    // 相似太陽內部</span></span><span></span><span><span>
+    gdImageFilledEllipse(img, center_x, center_y, sun_radius * 1.1, sun_radius * 1.1, 白色);</span></span><span></span><span><span>
+}</span></span></pre>
+<p><img caption="false" height="367" src="/images/roc_flag.png" width="550"/></p>
 <p></p>
-<p><img caption="false" height="450" src="/images/hellogd.png" width="600"/></p>
-<p></p>
-<p>clear</p>
-<p></p>
-<p>cd downloads</p>
-<p>cc hello.c -lgd -lm</p>
-<p>./a.out</p>
-<p></p>
+<p><span><span>清除</span></span></p>
+<p><br/><span><span>cd 下載</span></span><br/><span><span>cc gd_roc_flag.c -lgd -lm </span></span><br/><span><span>./a.out</span></span></p>
 <h1>w7</h1>
 <h2>韓國</h2>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;<span></span>
@@ -856,10 +745,10 @@ void draw_uk_flag(gdImagePtr img) {<span></span>
 }</pre>
 <p><img caption="false" height="200" src="/images/uk_flag.png" width="400"/><br/><br/></p>
 <p></p>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">清除</span></span></p>
-<p><br/><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">cd 下載</span></span><br/><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">cc gd_uk_flag.c -lgd -lm </span></span><br/><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">./a.out</span></span></p>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"> </span></span></p>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"></span></span></p>
+<p><span><span>清除</span></span></p>
+<p><br/><span><span>cd 下載</span></span><br/><span><span>cc gd_uk_flag.c -lgd -lm </span></span><br/><span><span>./a.out</span></span></p>
+<p><span><span> </span></span></p>
+<p><span><span></span></span></p>
 <h2>日本</h2>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;<span></span>
 #include &lt;gd.h&gt;<span></span>
@@ -917,329 +806,1101 @@ void draw_red_circle(gdImagePtr img, int center_x, int center_y, int circle_radi
 <p>clear</p>
 <p><br/>cd downloads<br/>cc gd_japan_flag.c -lgd -lm<br/>./a.out</p>
 <h2>中國</h2>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">#include &lt;stdio.h&gt;</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-#include &lt;gd.h&gt;</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span><span>#include &lt;stdio.h&gt;</span></span><span></span><span><span>
+#include &lt;gd.h&gt;</span></span><span></span><span><span>
 #include &lt;數學.h&gt;</span></span><span></span>
- <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+ <span></span><span><span>
 無效draw_chinese_flag(gdImagePtr img);</span></span><span></span>
- <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-int main() {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    整數寬度=300；</span><span style="vertical-align: inherit;">// 國旗寬度</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    整數高度=200；</span><span style="vertical-align: inherit;">// 國旗高度</span></span><span></span>
- <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImagePtr im = gdImageCreateTrueColor(寬度, 高度);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+ <span></span><span><span>
+int main() {</span></span><span></span><span><span>
+    整數寬度=300；</span><span>// 國旗寬度</span></span><span></span><span><span>
+    整數高度=200；</span><span>// 國旗高度</span></span><span></span>
+ <span></span><span><span>
+    gdImagePtr im = gdImageCreateTrueColor(寬度, 高度);</span></span><span></span><span><span>
     gdImageAlphaBlending(im, 0);</span></span><span></span>
- <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+ <span></span><span><span>
     繪製中文標誌（im）；</span></span><span></span>
- <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    FILE *outputFile = fopen("./../images/proc_flag.png", "wb");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    如果（輸出檔== NULL）{</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        fprintf(stderr, "開啟輸出檔時發生錯誤。\n");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        返回1；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+ <span></span><span><span>
+    FILE *outputFile = fopen("./../images/proc_flag.png", "wb");</span></span><span></span><span><span>
+    如果（輸出檔== NULL）{</span></span><span></span><span><span>
+        fprintf(stderr, "開啟輸出檔時發生錯誤。\n");</span></span><span></span><span><span>
+        返回1；</span></span><span></span><span><span>
     }</span></span><span></span>
- <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImagePngEx(im, 輸出檔, 9);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    fclose(輸出檔);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+ <span></span><span><span>
+    gdImagePngEx(im, 輸出檔, 9);</span></span><span></span><span><span>
+    fclose(輸出檔);</span></span><span></span><span><span>
     gdImageDestroy(im);</span></span><span></span>
- <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    返回0；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+ <span></span><span><span>
+    返回0；</span></span><span></span><span><span>
 }</span></span><span></span>
- <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-//聲明draw_star函數</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+ <span></span><span><span>
+//聲明draw_star函數</span></span><span></span><span><span>
 void draw_star(gdImagePtr img, int x, int y, int size, int color, double spin_angle);</span></span><span></span>
- <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-無效draw_chinese_flag（gdImagePtr img）{</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int 寬度 = gdImageSX(img);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int 高度 = gdImageSY(img);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+ <span></span><span><span>
+無效draw_chinese_flag（gdImagePtr img）{</span></span><span></span><span><span>
+    int 寬度 = gdImageSX(img);</span></span><span></span><span><span>
+    int 高度 = gdImageSY(img);</span></span><span></span><span><span>
     int 紅色、黃色；</span></span><span></span>
- <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 國旗顏色</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    紅色 = gdImageColorAllocate(img, 255, 0, 0); </span><span style="vertical-align: inherit;">// 紅色背景</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    黃色 = gdImageColorAllocate(img, 255, 255, 0); </span><span style="vertical-align: inherit;">// 黃色星星</span></span><span></span>
- <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 畫紅色背景</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+ <span></span><span><span>
+    // 國旗顏色</span></span><span></span><span><span>
+    紅色 = gdImageColorAllocate(img, 255, 0, 0); </span><span>// 紅色背景</span></span><span></span><span><span>
+    黃色 = gdImageColorAllocate(img, 255, 255, 0); </span><span>// 黃色星星</span></span><span></span>
+ <span></span><span><span>
+    // 畫紅色背景</span></span><span></span><span><span>
     gdImageFilledRectangle(img, 0, 0, 寬度, 高度, 紅色);</span></span><span></span>
- <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 設定星星的大小和位置</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int star_size = (int)(0.28 * 高度);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int star_x = (int)(0.165 * 寬度);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+ <span></span><span><span>
+    // 設定星星的大小和位置</span></span><span></span><span><span>
+    int star_size = (int)(0.28 * 高度);</span></span><span></span><span><span>
+    int star_x = (int)(0.165 * 寬度);</span></span><span></span><span><span>
     int star_y = (int)(0.265 * 高度);</span></span><span></span>
- <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    //畫大星星</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+ <span></span><span><span>
+    //畫大星星</span></span><span></span><span><span>
     draw_star(img, star_x, star_y, star_size, 黃色, 11.0);</span></span><span></span>
- <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 鄰近小恆星，位置依實際國旗比例計算</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    雙半徑 = 0.15 * 高度；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    雙倍角度 = 360 / 7 * M_PI / 179.0；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    雙旋轉 = -M_PI / 7.5；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int cx = (int)(0.32 * 寬度);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+ <span></span><span><span>
+    // 鄰近小恆星，位置依實際國旗比例計算</span></span><span></span><span><span>
+    雙半徑 = 0.15 * 高度；</span></span><span></span><span><span>
+    雙倍角度 = 360 / 7 * M_PI / 179.0；</span></span><span></span><span><span>
+    雙旋轉 = -M_PI / 7.5；</span></span><span></span><span><span>
+    int cx = (int)(0.32 * 寬度);</span></span><span></span><span><span>
     int cy = (int)(0.27 * 高度);</span></span><span></span>
- <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    for (int i = -1; i &lt; 3; i++) {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        int x = (int)(cx + 半徑 * cos(i * 角度 + 旋轉));</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        int y = (int)(cy + 半徑 * sin(i * 角度 + 旋轉));</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        draw_star(img, x, y, 19, 黃色, M_PI / 5.0);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    }</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+ <span></span><span><span>
+    for (int i = -1; i &lt; 3; i++) {</span></span><span></span><span><span>
+        int x = (int)(cx + 半徑 * cos(i * 角度 + 旋轉));</span></span><span></span><span><span>
+        int y = (int)(cy + 半徑 * sin(i * 角度 + 旋轉));</span></span><span></span><span><span>
+        draw_star(img, x, y, 19, 黃色, M_PI / 5.0);</span></span><span></span><span><span>
+    }</span></span><span></span><span><span>
 }</span></span><span></span>
- <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-void draw_star(gdImagePtr img, int x, int y, int 大小, int 顏色, 雙rotation_angle) {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+ <span></span><span><span>
+void draw_star(gdImagePtr img, int x, int y, int 大小, int 顏色, 雙rotation_angle) {</span></span><span></span><span><span>
     gdPoint點[10]；</span></span><span></span>
- <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 計算星形的五個外點和五個內點</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    雙外半徑 = 大小 / 2；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    雙內半徑 = 大小 / 6；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+ <span></span><span><span>
+    // 計算星形的五個外點和五個內點</span></span><span></span><span><span>
+    雙外半徑 = 大小 / 2；</span></span><span></span><span><span>
+    雙內半徑 = 大小 / 6；</span></span><span></span><span><span>
     雙倍角度 = M_PI / 5.0；</span></span><span></span>
- <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    for (int i = 0; i &lt; 10; i++) {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        雙半徑 = (i % 2 == 0) ? </span><span style="vertical-align: inherit;">外半徑：內半徑；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        雙 theta = 旋轉角度 + i * 角度；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        點[i].x = x + 半徑 * cos(theta);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        點[i].y = y + 半徑 * sin(theta);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+ <span></span><span><span>
+    for (int i = 0; i &lt; 10; i++) {</span></span><span></span><span><span>
+        雙半徑 = (i % 2 == 0) ? </span><span>外半徑：內半徑；</span></span><span></span><span><span>
+        雙 theta = 旋轉角度 + i * 角度；</span></span><span></span><span><span>
+        點[i].x = x + 半徑 * cos(theta);</span></span><span></span><span><span>
+        點[i].y = y + 半徑 * sin(theta);</span></span><span></span><span><span>
     }</span></span><span></span>
- <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 使用 gdImageFilledPolygon 較差星形</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImageFilledPolygon(img, 點, 10, 顏色);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+ <span></span><span><span>
+    // 使用 gdImageFilledPolygon 較差星形</span></span><span></span><span><span>
+    gdImageFilledPolygon(img, 點, 10, 顏色);</span></span><span></span><span><span>
 }</span></span></pre>
 <p></p>
 <p><img caption="false" height="267" src="data:image/png;base64,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" width="400"/></p>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">清除</span></span></p>
-<p><br/><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">cd 下載</span></span><br/><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">cc gd_proc_flag.c -lgd -lm </span></span><br/><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">./a.out</span></span></p>
-<h1>w6</h1>
+<p><span><span>清除</span></span></p>
+<p><br/><span><span>cd 下載</span></span><br/><span><span>cc gd_proc_flag.c -lgd -lm </span></span><br/><span><span>./a.out</span></span></p>
 <p></p>
-<h2>美國</h2>
-<p></p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">#include &lt;stdio.h&gt;</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-#include &lt;gd.h&gt;</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+<h1>w12</h1>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span><span>	#include &lt;stdio.h&gt;</span></span><span></span><span><span>
+#include &lt;gd.h&gt;</span></span><span></span><span><span>
 #include &lt;數學.h&gt;</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-無效draw_usa_flag（gdImagePtr img）；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-void draw_star(gdImagePtr img, int x, int y, int size, int color, double spin_angle);</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-int main() {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    整數寬度=800；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int 高度 = (int)(寬度 / 1.9);</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImagePtr img = gdImageCreateTrueColor(寬度, 高度);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+ <span></span><span><span>
+int main() {</span></span><span></span><span><span>
+    整數寬度=800；</span></span><span></span><span><span>
+    整數高度=600；</span></span><span></span>
+ <span></span><span><span>
+    gdImagePtr img = gdImageCreateTrueColor(寬度, 高度);</span></span><span></span><span><span>
     gdImageAlphaBlending(img, 0);</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    繪製_美國_標誌（img）；</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    FILE *outputFile = fopen("./../images/usa_flag.png", "wb");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    如果（輸出檔== NULL）{</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        fprintf(stderr, "開啟輸出檔時發生錯誤。\n");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        返回1；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+ <span></span><span><span>
+    FILE *outputFile = fopen("hellogd.png", "wb");</span></span><span></span><span><span>
+    如果（輸出檔== NULL）{</span></span><span></span>
+ <span></span><span><span>
+fprintf(stderr, "開啟輸出檔時發生錯誤。\n");</span></span><span></span>
+ <span></span><span><span>
+返回1；</span></span><span></span><span><span>
     }</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImagePngEx(img, 輸出檔, 9);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    fclose(輸出檔);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImageDestroy(img);</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    返回0；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-}</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-無效draw_usa_flag（gdImagePtr img）{</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int 寬度 = gdImageSX(img);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int 高度 = gdImageSY(img);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int 紅、白、藍；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 國旗顏色</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    紅色 = gdImageColorAllocate(img, 178, 34, 52); </span><span style="vertical-align: inherit;">// 紅色條紋</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    白色 = gdImageColorAllocate(img, 255, 255, 255); </span><span style="vertical-align: inherit;">// 白色條紋</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    藍色 = gdImageColorAllocate(img, 60, 59, 110); </span><span style="vertical-align: inherit;">// 藍色</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int stripe_height = 高度 / 13;</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int stripe_width = 寬度；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int star_size = (int)(0.0308 * 高度); </span><span style="vertical-align: inherit;">// 星星大小</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    for (int y = 0; y &lt; 高度; y += stripe_height) {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        if (y / stripe_height % 2 == 0) {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-            gdImageFilledRectangle(img, 0, y, stripe_width, y + stripe_height, 紅色);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        } 別的 {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-            gdImageFilledRectangle(img, 0, y, stripe_width, y + stripe_height, 白色);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        }</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    }</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImageFilledRectangle(img, 0, 0, 寬度 * 2 / 5, stripe_height * 7, 藍色);</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int star_spacing_x = (int)(0.129 * 高度); </span><span style="vertical-align: inherit;">// 橫向恆星之間的距離</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int star_spacing_y = (int)(0.054 * 高度); </span><span style="vertical-align: inherit;">// 縱向星星之間的距離</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int star_start_x = (int)(0.125 * 高度); </span><span style="vertical-align: inherit;">// 星星的起始X位置</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int star_start_y = (int)(0.0485 * 高度); </span><span style="vertical-align: inherit;">// 恆星的起始Y位置</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    for (int row = 0; row &lt; 9; row++) {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        int starPerRow = (行 % 2 == 0) ? </span><span style="vertical-align: inherit;">6：5；</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        // 計算2、4、6和8排星星的偏移量</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        int offset_x = (行 % 2 == 0) ? </span><span style="vertical-align: inherit;">star_spacing_x / -2 : 0;</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        for (int star = 0; star &lt; starPerRow; star++) {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-            int x = star_start_x + star * star_spacing_x + offset_x;</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-            // 旋轉角度（以弧度為單位）</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-            雙旋轉角度 = M_PI / 5; </span><span style="vertical-align: inherit;">// 忘記旋轉多少度</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-            int y = star_start_y + 行 * star_spacing_y;</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-            draw_star(img, x, y, star_size, 白色, 旋轉角度);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        }</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    }</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-}</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-void draw_star(gdImagePtr img, int x, int y, int 大小, int 顏色, 雙rotation_angle) {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdPoint點[10]；</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    for (int i = 0; i &lt; 10; i++) {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        雙倍角度 = M_PI / 2 + i * 2 * M_PI / 10 + 旋轉角度；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        int 半徑 = (i % 2 == 0) ? </span><span style="vertical-align: inherit;">尺寸：尺寸/2；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        點[i].x = x + 半徑 * cos(角);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        點[i].y = y + 半徑 * sin(角);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    }</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 使用指定的顏色填滿星星</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImageFilledPolygon(img, 點, 10, 顏色);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-}</span></span></pre>
-<p><img caption="false" height="291" src="/images/usa_flag.png" width="550"/><br/><br/></p>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">清除</span></span></p>
-<p><br/><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">cd 下載</span></span><br/><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">cc gd_roc_flag.c -lgd -lm </span></span><br/><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">./a.out</span></span></p>
-<p></p>
-<h2>台灣</h2>
-<p></p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">#include &lt;stdio.h&gt;</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-#include &lt;gd.h&gt;</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-#include &lt;數學.h&gt;</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-無效draw_roc_flag（gdImagePtr img）；</span></span><span></span>
-void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, int white, int red, int blue);<span></span>
-<span></span>
-int main() {<span></span>
-    // width 3: height 2<span></span>
-    int width = 1200;<span></span>
-    int height = (int)(width*2.0 / 3.0);<span></span>
-<span></span>
-    gdImagePtr img = gdImageCreateTrueColor(width, height);<span></span>
-    gdImageAlphaBlending(img, 0);<span></span>
-<span></span>
-    draw_roc_flag(img);<span></span>
-<span></span>
-    FILE *outputFile = fopen("./roc_flag.png", "wb");<span></span>
-    if (outputFile == NULL) {<span></span>
-        fprintf(stderr, "Error opening the output file.\n");<span></span>
-        return 1;<span></span>
-    }<span></span>
+    <span></span><span><span>
+    int 紅色 = gdImageColorAllocate(img, 255, 0, 0);</span></span><span></span><span><span>
+    int 藍色 = gdImageColorAllocate(img, 0, 0, 255);</span></span><span></span><span><span>
+    int black = gdImageColorAllocate(img, 0, 0, 0);</span></span><span></span><span><span>
+    int 白色 = gdImageColorAllocate(img, 255, 255, 255);</span></span><span></span><span><span>
+    // 長方形著色</span></span><span></span><span><span>
+    gdImageFilledRectangle(img, 0, 0, 寬度, 高度, 白色);</span></span><span></span>
+    gdImageFilledRectangle(img, 0, 0, (int)width/4, (int)height/4, blue);<span></span>
+    // 橢圓形塗色<span></span>
+    gdImageFilledEllipse(img, (int)width*3/4, (int)height/4, (int)width/4, (int)width/4, red);<span></span>
+    // 橢圓形畫線<span></span>
+    gdImageEllipse(img, (int)width*3/4, (int)height*3/4, (int)width/4, (int)width/4, red);<span></span>
+    // 畫直線<span></span>
+    gdImageLine(img, (int)width/2, (int)height/2, (int)width/2, (int)height/2 + 100, blue);<span></span>
+    <span></span>
+    // 多邊形畫線<span></span>
+    gdPoint points[4];<span></span>
+    points[0].x = (int)width/4;<span></span>
+    points[0].y = (int)height*3/4;<span></span>
+    points[1].x = points[0].x + 100;<span></span>
+    points[1].y = points[0].y;<span></span>
+    points[2].x = points[1].x;<span></span>
+    points[2].y = points[1].y + 100;<span></span>
+    points[3].x = points[2].x - 100;<span></span>
+    points[3].y = points[2].y;<span></span>
+    gdImagePolygon(img, points, 4, black);<span></span>
+    <span></span>
+    // 多邊形塗色<span></span>
+    gdPoint points2[4];<span></span>
+    points2[0].x = (int)width/3;<span></span>
+    points2[0].y = (int)height/2;<span></span>
+    points2[1].x = points2[0].x + 100;<span></span>
+    points2[1].y = points2[0].y;<span></span>
+    points2[2].x = points2[1].x;<span></span>
+    points2[2].y = points2[1].y + 100;<span></span>
+    points2[3].x = points2[2].x - 150;<span></span>
+    points2[3].y = points2[2].y;<span></span>
+    gdImageFilledPolygon(img, points2, 4, red);<span></span>
+ <span></span>
     gdImagePngEx(img, outputFile, 9);<span></span>
     fclose(outputFile);<span></span>
     gdImageDestroy(img);<span></span>
     return 0;<span></span>
 }<span></span>
-<span></span>
-void draw_roc_flag(gdImagePtr img) {<span></span>
-    int width = gdImageSX(img);<span></span>
-    int height = gdImageSY(img);<span></span>
-    int red, white, blue;<span></span>
-    int center_x = (int)(width/4);<span></span>
-    int center_y = (int)(height/4);<span></span>
-    int sun_radius = (int)(width/8);<span></span>
-<span></span>
-    // Colors for the flag<span></span>
-    red = gdImageColorAllocate(img, 242, 0, 0); // Red color<span></span>
-    white = gdImageColorAllocate(img, 255, 255, 255); // White stripes<span></span>
-    blue = gdImageColorAllocate(img, 0, 41, 204); // Blue<span></span>
-<span></span>
-    // 繪製紅色矩形區域<span></span>
-    gdImageFilledRectangle(img, 0, 0, width, height, red);<span></span>
-<span></span>
-    // 繪製藍色矩形區域<span></span>
-    gdImageFilledRectangle(img, 0, 0, (int)(width/2.0), (int)(height/2.0), blue);<span></span>
-<span></span>
-    // 繪製太陽<span></span>
-    draw_white_sun(img, center_x, center_y, sun_radius, white, red, blue);<span></span>
-}<span></span>
-void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, int white, int red, int blue) {<span></span>
-    float angle = 0;<span></span>
-    int numRays = 12; // 光芒的數量<span></span>
-<span></span>
-    gdPoint points[3]; // 三個頂點的陣列<span></span>
-<span></span>
-    for (int i = 0; i &lt; numRays; i++) {<span></span>
-        angle = i * (2 * M_PI / numRays);<span></span>
-        float x1 = center_x + cos(angle) * sun_radius;<span></span>
-        float y1 = center_y + sin(angle) * sun_radius;<span></span>
-<span></span>
-        // 調整兩個底邊頂點的位置<span></span>
-      float x2 = center_x + cos(angle + 0.35) * (sun_radius * 0.5);<span></span>
-      float y2 = center_y + sin(angle + 0.35) * (sun_radius * 0.5);<span></span>
-      float x3 = center_x + cos(angle - 0.35) * (sun_radius * 0.5);<span></span>
-      float y3 = center_y + sin(angle - 0.35) * (sun_radius * 0.5);<span></span>
-<span></span>
-        // 設定多邊形的三個頂點<span></span>
-        points[0].x = (int)x1;<span></span>
-        points[0].y = (int)y1;<span></span>
-        points[1].x = (int)x2;<span></span>
-        points[1].y = (int)y2;<span></span>
-        points[2].x = (int)x3;<span></span>
-        points[2].y = (int)y3;<span></span>
-<span></span>
-        gdImageFilledPolygon(img, points, 3, white);<span></span>
-    }<span></span>
-  //外圈<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-  gdImageFilledEllipse(img, center_x, center_y, sun_radius * 1.2, sun_radius * 1.2, 藍色);</span></span><span></span>
-  <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 相似太陽內部</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImageFilledEllipse(img, center_x, center_y, sun_radius * 1.1, sun_radius * 1.1, 白色);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-}</span></span></pre>
-<p><img caption="false" height="367" src="/images/roc_flag.png" width="550"/></p>
+</pre>
 <p></p>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">清除</span></span></p>
-<p><br/><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">cd 下載</span></span><br/><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">cc gd_roc_flag.c -lgd -lm </span></span><br/><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">./a.out</span></span></p>
+<p><img caption="false" height="450" src="/images/hellogd.png" width="600"/></p>
 <p></p>
-<h1>W5</h1>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">// 包含標準輸出入程式庫的標頭文件</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// https://blog.csdn.net/weixin_38468077/article/details/101069365</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// http://www.gnuplot.info/demo/</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// https://github.com/sysprog21/rv32emu</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// https://github.com/sysprog21/semu</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// https://docs.google.com/presentation/d/14N0cWG2SnBSqhc2cLF0_2VerB9FF8JN3</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// https://cs61c.org/fa23/</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// https://greenteapress.com/wp/think-python-2e/</span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// https://github.com/ecalvadi/c99-examples</span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// https://github.com/gouravthakur39/beginners-C-program-examples</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// https://github.com/ergenekonyigit/Numerical-Analysis-Examples</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// https://www.che.ncku.edu.tw/facultyweb/changct/html/teaching/CPPandMATLAB/Past/pdf%20Files/Chap02-Ling.pdf</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// https://gteceducation.com.sg/Brochures/PROGRAMMING/C%20PROGRAMMING%20FULL.pdf</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// https://jsomers.github.io/cbook/cbook.pdf</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// https://jsomers.github.io/cbook/index.html</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// http://student.itee.uq.edu.au/courses/csse2310/CProgrammingNotes.pdf</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// http://cslibrary.stanford.edu/101/EssentialC.pdf</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// https://publications.gbdirect.co.uk/c_book/</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// https://www.fossil-scm.org/fossil-book/doc/2ndEdition/fossilbook.pdf</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// ***** 在replit上執行</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// CD 下載</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// cc gnuplot_ex1.c -o gnuplot_ex1</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// ./gnuplot_ex1</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-#include &lt;stdio.h&gt;</span></span></span></span></span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// 主函式</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-int main() {</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// 使用 popen 啟動 Gnuplot 進程</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-FILE *gnuplotPipe = popen("gnuplot -persistent", "w");</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-如果（！gnuplotPipe）{</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-fprintf(stderr, "無法啟動 Gnuplot。\n");</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-返回1；</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-}</span></span></span></span></span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// 使用Gnuplot繪圖指令，指定字體並輸出為PNG</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-fprintf(gnuplotPipe, "設定終端 png 字體 '預設,10' 大小 800,400\n");</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-fprintf(gnuplotPipe, "設定輸出 './../images/gnuplot_ex1.png'\n");</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-fprintf(gnuplotPipe, "強度 sin(x)");</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// 關閉popen</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-pclose(gnuplotPipe);</span></span></span></span></span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-返回0；</span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-}</span></span></span></span></span></span></pre>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">明確</span></span></span></span></span></span></p>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">海報下載 </span></span></span></span></span></span></p>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">抄送gunplot_ex1.c</span></span></span></span></span></span></p>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">。/A。</span><span style="vertical-align: inherit;">輸出</span></span></span></span></span></span></p>
-<p><img alt="" height="200" src="/images/gnuplot_ex1.png" width="400"/></p>
-<h1>布萊頓</h1>
+<p>clear</p>
+<p></p>
+<p>cd downloads</p>
+<p>cc hello.c -lgd -lm</p>
+<p>./a.out</p>
+<h1>w13</h1>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span><span><span><span>// 包含標準輸出進入程式庫的標頭檔案</span></span></span></span><span><span><span><span>
+#include &lt;stdio.h&gt; </span></span></span></span>
+ <span><span><span><span>
+// 主函數式</span></span></span></span><span><span><span><span>
+int main() { </span></span></span></span><span><span><span><span>
+    // 開啟一個檔案讀取地震和速度資料</span></span></span></span><span><span><span><span>
+    FILE *outputFile = fopen("motion_data.txt 」、「w」）；</span></span></span></span><span><span><span><span>
+    if (!outputFile) { </span></span></span></span><span><span><span><span>
+        fprintf(stderr, "建立資料失敗檔。\n");</span></span></span></span><span><span><span><span>
+        返回1；</span></span></span></span><span><span><span><span>
+    } </span></span></span></span>
+ <span><span><span><span>
+    // 模擬運動10秒併計算地質與速度，同時將資料寫入文件</span></span></span></span><span><span><span><span>
+    double x = 0.2; </span></span></span><span><span><span>// 初始隧道</span></span></span></span><span><span><span><span>
+    double v = 0.0; </span></span></span><span><span><span>// 初速</span></span></span></span><span><span><span><span>
+    double dt = 0.01; </span></span></span><span><span><span>// 時間步</span></span></span></span><span><span><span><span>
+    長 double t = 0.0; </span></span></span><span><span><span>// 時間</span></span></span></span>
+ <span><span><span><span>
+    while (t &lt;= 10.0) {</span></span></span></span><span><span><span><span>
+        雙高度 = (-10.0 * x - 0.5 * v) / 1.0; </span></span></span><span><span><span>// 這裡修改系統參數</span></span></span></span><span><span><span><span>
+        v += 高度 * dt; </span></span></span></span><span><span><span><span>
+        x+=v*dt；</span></span></span></span>
+ <span><span><span><span>
+        fprintf(outputFile, "%lf %lf %lf\n", t, x, v); </span></span></span></span>
+ <span><span><span><span>
+        t += dt；</span></span></span></span><span><span><span><span>
+    } </span></span></span></span>
+ <span><span><span><span>
+    // 關閉資料檔</span></span></span></span><span><span><span><span>
+    fclose(outputFile); </span></span></span></span>
+ <span><span><span><span>
+    // 使用 popen 啟動 Gnuplot 程式</span></span></span></span><span><span><span><span>
+    FILE *gnuplotPipe = popen("gnuplot -persistent", "w"); </span></span></span></span><span><span><span><span>
+    if (!gnuplotPipe) { </span></span></span></span><span><span><span><span>
+        fprintf(stderr, "啟動Gnuplot失敗。\n");</span></span></span></span><span><span><span><span>
+        回傳1; </span></span></span></span><span><span><span><span>
+    } </span></span></span></span>
+ <span><span><span><span>
+    // 使用Gnuplot繪圖指令，指定字體並輸出為PNG </span></span></span></span><span><span><span><span>
+    fprintf(gnuplotPipe, "setterminal pngcairo Innovative font 'default,10' size 800,400\n"); </span></span></span></span><span><span><span><span>
+    fprintf( gnuplotPipe, "設定輸出'./../images/motion_plot.png'\n"); </span></span></span></span><span><span><span><span>
+    fprintf(gnuplotPipe, "設定標題'與速度與時間'\n"); </span></span></span></span><span><span><span><span>
+    fprintf(gnuplotPipe, "設定xlabel '時間(s)'\n"); </span></span></span></span><span><span><span><span>
+    fprintf(gnuplotPipe, "設定 ylabel '地質(m)'\n"); </span></span></span></span><span><span><span><span>
+    fprintf(gnuplotPipe, "使用1:2 行lw 2 標題'地質' 重要性'motion_data .txt', \ </span></span></span></span><span><span><span><span>
+                             'motion_data.txt' 使用 1:3 行 lw 2 標題 '速度'\n"); </span></span></span></span>
+ <span><span><span><span>
+    // 關閉 Gnuplot 程式</span></span></span></span><span><span><span><span>
+    fprintf(gnuplotPipe, "exit\n"); </span></span></span></span><span><span><span><span>
+    pclose(gnuplotPipe);</span></span></span></span>
+ <span><span><span><span>
+    回傳0; </span></span></span></span><span><span><span><span>
+}</span></span></span></span></pre>
+<p><img caption="false" height="300" src="/images/motion_plot.png" width="600"/></p>
+<p><span><span><span><span>明確</span></span></span></span></p>
+<p></p>
+<p><span><span><span><span>cd 下載</span></span></span></span><br/><span><span><span><span>cc </span></span></span></span><span><span><span><span><span>euler_gnuplot_msd_ex1.c</span></span></span></span></span><span><span><span><span> -lgd -lm </span></span></span></span><br/><span><span><span><span>./a.out</span></span></span></span></p>
+<h1>w15</h1>
+<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">(1)</span></span></span></span></span></span></span></span></span></span></p>
+<div><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">根據</span></span></span></span></span></span></span></span><a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EVcefUI2zPpAmP6lnLWLEAoBCBznMnvFpsNE-1VVFGvVZQ?e=goiPpP&amp;isSPOFile=1" rel="noreferrer noopener" tabindex="-1" target="_blank" title="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/evcefui2zppamp6lnlwleaobcbznmnvfpsne-1vvfgvvzq?e=goippp"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">roc_list_coord_flag.7z</span></span></span></span></span></span></span></span></a><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">方案內容所印出的六組ABED等相關中華民國國旗白日圖案中的菱形四個關鍵點，請直接在青天與滿地紅的圖案中，利用白色作為畫線顏色，將第一個兩個一組ABED等四點的座標，以直線相連。</span></span></span></span></span></span></span></span></div>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">#include &lt;stdio.h&gt;</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+#include &lt;gd.h&gt;</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+#include &lt;數學.h&gt;</span></span></span></span></span></span></span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+無效draw_roc_flag（gdImagePtr img）；</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+void draw_white_sun(gdImagePtr img, int x, int y, int size, int color);</span></span></span></span></span></span></span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+int main() {</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    //寬度3:高度2</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    整數寬度=1200；</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    // 國旗長寬比為3:2</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    int 高度 = (int)(寬度 * 2.0 / 3.0);</span></span></span></span></span></span></span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImagePtr img = gdImageCreateTrueColor(寬度, 高度);</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImageAlphaBlending(img, 0);</span></span></span></span></span></span></span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    鄰近_roc_flag（img）；</span></span></span></span></span></span></span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    FILE *outputFile = fopen("roc_flag_in_gd.png", "wb");</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    如果（輸出檔== NULL）{</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+        fprintf(stderr, "開啟輸出檔時發生錯誤。\n");</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+        返回1；</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    }</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImagePngEx(img, 輸出檔, 9);</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    fclose(輸出檔);</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImageDestroy(img);</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    返回0；</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+}</span></span></span></span></span></span></span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+無效draw_roc_flag（gdImagePtr img）{</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    int 寬度 = gdImageSX(img);</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    int 高度 = gdImageSY(img);</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    int 紅、白、藍；</span></span></span></span></span></span></span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    //白色日位於青天面積正中央，因此中心點座標為長寬各1/4處</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    int center_x = (int)(寬度/4);</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    int center_y = (int)(高度 / 4);</span></span></span></span></span></span></span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    int sun_radius = (int)(寬度/8);</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    int White_circle_dia = sun_radius;</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    int 藍色圓形直徑 = 白色圓形直徑 + 白色圓形直徑 * 2 / 15;</span></span></span></span></span></span></span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    紅色 = gdImageColorAllocate(img, 255, 0, 0); </span></span></span></span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">// 紅色</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    白色 = gdImageColorAllocate(img, 255, 255, 255); </span></span></span></span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">// 白色</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    藍色 = gdImageColorAllocate(img, 0, 0, 149); </span></span></span></span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">// 藍色</span></span></span></span></span></span></span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImageFilledRectangle(img, 0, 0, 寬度, 高度, 紅色);</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImageFilledRectangle(img, 0, 0, (int)(寬度 / 2.0), (int)(高度 / 2.0), 藍色);</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    draw_white_sun(img, center_x, center_y, sun_radius, 白色);</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImageFilledEllipse(img, center_x, center_y, blue_circle_dia, blue_circle_dia, 藍色);</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImageFilledEllipse（img，center_x，center_y，white_circle_dia，white_circle_dia，白色）；</span></span></span></span></span></span></span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    // 在青天與滿地紅的圖案中以白色畫線彩虹連接菱形的四個關鍵點</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImageSetThickness(img, 10); </span></span></span></span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">//設定線條粗度為10</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImageLine(img, 429, 125, 279, 165, 白色);</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImageLine(img, 279, 165, 170, 274, 白色);</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImageLine(img, 170, 274, 170, 274, 白色);</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImageLine(img, 429, 125, 170, 274, 白色); </span></span></span></span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">// 第四條加入條連線</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+}</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+void draw_white_sun(gdImagePtr img, int x, int y, int size, int color) {</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    // 實作draw_white_sun函數的內容</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    // 可以在此處比較白日的內部模式</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+}</span></span></span></span></span></span></span></span></pre>
+<p><br/><br/></p>
+<p><video controls="controls" height="248" width="496">
+<source src="/images/完成4.mp4" type="video/mp4"/></video></p>
+<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"> </span></span></span></span></span></span></span></span></p>
+<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">(2)</span></span></span></span></span></span></span></span></span></span></p>
+<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">承上題，請列出第二組ABED的四條直線與白日中的大圓所相交（相交）的四個點座標。</span></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">#include &lt;stdio.h&gt;</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+#include &lt;gd.h&gt;</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+#include &lt;數學.h&gt;</span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+無效draw_roc_flag（gdImagePtr img）；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+void draw_white_sun(gdImagePtr img, int x, int y, int size, int color);</span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+int main() {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    // 寬度 3: 高度 2</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    整數寬度=1200；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    // 國旗長寬比為3:2</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    int 高度 = (int)(寬度*2.0 / 3.0);</span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImagePtr img = gdImageCreateTrueColor(寬度, 高度);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImageAlphaBlending(img, 0);</span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    繪製_roc_flag（img）；</span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    FILE *outputFile = fopen("roc_flag_in_gd.png", "wb");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    如果（輸出檔== NULL）{</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+        fprintf(stderr, "開啟輸出檔時發生錯誤。\n");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+        返回1；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    }</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImagePngEx(img, 輸出檔, 9);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    fclose(輸出檔);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImageDestroy(img);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    返回0；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+}</span></span><span></span>
+void draw_roc_flag(gdImagePtr img) { <span></span>
+    int width = gdImageSX(img); <span></span>
+    int height = gdImageSY(img); <span></span>
+    int red, white, blue; <span></span>
+    // 白日位於青天面積正中央, 因此中心點座標為長寬各 1/4 處 <span></span>
+    int center_x = (int)(width/4); <span></span>
+    int center_y = (int)(height/4); <span></span>
+    // gdImageFilledEllipse 需以長寬方向的 diameter 作圖 <span></span>
+    // 由於中央白日圓形的半徑為青天寬度的 1/8 <span></span>
+    // 因此中央白日圓形的直徑為青天寬度的 1/4, 也就是國旗寬度的 1/8 <span></span>
+    // 而且白日十二道光芒的外圍圓形其半徑也是國旗寬度的1/8 <span></span>
+    int sun_radius = (int)(width/8); <span></span>
+    // 中央白日圓形的直徑等於十二道光芒外圍圓形的半徑 <span></span>
+    int white_circle_dia = sun_radius; <span></span>
+    // 中央藍色圓形半徑為中央白日的 1又 2/15 <span></span>
+    int blue_circle_dia = white_circle_dia +  white_circle_dia*2/15; <span></span>
+    // 根據 https://www.moi.gov.tw/cp.aspx?n=10621 訂定國旗三種顏色值 <span></span>
+    red = gdImageColorAllocate(img, 255, 0, 0); // 紅色 <span></span>
+    white = gdImageColorAllocate(img, 255, 255, 255); // 白色 <span></span>
+    blue = gdImageColorAllocate(img, 0, 0, 149); // 藍色 <span></span>
+    // 根據畫布大小塗上紅色長方形區域 <span></span>
+    gdImageFilledRectangle(img, 0, 0, width, height, red); <span></span>
+    // 青天面積為整面國旗的 1/4, 也是採用長方形塗色 <span></span>
+    gdImageFilledRectangle(img, 0, 0, (int)(width/2.0), (int)(height/2.0), blue); <span></span>
+  {int x1 = 429; <span></span>
+   int y1 = 125; <span></span>
+   int x2 = 279; <span></span>
+   int y2 = 165; <span></span>
+   gdImageSetThickness(img, 10); // 設置線條寬度為10<span></span>
+   gdImageLine(img, x1, y1, x2, y2, white); // 畫線<span></span>
+   // 畫一條線連接兩個點 <span></span>
+   gdImageLine(img, x1, y1, x2, y2, white); <span></span>
+  } <span></span>
+  {int x1 = 170; <span></span>
+     int y1 = 274; <span></span>
+     int x2 = 279; <span></span>
+     int y2 = 165; <span></span>
+<span></span>
+     // 畫一條線連接兩個點 <span></span>
+     gdImageLine(img, x1, y1, x2, y2, white); <span></span>
+  } <span></span>
+  { <span></span>
+    int x1 = 170; <span></span>
+     int y1 = 274; <span></span>
+     int x2 = 429; <span></span>
+     int y2 = 125; <span></span>
+<span></span>
+     // 畫一條線連接兩個點 <span></span>
+     gdImageLine(img, x1, y1, x2, y2, white); <span></span>
+  } <span></span>
+  // 利用一個藍色大圓與白色小圓畫出藍色環狀 <span></span>
+  gdImageFilledEllipse(img, center_x, center_y, blue_circle_dia, blue_circle_dia, blue); <span></span>
+  gdImageFilledEllipse(img, center_x, center_y, white_circle_dia, white_circle_dia, white); <span></span>
+<span></span>
+<span></span>
+  // 定義座標結構 <span></span>
+  typedef struct { <span></span>
+      double x; <span></span>
+      double y; <span></span>
+  } Point; <span></span>
+<span></span>
+  // 計算圓與線的交點 <span></span>
+  void circleLineIntersection(double h, double k, double r, double x1, double y1, double x2, double y2) { <span></span>
+      // 直線斜率 <span></span>
+      double m = (y2 - y1) / (x2 - x1); <span></span>
+<span></span>
+      // 直線方程式中的常數項 <span></span>
+      double b = y1 - m * x1; <span></span>
+<span></span>
+      // 圓與直線交點的計算 <span></span>
+      double A = 1 + pow(m, 2); <span></span>
+      double B = 2 * (m * b - m * k - h); <span></span>
+      double C = pow(k, 2) - pow(r, 2) + pow(h, 2) - 2 * b * k + pow(b, 2); <span></span>
+<span></span>
+      // 判斷交點個數 <span></span>
+    double discriminant = pow(B, 2) - 4 * A * C; <span></span>
+    if (discriminant &gt; 0) { <span></span>
+        double x_intersect1 = (-B + sqrt(discriminant)) / (2 * A); <span></span>
+        double y_intersect1 = m * x_intersect1 + b; <span></span>
+        printf("交點: (%.2f, %.2f)\n", x_intersect1, y_intersect1); <span></span>
+<span></span>
+        double x_intersect2 = (-B - sqrt(discriminant)) / (2 * A); <span></span>
+        double y_intersect2 = m * x_intersect2 + b; <span></span>
+        printf("交點: (%.2f, %.2f)\n", x_intersect2, y_intersect2); <span></span>
+    } else if (discriminant == 0) { <span></span>
+        double x_intersect = -B / (2 * A); <span></span>
+        double y_intersect = m * x_intersect + b; <span></span>
+        printf("交點: (%.2f, %.2f)\n", x_intersect, y_intersect); <span></span>
+    } else { <span></span>
+        printf("No points.\n"); <span></span>
+    } <span></span>
+<span></span>
+  } <span></span>
+      // 圓的參數 <span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+      雙circle_x = (int)(寬度/4); </span><span style="vertical-align: inherit;">// 圓心 x 座標</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+      雙圓_y = (int)(高度/4); </span><span style="vertical-align: inherit;">// 圓心 y 座標</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+      雙半徑 = 白色圓直徑 + 白色圓直徑*2/15；</span><span style="vertical-align: inherit;">// 圓半徑</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+      // 兩點座標</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+  雙 x3 = 170；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+  雙 y3 = 274；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+  雙倍 x4 = 279；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+  雙 y4 = 165；</span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+  圓線交集（圓x，圓y，半徑，x4，y4，x3，y3）；</span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+  雙 x5 = 279；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+  雙 y5 = 165；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+  雙 x6 = 429；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+  雙 y6 = 125；</span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+  圓線交集（圓x，圓y，半徑，x6，y6，x5，y5）；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+  }</span></span></pre>
+<p><br/><video controls="controls" height="247" width="494">
+<source src="/images/5.mp4" type="video/mp4"/></video></p>
+<h1>c_EX</h1>
+<p>(1)</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()  
+{
+    // Print Name
+    printf("Name   : Alexandra Abramov\n"); 
+
+    // Print Date of Birth
+    printf("DOB    : July 14, 1975\n"); 
+
+    // Print Mobile Number
+    printf("Mobile : 99-9999999999\n"); 
+
+    // Indicate successful execution
+    return(0); 
+}</pre>
+<p><img caption="false" height="87" src="/images/1.png" width="300"/></p>
+<p><span>(2</span><span>)</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+float myradius; /* radius of the sphere */
+float myvolume; /* volume of the sphere (to be computed) */
+char line_text[50]; /* a line from the keyboard */
+
+/* the value of pi to 50 places, from wikipedia */
+const float PI = 3.6939937510;
+
+int main() {
+printf("Input the radius of the sphere: "); // Prompt the user to input the radius of the sphere.
+
+if (fgets(line_text, sizeof(line_text), stdin) == NULL) {
+fprintf(stderr, "Error reading input.\n");
+return 1; // Return non-zero to indicate an error.
+}
+
+// Check if newline is present in the input
+char *newline = strchr(line_text, '\n');
+if (newline == NULL) {
+fprintf(stderr, "Error: Input too long.\n");
+return 1; // Return non-zero to indicate an error.
+}
+
+// Remove the newline character if present
+*newline = '\0';
+
+if (sscanf(line_text, "%f", &amp;myradius) != 1) {
+fprintf(stderr, "Error converting input to float.\n");
+return 1; // Return non-zero to indicate an error.
+}
+
+if (myradius &lt; 0) {
+fprintf(stderr, "Error: Radius cannot be negative.\n");
+return 1; // Return non-zero to indicate an error.
+}
+
+myvolume = (4.0 / 3.0) * PI * (myradius * myradius * myradius); /* Calculate the volume of the sphere using the formula. */
+printf("The volume of the sphere with radius %.2f is %.2f.\n", myradius, myvolume); // Print the calculated volume of the sphere.
+
+return 0; // Return 0 to indicate successful execution of the program.
+}</pre>
+<p><br/><img caption="false" height="59" src="/images/2.png" width="300"/></p>
+<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"></span></span></span></span><img caption="false" height="0" src="/images/motion_plot.png" width="500"/></p>
+<p>(3)</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main() {
+    float rec_width;         /* Declare variable 'rec_width' to store the width of the rectangle */
+    float rec_height;        /* Declare variable 'rec_height' to store the height of the rectangle */
+    float rec_perimeter;     /* Declare variable 'rec_perimeter' to store the perimeter (to be computed) */
+
+    // Prompt the user to input the height of the rectangle.
+    printf("Input the height of the Rectangle : ");
+    if (scanf("%f", &amp;rec_height) != 1) {
+        fprintf(stderr, "Error: Invalid input for height\n");
+        return 1;  // Return an error code.
+    }
+
+    // Prompt the user to input the width of the rectangle.
+    printf("Input the width of the Rectangle : ");
+    if (scanf("%f", &amp;rec_width) != 1) {
+        fprintf(stderr, "Error: Invalid input for width\n");
+        return 1;  // Return an error code.
+    }
+
+    // Calculate the perimeter of the rectangle using the formula: perimeter = 2 * ( width + height )
+    rec_perimeter = 2.0 * (rec_height + rec_width);
+
+    // Print the calculated perimeter of the rectangle.
+    printf("Perimeter of the Rectangle is : %f\n", rec_perimeter);
+
+    return 0;  // Indicate successful program execution.
+}
+</pre>
+<p><img caption="false" height="92" src="/images/3.png" width="300"/></p>
+<p>(4)</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+float kmph;              /* kilometers per hour */
+float miph;              /* miles per hour (to be computed) */
+char  line_text[50];      /* a line from the keyboard */
+
+int main() {
+    printf("Input kilometers per hour: ");   // Prompt the user to input kilometers per hour.
+
+    if (fgets(line_text, sizeof(line_text), stdin) == NULL) {
+        fprintf(stderr, "Error reading input.\n");
+        return 1;  // Return an error code.
+    }
+
+    if (sscanf(line_text, "%f", &amp;kmph) != 1) {
+        fprintf(stderr, "Error: Invalid input. Please enter a numeric value.\n");
+        return 1;  // Return an error code.
+    }
+
+    miph = kmph * 0.6213712;   // Convert kilometers per hour to miles per hour.
+    printf("%f miles per hour\n", miph);   // Print the result in miles per hour.
+
+    return 0;   // Return 0 to indicate successful execution of the program.
+}
+</pre>
+<p><img caption="false" height="105" src="/images/4.png" width="300"/></p>
+<p>(5)</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int hrs;          /* given number of hours */
+int mins;         /* given number of minutes */
+int tot_mins;     /* total number of minutes (to be computed) */
+
+const int MINaHOUR = 60;      /* number of minutes in an hour */
+
+char line_text[50];      /* line of input from the keyboard */
+
+int main() {
+    printf("Input hours: ");   // Prompt the user to input hours.
+
+    if (fgets(line_text, sizeof(line_text), stdin) == NULL) {
+        fprintf(stderr, "Error reading input for hours.\n");
+        return 1;  // Return an error code.
+    }
+
+    if (sscanf(line_text, "%d", &amp;hrs) != 1) {
+        fprintf(stderr, "Error: Invalid input for hours. Please enter an integer.\n");
+        return 1;  // Return an error code.
+    }
+
+    printf("Input minutes: ");   // Prompt the user to input minutes.
+
+    if (fgets(line_text, sizeof(line_text), stdin) == NULL) {
+        fprintf(stderr, "Error reading input for minutes.\n");
+        return 1;  // Return an error code.
+    }
+
+    if (sscanf(line_text, "%d", &amp;mins) != 1) {
+        fprintf(stderr, "Error: Invalid input for minutes. Please enter an integer.\n");
+        return 1;  // Return an error code.
+    }
+
+    tot_mins = mins + (hrs * MINaHOUR);   // Calculate the total number of minutes.
+
+    printf("Total: %d minutes.\n", tot_mins);   // Print the total number of minutes.
+
+    return 0;   // Return 0 to indicate successful execution of the program.
+}
+</pre>
+<p><img caption="false" height="138" src="/images/5.png" width="300"/></p>
+<p>(6)</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int tot_mins;  /* given number of minutes */
+int hrs;        /* number of hours (to be computed) */
+int mins;       /* number of minutes (to be computed) */
+
+const int MINaHOUR = 60;      /* number of minutes in an hour */
+
+char line_text[50];      /* line of input from keyboard */
+
+int main() {
+    printf("Input minutes: ");   // Prompt the user to input minutes.
+
+    if (fgets(line_text, sizeof(line_text), stdin) == NULL) {
+        printf("Error reading input.\n");
+        return 1;  // Return an error code.
+    }
+
+    sscanf(line_text, "%d", &amp;tot_mins);   // Convert the input to an integer and store it in 'tot_mins'.
+
+    if (tot_mins &lt; 0) {
+        printf("Please enter a non-negative value for minutes.\n");
+        return 1;  // Return an error code.
+    }
+
+    hrs = (tot_mins / MINaHOUR);   // Calculate the number of hours.
+    mins = (tot_mins % MINaHOUR);   // Calculate the remaining minutes.
+
+    printf("%d Hours, %d Minutes.\n", hrs, mins);   // Print the calculated hours and minutes.
+
+    return 0;   // Return 0 to indicate successful execution of the program.
+}
+</pre>
+<p><img caption="false" height="111" src="/images/6.png" width="300"/></p>
+<p></p>
+<p>(7)</p>
+<p>#include &lt;stdio.h&gt;</p>
+<p>int main() {<br/> char firstname[20], lastname[20]; // Declare character arrays for first name and last name with a maximum size of 20 characters each.<br/> int bir_year; // Declare an integer variable 'bir_year' to store the year of birth.</p>
+<p>printf("Input your firstname: "); // Prompt the user to input their first name.<br/> if (scanf("%19s", firstname) != 1) {<br/> fprintf(stderr, "Error: Failed to read firstname.\n");<br/> return 1; // Return an error code.<br/> }</p>
+<p>printf("Input your lastname: "); // Prompt the user to input their last name.<br/> if (scanf("%19s", lastname) != 1) {<br/> fprintf(stderr, "Error: Failed to read lastname.\n");<br/> return 1; // Return an error code.<br/> }</p>
+<p>printf("Input your year of birth: "); // Prompt the user to input their year of birth.<br/> if (scanf("%d", &amp;bir_year) != 1) {<br/> fprintf(stderr, "Error: Failed to read year of birth.\n");<br/> return 1; // Return an error code.<br/> }</p>
+<p>printf("%s %s %d\n", firstname, lastname, bir_year); // Print the first name, last name, and year of birth.</p>
+<p>return 0; // Return 0 to indicate successful execution of the program.<br/>}</p>
+<p><img caption="false" height="144" src="/images/7.png" width="300"/></p>
+<p>(8)</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int num1, num2, num3;   /* declaration of three variables */
+int sum;                /* variable to store the sum of numbers */
+char line_text[50];     /* line of input from keyboard */
+
+int main() {
+    printf("Input three numbers separated by comma : ");   // Prompt the user to input three numbers separated by a comma.
+
+    if (fgets(line_text, sizeof(line_text), stdin) == NULL) {
+        fprintf(stderr, "Error reading input.\n");
+        return 1;  // Return 1 to indicate an error.
+    }
+
+    // Clear the input buffer by consuming characters until a newline is encountered
+    int c;
+    while ((c = getchar()) != '\n' &amp;&amp; c != EOF);
+
+    sscanf(line_text, "%d, %d, %d", &amp;num1, &amp;num2, &amp;num3);   // Convert the input to integers and store them in 'num1', 'num2', 'num3'.
+    sum = num1 + num2 + num3;   // Calculate the sum of the three numbers.
+    printf("The sum of three numbers : %d\n", sum);   // Print the sum of the three numbers.
+    return 0;   // Return 0 to indicate successful execution of the program.
+}
+</pre>
+<p><img caption="false" height="78" src="/images/8.png" width="300"/></p>
+<p></p>
+<p>(9)</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main() {
+    int num1, num2;   // Declare two integer variables 'num1' and 'num2'.
+    int sum, sub, mult, mod;   // Declare variables to store the results of arithmetic operations.
+    float div;   // Declare a float variable 'div' to store the result of division.
+
+    /* 
+     * Read two numbers from the user separated by a comma 
+     */  
+    printf("Input any two numbers separated by a comma: ");   // Prompt the user to input two numbers separated by a comma.
+
+    // Check the return value of scanf
+    if (scanf("%d , %d", &amp;num1, &amp;num2) != 2) {
+        printf("Invalid input. Please enter two numbers.\n");
+        return 1;  // Return 1 to indicate an error.
+    }
+
+    /* 
+     * Perform all arithmetic operations 
+     */   
+    sum = num1 + num2;   // Calculate the sum of 'num1' and 'num2'.
+    sub = num1 - num2;   // Calculate the difference between 'num1' and 'num2'.
+    mult = num1 * num2;  // Calculate the product of 'num1' and 'num2'.
+    div = (float)num1 / num2;   // Calculate the division of 'num1' by 'num2' and cast the result to a float.
+    mod = num1 % num2;   // Calculate the modulus of 'num1' and 'num2'.
+
+    /* 
+     * Print the result of all arithmetic operations 
+     */  
+    printf("The sum of the given numbers: %d\n", sum);   // Print the sum.
+    printf("The difference of the given numbers: %d\n", sub);   // Print the difference.
+    printf("The product of the given numbers: %d\n", mult);   // Print the product.
+    printf("The quotient of the given numbers: %f\n", div);   // Print the quotient.
+    printf("MODULUS: %d\n", mod);   // Print the modulus.
+
+    return 0;   // Return 0 to indicate successful execution of the program.   
+}
+</pre>
+<p><img caption="false" height="113" src="/images/9.png" width="300"/></p>
+<p></p>
+<p>(10)</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()  
+{  
+    int ang1, ang2, ang3; /* Three angles of a triangle */
+  
+    /* Read two angles of the triangle from the user separated by a comma */  
+    printf("Input two angles of the triangle separated by a comma: ");  
+
+    // Check the return value of scanf
+    if (scanf("%d, %d", &amp;ang1, &amp;ang2) != 2) {
+        // If the expected number of inputs is not read, print an error message
+        printf("Error: Invalid input format.\n");
+        return 1; // Return a non-zero value to indicate an error
+    }
+  
+    ang3 = 180 - (ang1 + ang2);  /* Calculate the third angle */
+  
+    printf("Third angle of the triangle: %d\n", ang3);  
+  
+    return 0;  
+}
+</pre>
+<p><img caption="false" height="71" src="/images/10.png" width="300"/></p>
+<p></p>
+<p>(11)</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt; // Include standard input/output library
+
+int test(int x, int y); // Declare the function 'test' with two integer parameters
+
+int main(void)
+{
+    // Call the function 'test' with arguments 1 and 2 and print the result
+    printf("%d", test(1, 2));
+
+    // Print a newline for formatting
+    printf("\n");
+
+    // Call the function 'test' with arguments 2 and 2 and print the result
+    printf("%d", test(2, 2));
+}
+// Function definition for 'test'
+int test(int x, int y)
+{
+    // Conditional expression: If x is equal to y, return (x + y) multiplied by 3, otherwise return x + y
+    return x == y ? (x + y) * 3 : x + y;
+}
+</pre>
+<p><img caption="false" height="89" src="/images/11.png" width="300"/></p>
+<p></p>
+<p>(12)</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()  
+{  
+    int ang1, ang2, ang3; /* Three angles of a triangle */
+  
+    /* Read two angles of the triangle from the user separated by a comma */  
+    printf("Input two angles of the triangle separated by a comma: ");  
+
+    // Check the return value of scanf
+    if (scanf("%d, %d", &amp;ang1, &amp;ang2) != 2) {
+        // If the expected number of inputs is not read, print an error message
+        printf("Error: Invalid input format.\n");
+        return 1; // Return a non-zero value to indicate an error
+    }
+  
+    ang3 = 180 - (ang1 + ang2);  /* Calculate the third angle */
+  
+    printf("Third angle of the triangle: %d\n", ang3);  
+  
+    return 0;  
+}
+</pre>
+<p><img caption="false" height="114" src="/images/12.png" width="300"/></p>
+<p></p>
+<p>(13)</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt; // Include standard input/output library
+
+int test(int x, int y); // Declare the function 'test' with two integer parameters
+
+int main(void)
+{
+    // Call the function 'test' with arguments 25 and 5, and print the result
+    printf("%d", test(25, 5));
+
+    // Print a newline for formatting
+    printf("\n");
+
+    // Call the function 'test' with arguments 20 and 30, and print the result
+    printf("%d", test(20, 30));
+
+    // Print a newline for formatting
+    printf("\n");
+
+    // Call the function 'test' with arguments 20 and 25, and print the result
+    printf("%d", test(20, 25));
+}
+
+// Function definition for 'test'
+int test(int x, int y)
+{
+    // Return 1 (true) if any of the following conditions are true:
+    // 1. x is equal to 30
+    // 2. y is equal to 30
+    // 3. the sum of x and y is equal to 30
+    return x == 30 || y == 30 || (x + y == 30);
+}
+</pre>
+<p><img caption="false" height="111" src="/images/13.png" width="300"/></p>
+<p>(14)</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // Include standard input/output library
+#include &lt;stdlib.h&gt; // Include standard library for absolute value function
+
+int test(int x); // Declare the function 'test' with an integer parameter
+
+int main(void)
+{
+    // Call the function 'test' with argument 103 and print the result
+    printf("%d", test(103));
+
+    // Print a newline for formatting
+    printf("\n");
+
+    // Call the function 'test' with argument 90 and print the result
+    printf("%d", test(90));
+
+    // Print a newline for formatting
+    printf("\n");
+
+    // Call the function 'test' with argument 89 and print the result
+    printf("%d", test(89));
+}
+
+// Function definition for 'test'
+int test(int x)
+{
+    // Check if the absolute difference between 'x' and 100 is less than or equal to 10,
+    // or if the absolute difference between 'x' and 200 is less than or equal to 10.
+    // Return 1 (true) if either condition is true, otherwise return 0 (false).
+    if (abs(x - 100) &lt;= 10 || abs(x - 200) &lt;= 10)
+        return 1;
+    return 0;
+}
+</pre>
+<p><img caption="false" height="113" src="/images/14.png" width="300"/></p>
+<p><span>(15)</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // Include standard input/output library
+#include &lt;stdlib.h&gt; // Include standard library for modulo operation
+
+int test(int n); // Declare the function 'test' with an integer parameter
+
+int main(void)
+{
+    // Call the function 'test' with argument 3 and print the result
+    printf("%d", test(3));
+
+    // Print a newline for formatting
+    printf("\n");
+
+    // Call the function 'test' with argument 14 and print the result
+    printf("%d", test(14));
+
+    // Print a newline for formatting
+    printf("\n");
+
+    // Call the function 'test' with argument 12 and print the result
+    printf("%d", test(12));
+
+    // Print a newline for formatting
+    printf("\n");
+
+    // Call the function 'test' with argument 37 and print the result
+    printf("%d", test(37));
+}
+
+// Function definition for 'test'
+int test(int n)
+{
+    // Check if 'n' is divisible by 3 or if 'n' is divisible by 7.
+    // Return 1 (true) if either condition is true, otherwise return 0 (false).
+    return n % 3 == 0 || n % 7 == 0;
+}
+</pre>
+<p><span><img caption="false" height="138" src="/images/15.png" width="300"/></span></p>
+<p><span>(16)</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // Include standard input/output library
+#include &lt;stdlib.h&gt; // Include standard library for absolute value function
+
+int test(int temp1, int temp2); // Declare the function 'test' with two integer parameters
+
+int main(void)
+{
+    // Call the function 'test' with arguments 120 and -1, and print the result
+    printf("%d", test(120, -1));
+
+    // Print a newline for formatting
+    printf("\n");
+
+    // Call the function 'test' with arguments -1 and 120, and print the result
+    printf("%d", test(-1, 120));
+
+    // Print a newline for formatting
+    printf("\n");
+
+    // Call the function 'test' with arguments 2 and 120, and print the result
+    printf("%d", test(2, 120));
+}
+
+// Function definition for 'test'
+int test(int temp1, int temp2)
+{
+    // Check if either of the following conditions are true:
+    // 1. temp1 is less than 0 and temp2 is greater than 100
+    // 2. temp2 is less than 0 and temp1 is greater than 100
+    // Return 1 (true) if either condition is true, otherwise return 0 (false).
+    return temp1 &lt; 0 &amp;&amp; temp2 &gt; 100 || temp2 &lt; 0 &amp;&amp; temp1 &gt; 100;
+}
+</pre>
+<p><span><img caption="false" height="113" src="/images/16.png" width="300"/></span></p>
+<p><span>(17)</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // Include standard input/output library
+#include &lt;stdlib.h&gt; // Include standard library for absolute value function
+
+int test(int x, int y); // Declare the function 'test' with two integer parameters
+
+int main(void)
+{
+    // Call the function 'test' with arguments 100 and 199, and print the result
+    printf("%d", test(100, 199));
+
+    // Print a newline for formatting
+    printf("\n");
+
+    // Call the function 'test' with arguments 250 and 300, and print the result
+    printf("%d", test(250, 300));
+
+    // Print a newline for formatting
+    printf("\n");
+
+    // Call the function 'test' with arguments 105 and 190, and print the result
+    printf("%d", test(105, 190));
+}
+
+// Function definition for 'test'
+int test(int x, int y)
+{
+    // Check if either of the following conditions are true:
+    // 1. x is between 100 and 200 (inclusive)
+    // 2. y is between 100 and 200 (inclusive)
+    // Return 1 (true) if either condition is true, otherwise return 0 (false).
+    return (x &gt;= 100 &amp;&amp; x &lt;= 200) || (y &gt;= 100 &amp;&amp; y &lt;= 200);
+}
+</pre>
+<p><span><img caption="false" height="113" src="/images/17.png" width="300"/></span></p>
+<p><span>(18)</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // Include standard input/output library
+#include &lt;stdlib.h&gt; // Include standard library for additional functions
+
+// Declare the function 'test' with three integer parameters
+int test(int x, int y, int z);
+
+int main(void)
+{
+    // Call the function 'test' with arguments 11, 20, and 12, and print the result
+    printf("%d", test(11, 20, 12));
+
+    // Print a newline for formatting
+    printf("\n");
+
+    // Call the function 'test' with arguments 30, 30, and 17, and print the result
+    printf("%d", test(30, 30, 17));
+
+    // Print a newline for formatting
+    printf("\n");
+
+    // Call the function 'test' with arguments 25, 35, and 50, and print the result
+    printf("%d", test(25, 35, 50));
+
+    // Print a newline for formatting
+    printf("\n");
+
+    // Call the function 'test' with arguments 15, 12, and 8, and print the result
+    printf("%d", test(15, 12, 8));
+}
+
+// Function definition for 'test'
+int test(int x, int y, int z)
+{
+    // Check if either of the following conditions are true for any of the variables (x, y, or z):
+    // 1. The variable is between 20 and 50 (inclusive)
+    // Return 1 (true) if any condition is true, otherwise return 0 (false).
+    return (x &gt;= 20 &amp;&amp; x &lt;= 50) || (y &gt;= 20 &amp;&amp; y &lt;= 50) || (z &gt;= 20 &amp;&amp; z &lt;= 50);
+}
+</pre>
+<p><span><img caption="false" height="135" src="/images/18.png" width="300"/></span></p>
+<p><span>(19)</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // Include standard input/output library
+#include &lt;stdlib.h&gt; // Include standard library for additional functions
+
+// Declare the function 'test' with two integer parameters
+int test(int x, int y);
+
+int main(void)
+{
+    // Call the function 'test' with arguments 20 and 84, and print the result
+    printf("%d", test(20, 84));
+
+    // Print a newline for formatting
+    printf("\n");
+
+    // Call the function 'test' with arguments 14 and 50, and print the result
+    printf("%d", test(14, 50));
+
+    // Print a newline for formatting
+    printf("\n");
+
+    // Call the function 'test' with arguments 11 and 45, and print the result
+    printf("%d", test(11, 45));
+
+    // Print a newline for formatting
+    printf("\n");
+
+    // Call the function 'test' with arguments 25 and 40, and print the result
+    printf("%d", test(25, 40));
+}
+
+// Function definition for 'test'
+int test(int x, int y)
+{
+    // Check if either of the following conditions are true:
+    // 1. x is less than or equal to 20 OR y is greater than or equal to 50
+    // 2. x is less than or equal to 20 OR y is greater than or equal to 50
+    // If any of the conditions are true, return 1 (true). Otherwise, return 0 (false).
+    return (x &lt;= 20 || y &gt;= 50) || (x &lt;= 20 || y &gt;= 50);
+}
+</pre>
+<p><span><img caption="false" height="134" src="/images/19.png" width="300"/></span></p>
+<p><span>(20)</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // Include standard input/output library
+#include &lt;stdlib.h&gt; // Include standard library for additional functions
+
+// Declare the function 'test' with two integer parameters
+int test(int x, int y);
+
+int main(void)
+{
+    // Call the function 'test' with arguments 78 and 95, and print the result
+    printf("%d", test(78, 95));
+
+    // Print a newline for formatting
+    printf("\n");
+
+    // Call the function 'test' with arguments 95 and 95, and print the result
+    printf("%d", test(95, 95));
+
+    // Print a newline for formatting
+    printf("\n");
+
+    // Call the function 'test' with arguments 99 and 70, and print the result
+    printf("%d", test(99, 70));
+}
+
+// Function definition for 'test'
+int test(int x, int y)
+{
+    int n = 100;      // Define a variable 'n' and assign it the value 100
+    int val = abs(x - n);  // Calculate the absolute difference between 'x' and 'n' and store it in 'val'
+    int val2 = abs(y - n); // Calculate the absolute difference between 'y' and 'n' and store it in 'val2'
+
+    // Check if 'val' is equal to 'val2'. If true, return 0. Otherwise, return 'x' if 'val' is less than 'val2', otherwise return 'y'.
+    return val == val2 ? 0 : (val &lt; val2 ? x : y);
+}
+</pre>
+<p><img caption="false" height="111" src="/images/20.png" width="300"/></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p><h1>布萊頓</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">https://en.wikipedia.org/wiki/Python_（程式語言）</span></span></span></span></span></span></a></p>
 <h4><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">例子：</span></span></span></span></span></span></h4>
 <p style="padding-left: 30px;"><a href="https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d</span></span></span></span></span></span></a></p>

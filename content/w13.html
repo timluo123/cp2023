@@ -131,7 +131,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='關於.html'>關於</a><li><a href='w15.html'>w15</a><li><a href='w14.html'>w14</a><li><a href='w13.html'>w13</a><li><a href='w12.html'>w12</a><li class='has-children'><a href='w7.html'>w7</a><ul class='dropdown'><li><a href='韓國.html'>韓國</a><li><a href='英國.html'>英國</a><li><a href='日本.html'>日本</a><li><a href='中國.html'>中國</a></li></ul><li class='has-children'><a href='w6.html'>w6</a><ul class='dropdown'><li><a href='美國.html'>美國</a><li><a href='台灣.html'>台灣</a></li></ul><li><a href='W5.html'>W5</a><li><a href='布萊頓.html'>布萊頓</a></li>
+                     <li><a href='關於.html'>關於</a><li><a href='W5.html'>W5</a><li class='has-children'><a href='w6.html'>w6</a><ul class='dropdown'><li><a href='美國.html'>美國</a><li><a href='台灣.html'>台灣</a></li></ul><li class='has-children'><a href='w7.html'>w7</a><ul class='dropdown'><li><a href='韓國.html'>韓國</a><li><a href='英國.html'>英國</a><li><a href='日本.html'>日本</a><li><a href='中國.html'>中國</a></li></ul><li><a href='w12.html'>w12</a><li><a href='w13.html'>w13</a><li><a href='w15.html'>w15</a><li><a href='布萊頓.html'>布萊頓</a></li>
                       </ul>
                 </nav>
               </div>
@@ -142,65 +142,65 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">w14 << <a href='w14.html'>Previous</a> <a href='w12.html'>Next</a> >> w12<br /><h1>w13</h1>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">// 包含標準輸出進入程式庫的標頭檔案</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    <div id="tipue_search_content">w12 << <a href='w12.html'>Previous</a> <a href='w15.html'>Next</a> >> w15<br /><h1>w13</h1>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span><span><span><span>// 包含標準輸出進入程式庫的標頭檔案</span></span></span></span><span><span><span><span>
 #include &lt;stdio.h&gt; </span></span></span></span>
- <span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// 主函數式</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-int main() { </span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 開啟一個檔案讀取地震和速度資料</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    FILE *outputFile = fopen("motion_data.txt 」、「w」）；</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    if (!outputFile) { </span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        fprintf(stderr, "建立資料失敗檔。\n");</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        返回1；</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+ <span><span><span><span>
+// 主函數式</span></span></span></span><span><span><span><span>
+int main() { </span></span></span></span><span><span><span><span>
+    // 開啟一個檔案讀取地震和速度資料</span></span></span></span><span><span><span><span>
+    FILE *outputFile = fopen("motion_data.txt 」、「w」）；</span></span></span></span><span><span><span><span>
+    if (!outputFile) { </span></span></span></span><span><span><span><span>
+        fprintf(stderr, "建立資料失敗檔。\n");</span></span></span></span><span><span><span><span>
+        返回1；</span></span></span></span><span><span><span><span>
     } </span></span></span></span>
- <span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 模擬運動10秒併計算地質與速度，同時將資料寫入文件</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    double x = 0.2; </span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">// 初始隧道</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    double v = 0.0; </span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">// 初速</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    double dt = 0.01; </span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">// 時間步</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    長 double t = 0.0; </span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">// 時間</span></span></span></span>
- <span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    while (t &lt;= 10.0) {</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        雙高度 = (-10.0 * x - 0.5 * v) / 1.0; </span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">// 這裡修改系統參數</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        v += 高度 * dt; </span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+ <span><span><span><span>
+    // 模擬運動10秒併計算地質與速度，同時將資料寫入文件</span></span></span></span><span><span><span><span>
+    double x = 0.2; </span></span></span><span><span><span>// 初始隧道</span></span></span></span><span><span><span><span>
+    double v = 0.0; </span></span></span><span><span><span>// 初速</span></span></span></span><span><span><span><span>
+    double dt = 0.01; </span></span></span><span><span><span>// 時間步</span></span></span></span><span><span><span><span>
+    長 double t = 0.0; </span></span></span><span><span><span>// 時間</span></span></span></span>
+ <span><span><span><span>
+    while (t &lt;= 10.0) {</span></span></span></span><span><span><span><span>
+        雙高度 = (-10.0 * x - 0.5 * v) / 1.0; </span></span></span><span><span><span>// 這裡修改系統參數</span></span></span></span><span><span><span><span>
+        v += 高度 * dt; </span></span></span></span><span><span><span><span>
         x+=v*dt；</span></span></span></span>
- <span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+ <span><span><span><span>
         fprintf(outputFile, "%lf %lf %lf\n", t, x, v); </span></span></span></span>
- <span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        t += dt；</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+ <span><span><span><span>
+        t += dt；</span></span></span></span><span><span><span><span>
     } </span></span></span></span>
- <span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 關閉資料檔</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+ <span><span><span><span>
+    // 關閉資料檔</span></span></span></span><span><span><span><span>
     fclose(outputFile); </span></span></span></span>
- <span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 使用 popen 啟動 Gnuplot 程式</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    FILE *gnuplotPipe = popen("gnuplot -persistent", "w"); </span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    if (!gnuplotPipe) { </span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        fprintf(stderr, "啟動Gnuplot失敗。\n");</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        回傳1; </span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+ <span><span><span><span>
+    // 使用 popen 啟動 Gnuplot 程式</span></span></span></span><span><span><span><span>
+    FILE *gnuplotPipe = popen("gnuplot -persistent", "w"); </span></span></span></span><span><span><span><span>
+    if (!gnuplotPipe) { </span></span></span></span><span><span><span><span>
+        fprintf(stderr, "啟動Gnuplot失敗。\n");</span></span></span></span><span><span><span><span>
+        回傳1; </span></span></span></span><span><span><span><span>
     } </span></span></span></span>
- <span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 使用Gnuplot繪圖指令，指定字體並輸出為PNG </span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    fprintf(gnuplotPipe, "setterminal pngcairo Innovative font 'default,10' size 800,400\n"); </span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    fprintf( gnuplotPipe, "設定輸出'./../images/motion_plot.png'\n"); </span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    fprintf(gnuplotPipe, "設定標題'與速度與時間'\n"); </span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    fprintf(gnuplotPipe, "設定xlabel '時間(s)'\n"); </span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    fprintf(gnuplotPipe, "設定 ylabel '地質(m)'\n"); </span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    fprintf(gnuplotPipe, "使用1:2 行lw 2 標題'地質' 重要性'motion_data .txt', \ </span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+ <span><span><span><span>
+    // 使用Gnuplot繪圖指令，指定字體並輸出為PNG </span></span></span></span><span><span><span><span>
+    fprintf(gnuplotPipe, "setterminal pngcairo Innovative font 'default,10' size 800,400\n"); </span></span></span></span><span><span><span><span>
+    fprintf( gnuplotPipe, "設定輸出'./../images/motion_plot.png'\n"); </span></span></span></span><span><span><span><span>
+    fprintf(gnuplotPipe, "設定標題'與速度與時間'\n"); </span></span></span></span><span><span><span><span>
+    fprintf(gnuplotPipe, "設定xlabel '時間(s)'\n"); </span></span></span></span><span><span><span><span>
+    fprintf(gnuplotPipe, "設定 ylabel '地質(m)'\n"); </span></span></span></span><span><span><span><span>
+    fprintf(gnuplotPipe, "使用1:2 行lw 2 標題'地質' 重要性'motion_data .txt', \ </span></span></span></span><span><span><span><span>
                              'motion_data.txt' 使用 1:3 行 lw 2 標題 '速度'\n"); </span></span></span></span>
- <span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 關閉 Gnuplot 程式</span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    fprintf(gnuplotPipe, "exit\n"); </span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+ <span><span><span><span>
+    // 關閉 Gnuplot 程式</span></span></span></span><span><span><span><span>
+    fprintf(gnuplotPipe, "exit\n"); </span></span></span></span><span><span><span><span>
     pclose(gnuplotPipe);</span></span></span></span>
- <span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    回傳0; </span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+ <span><span><span><span>
+    回傳0; </span></span></span></span><span><span><span><span>
 }</span></span></span></span></pre>
 <p><img caption="false" height="300" src="./../images/motion_plot.png" width="600"/></p>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">明確</span></span></span></span></p>
+<p><span><span><span><span>明確</span></span></span></span></p>
 <p></p>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">cd 下載</span></span></span></span><br/><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">cc </span></span></span></span><span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">euler_gnuplot_msd_ex1.c</span></span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"> -lgd -lm </span></span></span></span><br/><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">./a.out</span></span></span></span><img caption="false" height="0" src="./../images/motion_plot.png" width="500"/></p>
-<br />w14 << <a href='w14.html'>Previous</a> <a href='w12.html'>Next</a> >> w12</div>
+<p><span><span><span><span>cd 下載</span></span></span></span><br/><span><span><span><span>cc </span></span></span></span><span><span><span><span><span>euler_gnuplot_msd_ex1.c</span></span></span></span></span><span><span><span><span> -lgd -lm </span></span></span></span><br/><span><span><span><span>./a.out</span></span></span></span></p>
+<br />w12 << <a href='w12.html'>Previous</a> <a href='w15.html'>Next</a> >> w15</div>
         
     <!-- footer -->
       <div class="container">

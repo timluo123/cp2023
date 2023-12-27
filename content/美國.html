@@ -131,7 +131,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='關於.html'>關於</a><li><a href='w15.html'>w15</a><li><a href='w14.html'>w14</a><li><a href='w13.html'>w13</a><li><a href='w12.html'>w12</a><li class='has-children'><a href='w7.html'>w7</a><ul class='dropdown'><li><a href='韓國.html'>韓國</a><li><a href='英國.html'>英國</a><li><a href='日本.html'>日本</a><li><a href='中國.html'>中國</a></li></ul><li class='has-children'><a href='w6.html'>w6</a><ul class='dropdown'><li><a href='美國.html'>美國</a><li><a href='台灣.html'>台灣</a></li></ul><li><a href='W5.html'>W5</a><li><a href='布萊頓.html'>布萊頓</a></li>
+                     <li><a href='關於.html'>關於</a><li><a href='W5.html'>W5</a><li class='has-children'><a href='w6.html'>w6</a><ul class='dropdown'><li><a href='美國.html'>美國</a><li><a href='台灣.html'>台灣</a></li></ul><li class='has-children'><a href='w7.html'>w7</a><ul class='dropdown'><li><a href='韓國.html'>韓國</a><li><a href='英國.html'>英國</a><li><a href='日本.html'>日本</a><li><a href='中國.html'>中國</a></li></ul><li><a href='w12.html'>w12</a><li><a href='w13.html'>w13</a><li><a href='w15.html'>w15</a><li><a href='布萊頓.html'>布萊頓</a></li>
                       </ul>
                 </nav>
               </div>
@@ -144,97 +144,97 @@ img.add_border {
         </header>
     <div id="tipue_search_content">w6 << <a href='w6.html'>Previous</a> <a href='台灣.html'>Next</a> >> 台灣<br /><h1>美國</h1>
 <p></p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">#include &lt;stdio.h&gt;</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-#include &lt;gd.h&gt;</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span><span>#include &lt;stdio.h&gt;</span></span><span></span><span><span>
+#include &lt;gd.h&gt;</span></span><span></span><span><span>
 #include &lt;數學.h&gt;</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-無效draw_usa_flag（gdImagePtr img）；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+<span></span><span><span>
+無效draw_usa_flag（gdImagePtr img）；</span></span><span></span><span><span>
 void draw_star(gdImagePtr img, int x, int y, int size, int color, double spin_angle);</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-int main() {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    整數寬度=800；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+<span></span><span><span>
+int main() {</span></span><span></span><span><span>
+    整數寬度=800；</span></span><span></span><span><span>
     int 高度 = (int)(寬度 / 1.9);</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImagePtr img = gdImageCreateTrueColor(寬度, 高度);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+<span></span><span><span>
+    gdImagePtr img = gdImageCreateTrueColor(寬度, 高度);</span></span><span></span><span><span>
     gdImageAlphaBlending(img, 0);</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+<span></span><span><span>
     繪製_美國_標誌（img）；</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    FILE *outputFile = fopen("./../images/usa_flag.png", "wb");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    如果（輸出檔== NULL）{</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        fprintf(stderr, "開啟輸出檔時發生錯誤。\n");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        返回1；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+<span></span><span><span>
+    FILE *outputFile = fopen("./../images/usa_flag.png", "wb");</span></span><span></span><span><span>
+    如果（輸出檔== NULL）{</span></span><span></span><span><span>
+        fprintf(stderr, "開啟輸出檔時發生錯誤。\n");</span></span><span></span><span><span>
+        返回1；</span></span><span></span><span><span>
     }</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImagePngEx(img, 輸出檔, 9);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    fclose(輸出檔);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+<span></span><span><span>
+    gdImagePngEx(img, 輸出檔, 9);</span></span><span></span><span><span>
+    fclose(輸出檔);</span></span><span></span><span><span>
     gdImageDestroy(img);</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    返回0；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+<span></span><span><span>
+    返回0；</span></span><span></span><span><span>
 }</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-無效draw_usa_flag（gdImagePtr img）{</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int 寬度 = gdImageSX(img);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int 高度 = gdImageSY(img);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int 紅、白、藍；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 國旗顏色</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    紅色 = gdImageColorAllocate(img, 178, 34, 52); </span><span style="vertical-align: inherit;">// 紅色條紋</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    白色 = gdImageColorAllocate(img, 255, 255, 255); </span><span style="vertical-align: inherit;">// 白色條紋</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    藍色 = gdImageColorAllocate(img, 60, 59, 110); </span><span style="vertical-align: inherit;">// 藍色</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int stripe_height = 高度 / 13;</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int stripe_width = 寬度；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int star_size = (int)(0.0308 * 高度); </span><span style="vertical-align: inherit;">// 星星大小</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    for (int y = 0; y &lt; 高度; y += stripe_height) {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        if (y / stripe_height % 2 == 0) {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-            gdImageFilledRectangle(img, 0, y, stripe_width, y + stripe_height, 紅色);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        } 別的 {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-            gdImageFilledRectangle(img, 0, y, stripe_width, y + stripe_height, 白色);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        }</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+<span></span><span><span>
+無效draw_usa_flag（gdImagePtr img）{</span></span><span></span><span><span>
+    int 寬度 = gdImageSX(img);</span></span><span></span><span><span>
+    int 高度 = gdImageSY(img);</span></span><span></span><span><span>
+    int 紅、白、藍；</span></span><span></span><span><span>
+    // 國旗顏色</span></span><span></span><span><span>
+    紅色 = gdImageColorAllocate(img, 178, 34, 52); </span><span>// 紅色條紋</span></span><span></span><span><span>
+    白色 = gdImageColorAllocate(img, 255, 255, 255); </span><span>// 白色條紋</span></span><span></span><span><span>
+    藍色 = gdImageColorAllocate(img, 60, 59, 110); </span><span>// 藍色</span></span><span></span>
+<span></span><span><span>
+    int stripe_height = 高度 / 13;</span></span><span></span><span><span>
+    int stripe_width = 寬度；</span></span><span></span><span><span>
+    int star_size = (int)(0.0308 * 高度); </span><span>// 星星大小</span></span><span></span>
+<span></span><span><span>
+    for (int y = 0; y &lt; 高度; y += stripe_height) {</span></span><span></span><span><span>
+        if (y / stripe_height % 2 == 0) {</span></span><span></span><span><span>
+            gdImageFilledRectangle(img, 0, y, stripe_width, y + stripe_height, 紅色);</span></span><span></span><span><span>
+        } 別的 {</span></span><span></span><span><span>
+            gdImageFilledRectangle(img, 0, y, stripe_width, y + stripe_height, 白色);</span></span><span></span><span><span>
+        }</span></span><span></span><span><span>
     }</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+<span></span><span><span>
     gdImageFilledRectangle(img, 0, 0, 寬度 * 2 / 5, stripe_height * 7, 藍色);</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int star_spacing_x = (int)(0.129 * 高度); </span><span style="vertical-align: inherit;">// 橫向恆星之間的距離</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int star_spacing_y = (int)(0.054 * 高度); </span><span style="vertical-align: inherit;">// 縱向星星之間的距離</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int star_start_x = (int)(0.125 * 高度); </span><span style="vertical-align: inherit;">// 星星的起始X位置</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int star_start_y = (int)(0.0485 * 高度); </span><span style="vertical-align: inherit;">// 恆星的起始Y位置</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    for (int row = 0; row &lt; 9; row++) {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        int starPerRow = (行 % 2 == 0) ? </span><span style="vertical-align: inherit;">6：5；</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        // 計算2、4、6和8排星星的偏移量</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        int offset_x = (行 % 2 == 0) ? </span><span style="vertical-align: inherit;">star_spacing_x / -2 : 0;</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        for (int star = 0; star &lt; starPerRow; star++) {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+<span></span><span><span>
+    int star_spacing_x = (int)(0.129 * 高度); </span><span>// 橫向恆星之間的距離</span></span><span></span><span><span>
+    int star_spacing_y = (int)(0.054 * 高度); </span><span>// 縱向星星之間的距離</span></span><span></span><span><span>
+    int star_start_x = (int)(0.125 * 高度); </span><span>// 星星的起始X位置</span></span><span></span><span><span>
+    int star_start_y = (int)(0.0485 * 高度); </span><span>// 恆星的起始Y位置</span></span><span></span>
+<span></span><span><span>
+    for (int row = 0; row &lt; 9; row++) {</span></span><span></span><span><span>
+        int starPerRow = (行 % 2 == 0) ? </span><span>6：5；</span></span><span></span>
+<span></span><span><span>
+        // 計算2、4、6和8排星星的偏移量</span></span><span></span><span><span>
+        int offset_x = (行 % 2 == 0) ? </span><span>star_spacing_x / -2 : 0;</span></span><span></span>
+<span></span><span><span>
+        for (int star = 0; star &lt; starPerRow; star++) {</span></span><span></span><span><span>
             int x = star_start_x + star * star_spacing_x + offset_x;</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-            // 旋轉角度（以弧度為單位）</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-            雙旋轉角度 = M_PI / 5; </span><span style="vertical-align: inherit;">// 忘記旋轉多少度</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-            int y = star_start_y + 行 * star_spacing_y;</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-            draw_star(img, x, y, star_size, 白色, 旋轉角度);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        }</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    }</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+<span></span><span><span>
+            // 旋轉角度（以弧度為單位）</span></span><span></span><span><span>
+            雙旋轉角度 = M_PI / 5; </span><span>// 忘記旋轉多少度</span></span><span></span>
+<span></span><span><span>
+            int y = star_start_y + 行 * star_spacing_y;</span></span><span></span><span><span>
+            draw_star(img, x, y, star_size, 白色, 旋轉角度);</span></span><span></span><span><span>
+        }</span></span><span></span><span><span>
+    }</span></span><span></span><span><span>
 }</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-void draw_star(gdImagePtr img, int x, int y, int 大小, int 顏色, 雙rotation_angle) {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+<span></span><span><span>
+void draw_star(gdImagePtr img, int x, int y, int 大小, int 顏色, 雙rotation_angle) {</span></span><span></span><span><span>
     gdPoint點[10]；</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    for (int i = 0; i &lt; 10; i++) {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        雙倍角度 = M_PI / 2 + i * 2 * M_PI / 10 + 旋轉角度；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        int 半徑 = (i % 2 == 0) ? </span><span style="vertical-align: inherit;">尺寸：尺寸/2；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        點[i].x = x + 半徑 * cos(角);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        點[i].y = y + 半徑 * sin(角);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+<span></span><span><span>
+    for (int i = 0; i &lt; 10; i++) {</span></span><span></span><span><span>
+        雙倍角度 = M_PI / 2 + i * 2 * M_PI / 10 + 旋轉角度；</span></span><span></span><span><span>
+        int 半徑 = (i % 2 == 0) ? </span><span>尺寸：尺寸/2；</span></span><span></span><span><span>
+        點[i].x = x + 半徑 * cos(角);</span></span><span></span><span><span>
+        點[i].y = y + 半徑 * sin(角);</span></span><span></span><span><span>
     }</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 使用指定的顏色填滿星星</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImageFilledPolygon(img, 點, 10, 顏色);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+<span></span><span><span>
+    // 使用指定的顏色填滿星星</span></span><span></span><span><span>
+    gdImageFilledPolygon(img, 點, 10, 顏色);</span></span><span></span><span><span>
 }</span></span></pre>
 <p><img caption="false" height="291" src="./../images/usa_flag.png" width="550"/><br/><br/></p>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">清除</span></span></p>
-<p><br/><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">cd 下載</span></span><br/><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">cc gd_roc_flag.c -lgd -lm </span></span><br/><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">./a.out</span></span></p>
+<p><span><span>清除</span></span></p>
+<p><br/><span><span>cd 下載</span></span><br/><span><span>cc gd_roc_flag.c -lgd -lm </span></span><br/><span><span>./a.out</span></span></p>
 <p></p>
 <br />w6 << <a href='w6.html'>Previous</a> <a href='台灣.html'>Next</a> >> 台灣</div>
         
