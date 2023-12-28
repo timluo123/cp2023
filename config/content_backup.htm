@@ -1953,7 +1953,8 @@ int main() {
     return 0;   // Return 0 to indicate successful execution of the program.
 }
 </pre>
-<p><br/><img alt="" height="53" src="/images/1.png" width="200"/><br/><br/></p>
+<p><br/><img alt="" height="53" src="/images/1.png" width="200"/><br/><video controls="controls" height="150" width="300">
+<source src="/images/1.mp4" type="video/mp4"/></video></p>
 <p><span>(2)判定<span>閏年</span></span></p>
 <h5></h5>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
@@ -1979,7 +1980,8 @@ int main() {
     return 0;   // Return 0 to indicate successful execution of the program.
 }
 </pre>
-<p><br/><img alt="" height="76" src="/images/2.png" width="200"/><br/><br/></p>
+<p><br/><img alt="" height="76" src="/images/2.png" width="200"/><br/><video controls="controls" height="150" width="300">
+<source src="/images/2.mp4" type="video/mp4"/></video></p>
 <p>(3)<span>計算交易損益</span></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
@@ -2017,48 +2019,55 @@ int main(void) {
 }
 </pre>
 <p><img alt="" height="77" src="/images/3.png" width="200"/></p>
-<p>(4)評價等級</p>
+<p><video controls="controls" height="150" width="300">
+<source src="/images/3.mp4" type="video/mp4"/></video></p>
+<p>(4)<span>用 C 寫一個程式來接受成績並聲明等效描</span></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;ctype.h&gt;
+#include &lt;string.h&gt;
 
 int main() {
-char notes[30]; // Increase the size of the array
-char grd; // Declare a character variable to store the grade.
+    char notes[20];  // 增加註解陣列的大小以容納更長的字串。
+    char grd;
 
-printf("Input the grade: "); // Prompt user for input of grade.
-if (scanf(" %c", &amp;grd) != 1) {
-printf("Error reading grade.\n");
-return 1; // Return an error code
+    printf("請輸入成績：");
+    if (scanf(" %c", &amp;grd) != 1) {
+        fprintf(stderr, "讀取成績時發生錯誤。\n");
+        return 1;  // 返回非零以表示錯誤。
+    }
+
+    grd = toupper(grd);
+
+    switch (grd) {
+        case 'E':
+            strncpy(notes, "優秀", sizeof(notes));
+            break;
+        case 'V':
+            strncpy(notes, "很好", sizeof(notes));
+            break;
+        case 'G':
+            strncpy(notes, "好", sizeof(notes));
+            break;
+        case 'A':
+            strncpy(notes, "普通", sizeof(notes));
+            break;
+        case 'F':
+            strncpy(notes, "不及格", sizeof(notes));
+            break;
+        default:
+            strncpy(notes, "無效的成績\n", sizeof(notes));
+            break;
+    }
+
+    printf("您選擇了：%s\n", notes);
+
+    return 0;
 }
-
-grd = toupper(grd); // Convert the grade to uppercase using 'toupper' function.
-
-switch(grd) // Start a switch statement based on the grade.
-{
-case 'E':
-printf("You have chosen: Excellent\n");
-break;
-case 'V':
-printf("You have chosen: Very Good\n");
-break;
-case 'G':
-printf("You have chosen: Good\n");
-break;
-case 'A':
-printf("You have chosen: Average\n");
-break;
-case 'F':
-printf("You have chosen: Fails\n");
-break;
-default:
-printf("Invalid Grade Found.\n"); // Print message for invalid grade.
-break;
-}
-
-return 0;
-}</pre>
-<p></p>
-<p><img alt="" height="73" src="/images/4.png" width="200"/></p>
+</pre>
+<p><br/><br/></p>
+<p><img alt="" height="76" src="/images/4.png" width="200"/></p>
+<p><video controls="controls" height="150" width="300">
+<source src="/images/4.mp4" type="video/mp4"/></video></p>
 <p>(5)計算該月天數</p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
