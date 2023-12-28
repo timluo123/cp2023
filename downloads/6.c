@@ -1,32 +1,21 @@
-#include <stdio.h>
-
-int tot_mins;  /* given number of minutes */
-int hrs;        /* number of hours (to be computed) */
-int mins;       /* number of minutes (to be computed) */
-
-const int MINaHOUR = 60;      /* number of minutes in an hour */
-
-char line_text[50];      /* line of input from keyboard */
+#include <stdio.h>  // Include the standard input/output header file.
 
 int main() {
-    printf("Input minutes: ");   // Prompt the user to input minutes.
+    int j, n;  // Declare variables 'j' for loop counter and 'n' for user input.
 
-    if (fgets(line_text, sizeof(line_text), stdin) == NULL) {
+    printf("Input the number (Table to be calculated) : ");  // Print a message to prompt user input.
+
+    // Check the return value of scanf for errors
+    if (scanf("%d", &n) != 1) {
         printf("Error reading input.\n");
-        return 1;  // Return an error code.
+        return 1;  // Indicate an error
     }
 
-    sscanf(line_text, "%d", &tot_mins);   // Convert the input to an integer and store it in 'tot_mins'.
+    printf("\n");  // Print a newline for formatting.
 
-    if (tot_mins < 0) {
-        printf("Please enter a non-negative value for minutes.\n");
-        return 1;  // Return an error code.
+    for (j = 1; j <= 10; j++) {  // Start a for loop to calculate the table up to 10.
+        printf("%d X %d = %d \n", n, j, n * j);  // Print the multiplication expression and result.
     }
 
-    hrs = (tot_mins / MINaHOUR);   // Calculate the number of hours.
-    mins = (tot_mins % MINaHOUR);   // Calculate the remaining minutes.
-
-    printf("%d Hours, %d Minutes.\n", hrs, mins);   // Print the calculated hours and minutes.
-
-    return 0;   // Return 0 to indicate successful execution of the program.
+    return 0;  // Return 0 to indicate successful execution of the program.
 }

@@ -1,34 +1,30 @@
-#include <stdio.h> // Include standard input/output library
+#include <stdio.h>
 
-int test(int n); // Declare the function 'test' with an integer parameter
+int main() {
+    char firstname[20], lastname[20];
+    int bir_year;
 
-int main(void)
-{
-    // Call the function 'test' with argument 53 and print the result
-    printf("%d", test(53));
+    printf("Input your firstname: ");
 
-    // Print a newline for formatting
-    printf("\n");
-
-    // Call the function 'test' with argument 30 and print the result
-    printf("%d", test(30));
-
-    // Print a newline for formatting
-    printf("\n");
-
-    // Call the function 'test' with argument 51 and print the result
-    printf("%d", test(51));
-}
-
-// Function definition for 'test'
-int test(int n)
-{
-    const int x = 51; // Declare and initialize constant variable 'x'
-
-    if (n > x) // Check if 'n' is greater than 'x'
-    {
-        return (n - x) * 3; // Return the result of the expression (n - x) multiplied by 3
+    // Check the return value of scanf to handle input errors
+    if (scanf("%19s", firstname) != 1) {
+        fprintf(stderr, "Error reading firstname.\n");
+        return 1;  // Return non-zero to indicate an error.
     }
 
-    return x - n; // Return the result of the expression x minus n
+    printf("Input your lastname: ");
+    if (scanf("%19s", lastname) != 1) {
+        fprintf(stderr, "Error reading lastname.\n");
+        return 1;  // Return non-zero to indicate an error.
+    }
+
+    printf("Input your year of birth: ");
+    if (scanf("%d", &bir_year) != 1) {
+        fprintf(stderr, "Error reading year of birth.\n");
+        return 1;  // Return non-zero to indicate an error.
+    }
+
+    printf("%s %s %d\n", firstname, lastname, bir_year);
+
+    return 0;
 }

@@ -1,29 +1,41 @@
 #include <stdio.h>
+#include <ctype.h>
+#include <string.h>
 
 int main() {
-    float rec_width;         /* Declare variable 'rec_width' to store the width of the rectangle */
-    float rec_height;        /* Declare variable 'rec_height' to store the height of the rectangle */
-    float rec_perimeter;     /* Declare variable 'rec_perimeter' to store the perimeter (to be computed) */
+    char notes[20];  // 增加註解陣列的大小以容納更長的字串。
+    char grd;
 
-    // Prompt the user to input the height of the rectangle.
-    printf("Input the height of the Rectangle : ");
-    if (scanf("%f", &rec_height) != 1) {
-        fprintf(stderr, "Error: Invalid input for height\n");
-        return 1;  // Return an error code.
+    printf("請輸入成績：");
+    if (scanf(" %c", &grd) != 1) {
+        fprintf(stderr, "讀取成績時發生錯誤。\n");
+        return 1;  // 返回非零以表示錯誤。
     }
 
-    // Prompt the user to input the width of the rectangle.
-    printf("Input the width of the Rectangle : ");
-    if (scanf("%f", &rec_width) != 1) {
-        fprintf(stderr, "Error: Invalid input for width\n");
-        return 1;  // Return an error code.
+    grd = toupper(grd);
+
+    switch (grd) {
+        case 'E':
+            strncpy(notes, "優秀", sizeof(notes));
+            break;
+        case 'V':
+            strncpy(notes, "很好", sizeof(notes));
+            break;
+        case 'G':
+            strncpy(notes, "好", sizeof(notes));
+            break;
+        case 'A':
+            strncpy(notes, "普通", sizeof(notes));
+            break;
+        case 'F':
+            strncpy(notes, "不及格", sizeof(notes));
+            break;
+        default:
+            strncpy(notes, "無效的成績\n", sizeof(notes));
+            break;
     }
 
-    // Calculate the perimeter of the rectangle using the formula: perimeter = 2 * ( width + height )
-    rec_perimeter = 2.0 * (rec_height + rec_width);
+    printf("您選擇了：%s\n", notes);
 
-    // Print the calculated perimeter of the rectangle.
-    printf("Perimeter of the Rectangle is : %f\n", rec_perimeter);
-
-    return 0;  // Indicate successful program execution.
+    return 0;
 }

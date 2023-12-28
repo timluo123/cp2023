@@ -1,21 +1,26 @@
-#include <stdio.h> // Include standard input/output library
+#include <stdio.h>
 
-int test(int x, int y); // Declare the function 'test' with two integer parameters
+float kmph;              /* kilometers per hour */
+float miph;              /* miles per hour (to be computed) */
+char  line_text[50];      /* a line from the keyboard */
 
-int main(void)
-{
-    // Call the function 'test' with arguments 1 and 2 and print the result
-    printf("%d", test(1, 2));
+int main() {
+    printf("Input kilometers per hour: ");   // Prompt the user to input kilometers per hour.
+    
+    // Check the return value of fgets for errors
+    if (fgets(line_text, sizeof(line_text), stdin) == NULL) {
+        perror("Error reading input");
+        return 1; // Return non-zero to indicate an error.
+    }
 
-    // Print a newline for formatting
-    printf("\n");
+    // Check the return value of sscanf for errors
+    if (sscanf(line_text, "%f", &kmph) != 1) {
+        printf("Error: Please enter a valid number for kilometers per hour.\n");
+        return 1; // Return non-zero to indicate an error.
+    }
 
-    // Call the function 'test' with arguments 2 and 2 and print the result
-    printf("%d", test(2, 2));
-}
-// Function definition for 'test'
-int test(int x, int y)
-{
-    // Conditional expression: If x is equal to y, return (x + y) multiplied by 3, otherwise return x + y
-    return x == y ? (x + y) * 3 : x + y;
+    miph = kmph * 0.6213712;   // Convert kilometers per hour to miles per hour.
+    printf("%f miles per hour\n", miph);   // Print the result in miles per hour.
+
+    return 0;   // Return 0 to indicate successful execution of the program.
 }

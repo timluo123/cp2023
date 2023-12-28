@@ -1,24 +1,41 @@
 #include <stdio.h>
-
-float kmph;              /* kilometers per hour */
-float miph;              /* miles per hour (to be computed) */
-char  line_text[50];      /* a line from the keyboard */
+#include <ctype.h>
+#include <string.h>
 
 int main() {
-    printf("Input kilometers per hour: ");   // Prompt the user to input kilometers per hour.
+    char notes[20];  // 增加註解陣列的大小以容納更長的字串。
+    char grd;
 
-    if (fgets(line_text, sizeof(line_text), stdin) == NULL) {
-        fprintf(stderr, "Error reading input.\n");
-        return 1;  // Return an error code.
+    printf("請輸入成績：");
+    if (scanf(" %c", &grd) != 1) {
+        fprintf(stderr, "讀取成績時發生錯誤。\n");
+        return 1;  // 返回非零以表示錯誤。
     }
 
-    if (sscanf(line_text, "%f", &kmph) != 1) {
-        fprintf(stderr, "Error: Invalid input. Please enter a numeric value.\n");
-        return 1;  // Return an error code.
+    grd = toupper(grd);
+
+    switch (grd) {
+        case 'E':
+            strncpy(notes, "優秀", sizeof(notes));
+            break;
+        case 'V':
+            strncpy(notes, "很好", sizeof(notes));
+            break;
+        case 'G':
+            strncpy(notes, "好", sizeof(notes));
+            break;
+        case 'A':
+            strncpy(notes, "普通", sizeof(notes));
+            break;
+        case 'F':
+            strncpy(notes, "不及格", sizeof(notes));
+            break;
+        default:
+            strncpy(notes, "無效的成績\n", sizeof(notes));
+            break;
     }
 
-    miph = kmph * 0.6213712;   // Convert kilometers per hour to miles per hour.
-    printf("%f miles per hour\n", miph);   // Print the result in miles per hour.
+    printf("您選擇了：%s\n", notes);
 
-    return 0;   // Return 0 to indicate successful execution of the program.
+    return 0;
 }

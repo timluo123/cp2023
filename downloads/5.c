@@ -1,41 +1,40 @@
 #include <stdio.h>
 
-int hrs;          /* given number of hours */
-int mins;         /* given number of minutes */
-int tot_mins;     /* total number of minutes (to be computed) */
-
-const int MINaHOUR = 60;      /* number of minutes in an hour */
-
-char line_text[50];      /* line of input from the keyboard */
-
 int main() {
-    printf("Input hours: ");   // Prompt the user to input hours.
+    int monno;  // Declare a variable to store the input month number.
 
-    if (fgets(line_text, sizeof(line_text), stdin) == NULL) {
-        fprintf(stderr, "Error reading input for hours.\n");
-        return 1;  // Return an error code.
+    printf("Input Month No : ");  // Prompt the user to input a month number.
+
+    // Check the return value of scanf for successful input
+    if (scanf("%d", &monno) != 1) {
+        printf("Invalid input. Please enter a valid month number.\n");
+        return 1;  // Indicate an error
     }
 
-    if (sscanf(line_text, "%d", &hrs) != 1) {
-        fprintf(stderr, "Error: Invalid input for hours. Please enter an integer.\n");
-        return 1;  // Return an error code.
+    switch(monno)  // Start a switch statement based on the input month number.
+    {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            printf("Month has 31 days.\n");  // Print a message for months with 31 days.
+            break;
+        case 2:
+            printf("The 2nd month is February and has 28 or 29 days.\n");  // Print a message for February with 28 or 29 days.
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            printf("Month has 30 days.\n");  // Print a message for months with 30 days.
+            break;
+        default:
+            printf("Invalid Month number.\nPlease try again....\n");  // Print a message for an invalid input.
+            break;
     }
 
-    printf("Input minutes: ");   // Prompt the user to input minutes.
-
-    if (fgets(line_text, sizeof(line_text), stdin) == NULL) {
-        fprintf(stderr, "Error reading input for minutes.\n");
-        return 1;  // Return an error code.
-    }
-
-    if (sscanf(line_text, "%d", &mins) != 1) {
-        fprintf(stderr, "Error: Invalid input for minutes. Please enter an integer.\n");
-        return 1;  // Return an error code.
-    }
-
-    tot_mins = mins + (hrs * MINaHOUR);   // Calculate the total number of minutes.
-
-    printf("Total: %d minutes.\n", tot_mins);   // Print the total number of minutes.
-
-    return 0;   // Return 0 to indicate successful execution of the program.
+    return 0;  // Indicate successful execution
 }

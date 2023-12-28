@@ -1,31 +1,20 @@
-#include <stdio.h> // Include standard input/output library
+#include <stdio.h>
 
-int test(int x, int y); // Declare the function 'test' with two integer parameters
+int main() {
+    int ang1, ang2, ang3; // three angles of a triangle
 
-int main(void)
-{
-    // Call the function 'test' with arguments 25 and 5, and print the result
-    printf("%d", test(25, 5));
+    // Read two angles of the triangle from the user separated by a comma
+    printf("Input two angles of a triangle separated by a comma: ");
+    
+    // Check the return value of scanf to handle input errors
+    if (scanf("%d, %d", &ang1, &ang2) != 2) {
+        fprintf(stderr, "Error reading input. Please provide two integers separated by a comma.\n");
+        return 1;  // Return non-zero to indicate an error.
+    }
 
-    // Print a newline for formatting
-    printf("\n");
+    ang3 = 180 - (ang1 + ang2); // Calculate the third angle
 
-    // Call the function 'test' with arguments 20 and 30, and print the result
-    printf("%d", test(20, 30));
+    printf("Third angle of the triangle: %d\n", ang3);
 
-    // Print a newline for formatting
-    printf("\n");
-
-    // Call the function 'test' with arguments 20 and 25, and print the result
-    printf("%d", test(20, 25));
-}
-
-// Function definition for 'test'
-int test(int x, int y)
-{
-    // Return 1 (true) if any of the following conditions are true:
-    // 1. x is equal to 30
-    // 2. y is equal to 30
-    // 3. the sum of x and y is equal to 30
-    return x == 30 || y == 30 || (x + y == 30);
+    return 0;
 }

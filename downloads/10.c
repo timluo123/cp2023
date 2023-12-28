@@ -1,22 +1,37 @@
 #include <stdio.h>
 
-int main()  
-{  
-    int ang1, ang2, ang3; /* Three angles of a triangle */
+int hrs;          /* given number of hours */
+int mins;         /* given number of minutes */
+int tot_mins;     /* total number of minutes (to be computed) */
 
-    /* Read two angles of the triangle from the user separated by a comma */  
-    printf("Input two angles of the triangle separated by a comma: ");  
+const int MIN_PER_HOUR = 60;      /* number of minutes in an hour */
 
-    // Check the return value of scanf
-    if (scanf("%d, %d", &ang1, &ang2) != 2) {
-        // If the expected number of inputs is not read, print an error message
-        printf("Error: Invalid input format.\n");
-        return 1; // Return a non-zero value to indicate an error
+char line_text[50];      /* line of input from keyboard */
+
+int main() {
+    printf("Input hours: ");   // Prompt the user to input hours.
+    if (fgets(line_text, sizeof(line_text), stdin) == NULL) {
+        perror("Error reading hours");
+        return 1; // Return non-zero to indicate an error.
+    }
+    if (sscanf(line_text, "%d", &hrs) != 1) {
+        printf("Error: Please enter a valid number for hours.\n");
+        return 1; // Return non-zero to indicate an error.
     }
 
-    ang3 = 180 - (ang1 + ang2);  /* Calculate the third angle */
+    printf("Input minutes: ");   // Prompt the user to input minutes.
+    if (fgets(line_text, sizeof(line_text), stdin) == NULL) {
+        perror("Error reading minutes");
+        return 1; // Return non-zero to indicate an error.
+    }
+    if (sscanf(line_text, "%d", &mins) != 1) {
+        printf("Error: Please enter a valid number for minutes.\n");
+        return 1; // Return non-zero to indicate an error.
+    }
 
-    printf("Third angle of the triangle: %d\n", ang3);  
+    tot_mins = mins + (hrs * MIN_PER_HOUR);   // Calculate the total number of minutes.
 
-    return 0;  
+    printf("Total: %d minutes.\n", tot_mins);   // Print the total number of minutes.
+
+    return 0;   // Return 0 to indicate successful execution of the program.
 }

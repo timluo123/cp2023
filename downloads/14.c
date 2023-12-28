@@ -1,33 +1,33 @@
-#include <stdio.h>  // Include standard input/output library
-#include <stdlib.h> // Include standard library for absolute value function
+#include <stdio.h>
 
-int test(int x); // Declare the function 'test' with an integer parameter
+int main() {
+    float rec_width;      /* Variable to store the width of the rectangle */
+    float rec_height;     /* Variable to store the height of the rectangle */
+    float rec_perimeter;  /* Variable to store the perimeter (to be computed) */
 
-int main(void)
-{
-    // Call the function 'test' with argument 103 and print the result
-    printf("%d", test(103));
+    // Prompt the user to input the height of the rectangle.
+    printf("Input the height of the Rectangle : ");
 
-    // Print a newline for formatting
-    printf("\n");
+    // Check the return value of scanf to ensure a valid float is entered.
+    if (scanf("%f", &rec_height) != 1 || rec_height <= 0) {
+        fprintf(stderr, "Error: Invalid input for height. Please enter a positive number.\n");
+        return 1;  // Return non-zero to indicate an error.
+    }
 
-    // Call the function 'test' with argument 90 and print the result
-    printf("%d", test(90));
+    // Prompt the user to input the width of the rectangle.
+    printf("Input the width of the Rectangle : ");
 
-    // Print a newline for formatting
-    printf("\n");
+    // Check the return value of scanf to ensure a valid float is entered.
+    if (scanf("%f", &rec_width) != 1 || rec_width <= 0) {
+        fprintf(stderr, "Error: Invalid input for width. Please enter a positive number.\n");
+        return 1;  // Return non-zero to indicate an error.
+    }
 
-    // Call the function 'test' with argument 89 and print the result
-    printf("%d", test(89));
-}
+    // Calculate the perimeter of the rectangle using the formula: perimeter = 2 * ( width + height )
+    rec_perimeter = 2.0 * (rec_height + rec_width);
 
-// Function definition for 'test'
-int test(int x)
-{
-    // Check if the absolute difference between 'x' and 100 is less than or equal to 10,
-    // or if the absolute difference between 'x' and 200 is less than or equal to 10.
-    // Return 1 (true) if either condition is true, otherwise return 0 (false).
-    if (abs(x - 100) <= 10 || abs(x - 200) <= 10)
-        return 1;
-    return 0;
+    // Print the calculated perimeter of the rectangle.
+    printf("Perimeter of the Rectangle is : %f\n", rec_perimeter);
+
+    return 0;  // Indicate successful program execution.
 }

@@ -1,28 +1,19 @@
-#include <stdio.h>
+#include <stdio.h>  // Include the standard input/output header file.
 
 int main() {
-    char firstname[20], lastname[20];   // Declare character arrays for first name and last name with a maximum size of 20 characters each.
-    int bir_year;   // Declare an integer variable 'bir_year' to store the year of birth.
+    int i, f = 1, num;  // Declare variables 'i' for loop counter, 'f' to store factorial, 'num' for user input.
 
-    printf("Input your firstname: ");   // Prompt the user to input their first name.
-    if (scanf("%19s", firstname) != 1) {
-        fprintf(stderr, "Error: Failed to read firstname.\n");
-        return 1;  // Return an error code.
+    printf("Input the number : ");  // Print a message to prompt user input.
+
+    if (scanf("%d", &num) != 1) {
+        printf("Error: Please enter a valid integer.\n");
+        return 1;  // Indicate an error
     }
 
-    printf("Input your lastname: ");   // Prompt the user to input their last name.
-    if (scanf("%19s", lastname) != 1) {
-        fprintf(stderr, "Error: Failed to read lastname.\n");
-        return 1;  // Return an error code.
-    }
+    for (i = 1; i <= num; i++)  // Start a loop to calculate factorial.
+        f = f * i;  // Calculate factorial.
 
-    printf("Input your year of birth: ");   // Prompt the user to input their year of birth.
-    if (scanf("%d", &bir_year) != 1) {
-        fprintf(stderr, "Error: Failed to read year of birth.\n");
-        return 1;  // Return an error code.
-    }
+    printf("The Factorial of %d is: %d\n", num, f);  // Print the calculated factorial.
 
-    printf("%s %s %d\n", firstname, lastname, bir_year);   // Print the first name, last name, and year of birth.
-
-    return 0;   // Return 0 to indicate successful execution of the program.
+    return 0;  // Indicate that the program has executed successfully.
 }
