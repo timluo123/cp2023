@@ -965,129 +965,130 @@ return 1;
 <p>cd downloads</p>
 <p>cc hello.c -lgd -lm</p>
 <p>./a.out</p><h1>w13</h1>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span><span><span><span>// 包含標準輸出進入程式庫的標頭檔案</span></span></span></span><span><span><span><span>
-#include &lt;stdio.h&gt; </span></span></span></span>
- <span><span><span><span>
-// 主函數式</span></span></span></span><span><span><span><span>
-int main() { </span></span></span></span><span><span><span><span>
-    // 開啟一個檔案讀取地震和速度資料</span></span></span></span><span><span><span><span>
-    FILE *outputFile = fopen("motion_data.txt 」、「w」）；</span></span></span></span><span><span><span><span>
-    if (!outputFile) { </span></span></span></span><span><span><span><span>
-        fprintf(stderr, "建立資料失敗檔。\n");</span></span></span></span><span><span><span><span>
-        返回1；</span></span></span></span><span><span><span><span>
-    } </span></span></span></span>
- <span><span><span><span>
-    // 模擬運動10秒併計算地質與速度，同時將資料寫入文件</span></span></span></span><span><span><span><span>
-    double x = 0.2; </span></span></span><span><span><span>// 初始隧道</span></span></span></span><span><span><span><span>
-    double v = 0.0; </span></span></span><span><span><span>// 初速</span></span></span></span><span><span><span><span>
-    double dt = 0.01; </span></span></span><span><span><span>// 時間步</span></span></span></span><span><span><span><span>
-    長 double t = 0.0; </span></span></span><span><span><span>// 時間</span></span></span></span>
- <span><span><span><span>
-    while (t &lt;= 10.0) {</span></span></span></span><span><span><span><span>
-        雙高度 = (-10.0 * x - 0.5 * v) / 1.0; </span></span></span><span><span><span>// 這裡修改系統參數</span></span></span></span><span><span><span><span>
-        v += 高度 * dt; </span></span></span></span><span><span><span><span>
-        x+=v*dt；</span></span></span></span>
- <span><span><span><span>
-        fprintf(outputFile, "%lf %lf %lf\n", t, x, v); </span></span></span></span>
- <span><span><span><span>
-        t += dt；</span></span></span></span><span><span><span><span>
-    } </span></span></span></span>
- <span><span><span><span>
-    // 關閉資料檔</span></span></span></span><span><span><span><span>
-    fclose(outputFile); </span></span></span></span>
- <span><span><span><span>
-    // 使用 popen 啟動 Gnuplot 程式</span></span></span></span><span><span><span><span>
-    FILE *gnuplotPipe = popen("gnuplot -persistent", "w"); </span></span></span></span><span><span><span><span>
-    if (!gnuplotPipe) { </span></span></span></span><span><span><span><span>
-        fprintf(stderr, "啟動Gnuplot失敗。\n");</span></span></span></span><span><span><span><span>
-        回傳1; </span></span></span></span><span><span><span><span>
-    } </span></span></span></span>
- <span><span><span><span>
-    // 使用Gnuplot繪圖指令，指定字體並輸出為PNG </span></span></span></span><span><span><span><span>
-    fprintf(gnuplotPipe, "setterminal pngcairo Innovative font 'default,10' size 800,400\n"); </span></span></span></span><span><span><span><span>
-    fprintf( gnuplotPipe, "設定輸出'./../images/motion_plot.png'\n"); </span></span></span></span><span><span><span><span>
-    fprintf(gnuplotPipe, "設定標題'與速度與時間'\n"); </span></span></span></span><span><span><span><span>
-    fprintf(gnuplotPipe, "設定xlabel '時間(s)'\n"); </span></span></span></span><span><span><span><span>
-    fprintf(gnuplotPipe, "設定 ylabel '地質(m)'\n"); </span></span></span></span><span><span><span><span>
-    fprintf(gnuplotPipe, "使用1:2 行lw 2 標題'地質' 重要性'motion_data .txt', \ </span></span></span></span><span><span><span><span>
-                             'motion_data.txt' 使用 1:3 行 lw 2 標題 '速度'\n"); </span></span></span></span>
- <span><span><span><span>
-    // 關閉 Gnuplot 程式</span></span></span></span><span><span><span><span>
-    fprintf(gnuplotPipe, "exit\n"); </span></span></span></span><span><span><span><span>
-    pclose(gnuplotPipe);</span></span></span></span>
- <span><span><span><span>
-    回傳0; </span></span></span></span><span><span><span><span>
-}</span></span></span></span></pre>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">// 包含標準輸出入程式庫的標頭文件
+#include &lt;stdio.h&gt;
+ 
+// 主函式
+int main() {
+    // Open a file to write displacement and velocity data
+    FILE *outputFile = fopen("motion_data.txt", "w");
+    if (!outputFile) {
+        fprintf(stderr, "Failed to create data file.\n");
+        return 1;
+    }
+ 
+    // Simulate motion for 10 seconds and calculate displacement and velocity, while writing data to the file
+    double x = 0.2;  // Initial displacement
+    double v = 0.0;  // Initial velocity
+    double dt = 0.01; // Time step
+    double t = 0.0;  // Time
+ 
+    while (t &lt;= 10.0) {
+        double acceleration = (-10.0 * x - 0.5 * v) / 1.0; // Modified system parameters here
+        v += acceleration * dt;
+        x += v * dt;
+ 
+        fprintf(outputFile, "%lf %lf %lf\n", t, x, v);
+ 
+        t += dt;
+    }
+ 
+    // Close the data file
+    fclose(outputFile);
+ 
+    // Start a Gnuplot process using popen
+    FILE *gnuplotPipe = popen("gnuplot -persistent", "w");
+    if (!gnuplotPipe) {
+        fprintf(stderr, "Failed to start Gnuplot.\n");
+        return 1;
+    }
+ 
+    // Use Gnuplot plotting commands, specify font and output as PNG
+    fprintf(gnuplotPipe, "set terminal pngcairo enhanced font 'default,10' size 800,400\n");
+    fprintf(gnuplotPipe, "set output './../images/motion_plot.png'\n");
+    fprintf(gnuplotPipe, "set title 'Displacement and Velocity vs. Time'\n");
+    fprintf(gnuplotPipe, "set xlabel 'Time (s)'\n");
+    fprintf(gnuplotPipe, "set ylabel 'Displacement (m)'\n");
+    fprintf(gnuplotPipe, "plot 'motion_data.txt' using 1:2 with lines lw 2 title 'Displacement', \
+                             'motion_data.txt' using 1:3 with lines lw 2 title 'Velocity'\n");
+ 
+    // Close the Gnuplot process
+    fprintf(gnuplotPipe, "exit\n");
+    pclose(gnuplotPipe);
+ 
+    return 0;
+}</pre>
 <p><img caption="false" height="300" src="/images/motion_plot.png" width="600"/></p>
 <p><span><span><span><span>明確</span></span></span></span></p>
 <p></p>
-<p><span><span><span><span>cd 下載</span></span></span></span><br/><span><span><span><span>cc </span></span></span></span><span><span><span><span><span>euler_gnuplot_msd_ex1.c</span></span></span></span></span><span><span><span><span> -lgd -lm </span></span></span></span><br/><span><span><span><span>./a.out</span></span></span></span></p>
-<h1>w15</h1>
+<p><span><span><span><span>cd 下載</span></span></span></span><br/><span><span><span><span>cc </span></span></span></span><span><span><span><span><span>euler_gnuplot_msd_ex1.c</span></span></span></span></span><span><span><span><span> -lgd -lm </span></span></span></span><br/><span><span><span><span>./a.out</span></span></span></span></p><h1>w15</h1>
 <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">(1)</span></span></span></span></span></span></span></span></span></span></p>
 <div><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">根據</span></span></span></span></span></span></span></span><a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EVcefUI2zPpAmP6lnLWLEAoBCBznMnvFpsNE-1VVFGvVZQ?e=goiPpP&amp;isSPOFile=1" rel="noreferrer noopener" tabindex="-1" target="_blank" title="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/evcefui2zppamp6lnlwleaobcbznmnvfpsne-1vvfgvvzq?e=goippp"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">roc_list_coord_flag.7z</span></span></span></span></span></span></span></span></a><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">方案內容所印出的六組ABED等相關中華民國國旗白日圖案中的菱形四個關鍵點，請直接在青天與滿地紅的圖案中，利用白色作為畫線顏色，將第一個兩個一組ABED等四點的座標，以直線相連。</span></span></span></span></span></span></span></span></div>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">#include &lt;stdio.h&gt;</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-#include &lt;gd.h&gt;</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-#include &lt;數學.h&gt;</span></span></span></span></span></span></span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-無效draw_roc_flag（gdImagePtr img）；</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-void draw_white_sun(gdImagePtr img, int x, int y, int size, int color);</span></span></span></span></span></span></span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-int main() {</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    //寬度3:高度2</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    整數寬度=1200；</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 國旗長寬比為3:2</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int 高度 = (int)(寬度 * 2.0 / 3.0);</span></span></span></span></span></span></span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImagePtr img = gdImageCreateTrueColor(寬度, 高度);</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImageAlphaBlending(img, 0);</span></span></span></span></span></span></span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    鄰近_roc_flag（img）；</span></span></span></span></span></span></span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    FILE *outputFile = fopen("roc_flag_in_gd.png", "wb");</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    如果（輸出檔== NULL）{</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        fprintf(stderr, "開啟輸出檔時發生錯誤。\n");</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        返回1；</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    }</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImagePngEx(img, 輸出檔, 9);</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    fclose(輸出檔);</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImageDestroy(img);</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    返回0；</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-}</span></span></span></span></span></span></span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-無效draw_roc_flag（gdImagePtr img）{</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int 寬度 = gdImageSX(img);</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int 高度 = gdImageSY(img);</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int 紅、白、藍；</span></span></span></span></span></span></span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    //白色日位於青天面積正中央，因此中心點座標為長寬各1/4處</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int center_x = (int)(寬度/4);</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int center_y = (int)(高度 / 4);</span></span></span></span></span></span></span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int sun_radius = (int)(寬度/8);</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int White_circle_dia = sun_radius;</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int 藍色圓形直徑 = 白色圓形直徑 + 白色圓形直徑 * 2 / 15;</span></span></span></span></span></span></span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    紅色 = gdImageColorAllocate(img, 255, 0, 0); </span></span></span></span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">// 紅色</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    白色 = gdImageColorAllocate(img, 255, 255, 255); </span></span></span></span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">// 白色</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    藍色 = gdImageColorAllocate(img, 0, 0, 149); </span></span></span></span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">// 藍色</span></span></span></span></span></span></span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImageFilledRectangle(img, 0, 0, 寬度, 高度, 紅色);</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImageFilledRectangle(img, 0, 0, (int)(寬度 / 2.0), (int)(高度 / 2.0), 藍色);</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    draw_white_sun(img, center_x, center_y, sun_radius, 白色);</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImageFilledEllipse(img, center_x, center_y, blue_circle_dia, blue_circle_dia, 藍色);</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImageFilledEllipse（img，center_x，center_y，white_circle_dia，white_circle_dia，白色）；</span></span></span></span></span></span></span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 在青天與滿地紅的圖案中以白色畫線彩虹連接菱形的四個關鍵點</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImageSetThickness(img, 10); </span></span></span></span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">//設定線條粗度為10</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImageLine(img, 429, 125, 279, 165, 白色);</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImageLine(img, 279, 165, 170, 274, 白色);</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImageLine(img, 170, 274, 170, 274, 白色);</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    gdImageLine(img, 429, 125, 170, 274, 白色); </span></span></span></span></span></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">// 第四條加入條連線</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-}</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-void draw_white_sun(gdImagePtr img, int x, int y, int size, int color) {</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 實作draw_white_sun函數的內容</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 可以在此處比較白日的內部模式</span></span></span></span></span></span></span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-}</span></span></span></span></span></span></span></span></pre>
+<pre class="brush:cpp;auto-links:false;toolbar:false;tab-size:10" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;gd.h&gt;
+#include &lt;math.h&gt;
+ 
+void draw_roc_flag(gdImagePtr img);
+void draw_white_sun(gdImagePtr img, int x, int y, int size, int color);
+ 
+int main() {
+    // width 3: height 2
+    int width = 1200;
+    // 國旗長寬比為 3:2
+    int height = (int)(width * 2.0 / 3.0);
+ 
+    gdImagePtr img = gdImageCreateTrueColor(width, height);
+    gdImageAlphaBlending(img, 0);
+ 
+    draw_roc_flag(img);
+ 
+    FILE *outputFile = fopen("roc_flag_in_gd.png", "wb");
+    if (outputFile == NULL) {
+        fprintf(stderr, "Error opening the output file.\n");
+        return 1;
+    }
+    gdImagePngEx(img, outputFile, 9);
+    fclose(outputFile);
+    gdImageDestroy(img);
+    return 0;
+}
+ 
+void draw_roc_flag(gdImagePtr img) {
+    int width = gdImageSX(img);
+    int height = gdImageSY(img);
+    int red, white, blue;
+ 
+    // 白日位於青天面積正中央, 因此中心點座標為長寬各 1/4 處
+    int center_x = (int)(width / 4);
+    int center_y = (int)(height / 4);
+ 
+    int sun_radius = (int)(width / 8);
+    int white_circle_dia = sun_radius;
+    int blue_circle_dia = white_circle_dia + white_circle_dia * 2 / 15;
+ 
+    red = gdImageColorAllocate(img, 255, 0, 0); // 紅色
+    white = gdImageColorAllocate(img, 255, 255, 255); // 白色
+    blue = gdImageColorAllocate(img, 0, 0, 149); // 藍色
+ 
+    gdImageFilledRectangle(img, 0, 0, width, height, red);
+    gdImageFilledRectangle(img, 0, 0, (int)(width / 2.0), (int)(height / 2.0), blue);
+    draw_white_sun(img, center_x, center_y, sunS_radius, white);
+    gdImageFilledEllipse(img, center_x, center_y, blue_circle_dia, blue_circle_dia, blue);
+    gdImageFilledEllipse(img, center_x, center_y, white_circle_dia, white_circle_dia, white);
+ 
+    // 在青天與滿地紅的圖案中以白色畫線繪製連接菱形的四個關鍵點
+    gdImageSetThickness(img, 10); // 設置線條粗度為10
+    gdImageLine(img, 429, 125, 279, 165, white);
+    gdImageLine(img, 279, 165, 170, 274, white);
+    gdImageLine(img, 170, 274, 170, 274, white);
+    gdImageLine(img, 429, 125, 170, 274, white); // 加入第四條連線
+}
+void draw_white_sun(gdImagePtr img, int x, int y, int size, int color) {
+    // 實現 draw_white_sun 函數的內容
+    // 可以在此處繪製白日的內部圖案
+}
+</pre>
+<p><br/><br/></p>
 <p><br/><br/></p>
 <p><video controls="controls" height="248" width="496">
 <source src="/images/完成4.mp4" type="video/mp4"/></video></p>
@@ -1235,8 +1236,7 @@ void draw_roc_flag(gdImagePtr img) { <span></span>
   圓線交集（圓x，圓y，半徑，x6，y6，x5，y5）；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
   }</span></span></pre>
 <p><br/><video controls="controls" height="247" width="494">
-<source src="/images/5.mp4" type="video/mp4"/></video></p>
-<h1>w16</h1>
+<source src="/images/5.mp4" type="video/mp4"/></video></p><h1>w16</h1>
 <p>(1)</p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;gd.h&gt;
 #include &lt;stdio.h&gt;
