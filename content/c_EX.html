@@ -131,7 +131,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='關於.html'>關於</a><li><a href='W5.html'>W5</a><li class='has-children'><a href='w6.html'>w6</a><ul class='dropdown'><li><a href='美國.html'>美國</a><li><a href='台灣.html'>台灣</a></li></ul><li class='has-children'><a href='w7.html'>w7</a><ul class='dropdown'><li><a href='韓國.html'>韓國</a><li><a href='英國.html'>英國</a><li><a href='日本.html'>日本</a><li><a href='中國.html'>中國</a></li></ul><li><a href='w12.html'>w12</a><li><a href='w13.html'>w13</a><li><a href='W15.html'>W15</a><li><a href='w16.html'>w16</a><li><a href='c_EX.html'>c_EX</a><li><a href='ANSIC.html'>ANSIC</a><li><a href='期末總結.html'>期末總結</a><li><a href='布萊頓.html'>布萊頓</a></li>
+                     <li><a href='About.html'>About</a><li><a href='W5.html'>W5</a><li class='has-children'><a href='w6.html'>w6</a><ul class='dropdown'><li><a href='美國.html'>美國</a><li><a href='台灣.html'>台灣</a></li></ul><li class='has-children'><a href='w7.html'>w7</a><ul class='dropdown'><li><a href='韓國.html'>韓國</a><li><a href='英國.html'>英國</a><li><a href='日本.html'>日本</a><li><a href='中國.html'>中國</a></li></ul><li><a href='w12.html'>w12</a><li><a href='w13.html'>w13</a><li><a href='W15.html'>W15</a><li><a href='w16.html'>w16</a><li><a href='c_EX.html'>c_EX</a><li><a href='ANSIC.html'>ANSIC</a><li><a href='期末總結.html'>期末總結</a><li><a href='Brython.html'>Brython</a></li>
                       </ul>
                 </nav>
               </div>
@@ -143,334 +143,131 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">w16 << <a href='w16.html'>Previous</a> <a href='ANSIC.html'>Next</a> >> ANSIC<br /><h1>c_EX</h1>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">(1)</span></span></p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">#include &lt;stdio.h&gt;</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-int main()  </span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-{</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 列印名稱</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    printf("姓名：亞歷珊卓·阿布拉莫夫\n");</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 列印出生日期</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    printf("出生日期：1975 年 7 月 14 日\n");</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 列印手機號碼</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    printf("手機: 99-9999999999\n");</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 表示執行成功</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    返回（0）；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-}</span></span></pre>
-<p><img caption="false" height="58" src="./../images/1.png" width="200"/></p>
-<p><span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">(2 </span></span></span><span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">)</span></span></span></p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">#include &lt;stdio.h&gt;</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-#include &lt;字串.h&gt;</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-浮動我的半徑；</span><span style="vertical-align: inherit;">/* 球體半徑 */</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-浮動我的音量；</span><span style="vertical-align: inherit;">/* 球體的體積（待計算） */</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-字元行_文字[50]；</span><span style="vertical-align: inherit;">/* 鍵盤上的一行 */</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-/* pi 的值到 50 位，取自維基百科 */</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-常量浮點 PI = 3.6939937510；</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-int main() {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-printf("請輸入球體的半徑："); </span><span style="vertical-align: inherit;">// 提示使用者輸入球體的半徑。</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-if (fgets(line_text, sizeof(line_text), stdin) == NULL) {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-fprintf(stderr, "讀取輸入時發生錯誤。\n");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-返回1；</span><span style="vertical-align: inherit;">// 傳回非零值來指示錯誤。</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-}</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// 檢查輸入中是否有換行符</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-char *newline = strchr(line_text, '\n');</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-如果（換行符號== NULL）{</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-fprintf(stderr, "錯誤: 輸入太長。\n");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-返回1；</span><span style="vertical-align: inherit;">// 傳回非零值來指示錯誤。</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-}</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// 刪除換行符號（如果存在）</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-*換行='\0';</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-if (sscanf(line_text, "%f", &amp;myradius) != 1) {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-fprintf(stderr, "將輸入轉換為浮點數時發生錯誤。\n");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-返回1；</span><span style="vertical-align: inherit;">// 傳回非零值來指示錯誤。</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-}</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-如果（myradius &lt; 0）{</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-fprintf(stderr, "錯誤: 半徑不能為負數。\n");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-返回1；</span><span style="vertical-align: inherit;">// 傳回非零值來指示錯誤。</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-}</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-myvolume = (4.0 / 3.0) * PI * (myradius * myradius * myradius); </span><span style="vertical-align: inherit;">/* 使用公式計算球體的體積。</span><span style="vertical-align: inherit;">*/</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-printf("半徑為 %.2f 的球體的體積為 %.2f。\n", myradius, myvolume); </span><span style="vertical-align: inherit;">// 列印計算出的球體體積。</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-返回0；</span><span style="vertical-align: inherit;">// 回傳0表示程式執行成功。</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-}</span></span></pre>
-<p><br/><img caption="false" height="39" src="./../images/2.png" width="200"/></p>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"></span></span></span></span><img caption="false" height="0" src="./../images/motion_plot.png" width="500"/></p>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">(3)</span></span></p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">#include &lt;stdio.h&gt;</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-int main() {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    浮點rec_width；</span><span style="vertical-align: inherit;">/* 宣告變數 'rec_width' 來儲存矩形的寬度 */</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    浮動記錄高度；</span><span style="vertical-align: inherit;">/* 宣告變數 'rec_height' 來儲存矩形的高度 */</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    浮動rec_perimeter；</span><span style="vertical-align: inherit;">/* 宣告變數 'rec_perimeter' 來儲存週長（待計算） */</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 提示使用者輸入矩形的高度。</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    printf("請輸入長方形的高度：");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    if (scanf("%f", &amp;rec_height) != 1) {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        fprintf(stderr, "錯誤: 高度輸入無效\n");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        返回1；</span><span style="vertical-align: inherit;">// 回傳錯誤代碼。</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    }</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 提示使用者輸入矩形的寬度。</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    printf("請輸入長方形的寬度：");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    if (scanf("%f", &amp;rec_width) != 1) {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        fprintf(stderr, "錯誤: 寬度輸入無效\n");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        返回1；</span><span style="vertical-align: inherit;">// 回傳錯誤代碼。</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    }</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 使用下列公式計算矩形的周長：週長 = 2 * ( 寬度 + 高度 )</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    記錄週長 = 2.0 * (記錄高度 + 記錄寬度);</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 列印計算出的矩形週長。</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    printf("長方形的周長是：%f\n", rec_perimeter);</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    返回0；</span><span style="vertical-align: inherit;">// 表示程式執行成功。</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-}</span></span><span></span>
-</pre>
-<p><img caption="false" height="61" src="./../images/3.png" width="200"/></p>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">(4)</span></span></p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">#include &lt;stdio.h&gt;</span></span><span></span>
-<span></span>
-float kmph;              /* kilometers per hour */<span></span>
-float miph;              /* miles per hour (to be computed) */<span></span>
-char  line_text[50];      /* a line from the keyboard */<span></span>
-<span></span>
-int main() {<span></span>
-    printf("Input kilometers per hour: ");   // Prompt the user to input kilometers per hour.<span></span>
-<span></span>
-    if (fgets(line_text, sizeof(line_text), stdin) == NULL) {<span></span>
-        fprintf(stderr, "Error reading input.\n");<span></span>
-        return 1;  // Return an error code.<span></span>
-    }<span></span>
-<span></span>
-    if (sscanf(line_text, "%f", &amp;kmph) != 1) {<span></span>
-        fprintf(stderr, "Error: Invalid input. Please enter a numeric value.\n");<span></span>
-        return 1;  // Return an error code.<span></span>
-    }<span></span>
-<span></span>
-    miph = kmph * 0.6213712;   // Convert kilometers per hour to miles per hour.<span></span>
-    printf("%f miles per hour\n", miph);   // Print the result in miles per hour.<span></span>
-<span></span>
-    return 0;   // Return 0 to indicate successful execution of the program.<span></span>
-}<span></span>
-</pre>
-<p><img caption="false" height="70" src="./../images/4.png" width="200"/></p>
-<p>(5)</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;<span></span>
-<span></span>
-int hrs;          /* given number of hours */<span></span>
-int mins;         /* given number of minutes */<span></span>
-int tot_mins;     /* total number of minutes (to be computed) */<span></span>
-<span></span>
-const int MINaHOUR = 60;      /* number of minutes in an hour */<span></span>
-<span></span>
-char line_text[50];      /* line of input from the keyboard */<span></span>
-<span></span>
-int main() {<span></span>
-    printf("Input hours: ");   // Prompt the user to input hours.<span></span>
-<span></span>
-    if (fgets(line_text, sizeof(line_text), stdin) == NULL) {<span></span>
-        fprintf(stderr, "Error reading input for hours.\n");<span></span>
-        return 1;  // Return an error code.<span></span>
-    }<span></span>
-<span></span>
-    if (sscanf(line_text, "%d", &amp;hrs) != 1) {<span></span>
-        fprintf(stderr, "Error: Invalid input for hours. Please enter an integer.\n");<span></span>
-        return 1;  // Return an error code.<span></span>
-    }<span></span>
-<span></span>
-    printf("Input minutes: ");   // Prompt the user to input minutes.<span></span>
-<span></span>
-    if (fgets(line_text, sizeof(line_text), stdin) == NULL) {<span></span>
-        fprintf(stderr, "Error reading input for minutes.\n");<span></span>
-        return 1;  // Return an error code.<span></span>
-    }<span></span>
-<span></span>
-    if (sscanf(line_text, "%d", &amp;mins) != 1) {<span></span>
-        fprintf(stderr, "Error: Invalid input for minutes. Please enter an integer.\n");<span></span>
-        return 1;  // Return an error code.<span></span>
-    }<span></span>
-<span></span>
-    tot_mins = mins + (hrs * MINaHOUR);   // Calculate the total number of minutes.<span></span>
-<span></span>
-    printf("Total: %d minutes.\n", tot_mins);   // Print the total number of minutes.<span></span>
-<span></span>
-    return 0;   // Return 0 to indicate successful execution of the program.<span></span>
-}<span></span>
-</pre>
-<p><img caption="false" height="92" src="./../images/5.png" width="200"/></p>
-<p>(6)</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;<span></span>
-<span></span>
-int tot_mins;  /* given number of minutes */<span></span>
-int hrs;        /* number of hours (to be computed) */<span></span>
-int mins;       /* number of minutes (to be computed) */<span></span>
-<span></span>
-const int MINaHOUR = 60;      /* number of minutes in an hour */<span></span>
-<span></span>
-char line_text[50];      /* line of input from keyboard */<span></span>
-<span></span>
-int main() {<span></span>
-    printf("Input minutes: ");   // Prompt the user to input minutes.<span></span>
-<span></span>
-    if (fgets(line_text, sizeof(line_text), stdin) == NULL) {<span></span>
-        printf("Error reading input.\n");<span></span>
-        return 1;  // Return an error code.<span></span>
-    }<span></span>
-<span></span>
-    sscanf(line_text, "%d", &amp;tot_mins);   // Convert the input to an integer and store it in 'tot_mins'.<span></span>
-<span></span>
-    if (tot_mins &lt; 0) {<span></span>
-        printf("Please enter a non-negative value for minutes.\n");<span></span>
-        return 1;  // Return an error code.<span></span>
-    }<span></span>
-<span></span>
-    hrs = (tot_mins / MINaHOUR);   // Calculate the number of hours.<span></span>
-    mins = (tot_mins % MINaHOUR);   // Calculate the remaining minutes.<span></span>
-<span></span>
-    printf("%d Hours, %d Minutes.\n", hrs, mins);   // Print the calculated hours and minutes.<span></span>
-<span></span>
-    return 0;   // Return 0 to indicate successful execution of the program.<span></span>
-}<span></span>
-</pre>
-<p><img caption="false" height="74" src="./../images/6.png" width="200"/></p>
-<p></p>
-<p>(7)</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;<span></span>
-<span></span>
-int main() {<span></span>
-char firstname[20], lastname[20]; // Declare character arrays for first name and last name with a maximum size of 20 characters each.<span></span>
-int bir_year; // Declare an integer variable 'bir_year' to store the year of birth.<span></span>
-<span></span>
-printf("Input your firstname: "); // Prompt the user to input their first name.<span></span>
-if (scanf("%19s", firstname) != 1) {<span></span>
-fprintf(stderr, "Error: Failed to read firstname.\n");<span></span>
-return 1; // Return an error code.<span></span>
-}<span></span>
-<span></span>
-printf("Input your lastname: "); // Prompt the user to input their last name.<span></span>
-if (scanf("%19s", lastname) != 1) {<span></span>
-fprintf(stderr, "Error: Failed to read lastname.\n");<span></span>
-return 1; // Return an error code.<span></span>
-}<span></span>
-<span></span>
-printf("Input your year of birth: "); // Prompt the user to input their year of birth.<span></span>
-if (scanf("%d", &amp;bir_year) != 1) {<span></span>
-fprintf(stderr, "Error: Failed to read year of birth.\n");<span></span>
-return 1; // Return an error code.<span></span>
-}<span></span>
-<span></span>
-printf("%s %s %d\n", firstname, lastname, bir_year); // Print the first name, last name, and year of birth.<span></span>
-<span></span>
-return 0; // Return 0 to indicate successful execution of the program.<span></span>
+<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">(1)C 標準輸出函數</span></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+void main()
+{
+ /* 印出 Hello */
+printf("Hello World!");
 }</pre>
-<p></p>
-<p><img caption="false" height="96" src="./../images/7.png" width="200"/></p>
-<p>(8)</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;<span></span>
-<span></span>
-int num1, num2, num3;   /* declaration of three variables */<span></span>
-int sum;                /* variable to store the sum of numbers */<span></span>
-char line_text[50];     /* line of input from keyboard */<span></span>
-<span></span>
-int main() {<span></span>
-    printf("Input three numbers separated by comma : ");   // Prompt the user to input three numbers separated by a comma.<span></span>
-<span></span>
-    if (fgets(line_text, sizeof(line_text), stdin) == NULL) {<span></span>
-        fprintf(stderr, "Error reading input.\n");<span></span>
-        return 1;  // Return 1 to indicate an error.<span></span>
-    }<span></span>
-<span></span>
-    // Clear the input buffer by consuming characters until a newline is encountered<span></span>
-    int c;<span></span>
-    while ((c = getchar()) != '\n' &amp;&amp; c != EOF);<span></span>
-<span></span>
-    sscanf(line_text, "%d, %d, %d", &amp;num1, &amp;num2, &amp;num3);   // Convert the input to integers and store them in 'num1', 'num2', 'num3'.<span></span>
-    sum = num1 + num2 + num3;   // Calculate the sum of the three numbers.<span></span>
-    printf("The sum of three numbers : %d\n", sum);   // Print the sum of the three numbers.<span></span>
-    return 0;   // Return 0 to indicate successful execution of the program.<span></span>
-}<span></span>
+<p><img caption="false" height="68" src="./../images/001.png" width="250"/></p>
+<p><span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">(2 </span></span></span><span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">)C 標準輸出函數</span></span></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int main()
+{
+/* 印出 Hello World! Bye Bye */
+printf("Hello World! ");
+printf("Bye ");
+printf("Bye");
+return 0;
+}</pre>
+<p><img alt="" height="43" src="./../images/002.png" width="250"/><img caption="false" height="0" src="./../images/motion_plot.png" width="500"/></p>
+<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">(3)c變數宣告</span></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int main()
+{
+int a = 1;
+int A = 8;
+int b = 2, c;
+c = A - a + b;
+/* 輸出 a, A, b, c 到螢幕 */
+printf( "a = %d, A = %d, b = %d, c = %d ", a, A, b, c );
+return 0;
+}
 </pre>
-<p><img caption="false" height="52" src="./../images/8.png" width="200"/></p>
-<p></p>
-<p>(9)</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;<span></span>
-<span></span>
-int main() {<span></span>
-    int num1, num2;   // Declare two integer variables 'num1' and 'num2'.<span></span>
-    int sum, sub, mult, mod;   // Declare variables to store the results of arithmetic operations.<span></span>
-    float div;   // Declare a float variable 'div' to store the result of division.<span></span>
-<span></span>
-    /* <span></span>
-     * Read two numbers from the user separated by a comma <span></span>
-     */  <span></span>
-    printf("Input any two numbers separated by a comma: ");   // Prompt the user to input two numbers separated by a comma.<span></span>
-<span></span>
-    // Check the return value of scanf<span></span>
-    if (scanf("%d , %d", &amp;num1, &amp;num2) != 2) {<span></span>
-        printf("Invalid input. Please enter two numbers.\n");<span></span>
-        return 1;  // Return 1 to indicate an error.<span></span>
-    }<span></span>
-<span></span>
-    /* <span></span>
-     * Perform all arithmetic operations <span></span>
-     */   <span></span>
-    sum = num1 + num2;   // Calculate the sum of 'num1' and 'num2'.<span></span>
-    sub = num1 - num2;   // Calculate the difference between 'num1' and 'num2'.<span></span>
-    mult = num1 * num2;  // Calculate the product of 'num1' and 'num2'.<span></span>
-    div = (float)num1 / num2;   // Calculate the division of 'num1' by 'num2' and cast the result to a float.<span></span>
-    mod = num1 % num2;   // Calculate the modulus of 'num1' and 'num2'.<span></span>
-<span></span>
-    /* <span></span>
-     * Print the result of all arithmetic operations <span></span>
-     */  <span></span>
-    printf("The sum of the given numbers: %d\n", sum);   // Print the sum.<span></span>
-    printf("The difference of the given numbers: %d\n", sub);   // Print the difference.<span></span>
-    printf("The product of the given numbers: %d\n", mult);   // Print the product.<span></span>
-    printf("The quotient of the given numbers: %f\n", div);   // Print the quotient.<span></span>
-    printf("MODULUS: %d\n", mod);   // Print the modulus.<span></span>
-<span></span>
-    return 0;   // Return 0 to indicate successful execution of the program.   <span></span>
-}<span></span>
+<p><img caption="false" height="41" src="./../images/003.png" width="300"/><br/><br/></p>
+<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">(4)C 的浮點數運算</span></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+void main()
+{
+float a = 0.5;
+double b = 1.2;
+int c = 3;
+b = b + a + c;
+/* 輸出 a, b, c 到螢幕 */
+printf( " a = %3.1f, b = %3.1f, c = %d ", a ,b, c );
+}</pre>
+<p><img caption="false" height="44" src="./../images/004.png" width="300"/><br/><br/></p>
+<p>(5)C 字元型態</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int main()
+{
+char x, y;
+x = 'a';
+y = (char)97;
+/* 輸出 x, y, x, 最後一個是以 ASCII 值顯示 y */
+printf( " x = %c, y = %c, ASCII of y = %d", x, y, y );
+return 0;
+}</pre>
+<p><img caption="false" height="40" src="./../images/005.png" width="300"/><br/><br/></p>
+<p>(6)常數數字表示法</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main() {
+    int a = 64;
+    int b = 0x40;
+    long c = 64L;
+
+    printf("%d,%d,%ld", a, b, c);  // 使用 %ld 來打印 long 整數型別的變數 c
+
+    return 0;
+}
 </pre>
-<p><img caption="false" height="75" src="./../images/9.png" width="200"/></p>
 <p></p>
-<p>(10)</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;<span></span>
-<span></span>
-int main()  <span></span>
-{  <span></span>
-    int ang1, ang2, ang3; /* Three angles of a triangle */<span></span>
-  <span></span>
-    /* Read two angles of the triangle from the user separated by a comma */  <span></span>
-    printf("Input two angles of the triangle separated by a comma: ");  <span></span>
-<span></span>
-    // Check the return value of scanf<span></span>
-    if (scanf("%d, %d", &amp;ang1, &amp;ang2) != 2) {<span></span>
-        // If the expected number of inputs is not read, print an error message<span></span>
-        printf("Error: Invalid input format.\n");<span></span>
-        return 1; // Return a non-zero value to indicate an error<span></span>
-    }<span></span>
-  <span></span>
-    ang3 = 180 - (ang1 + ang2);  /* Calculate the third angle */<span></span>
-  <span></span>
-    printf("Third angle of the triangle: %d\n", ang3);  <span></span>
-  <span></span>
-    return 0;  <span></span>
-}<span></span>
-</pre>
-<p><img caption="false" height="47" src="./../images/10.png" width="200"/></p>
+<p><img caption="false" height="60" src="./../images/006.png" width="250"/></p>
+<p></p>
+<p>(7)算術運算元</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include&lt;stdio.h&gt;
+int main()
+{
+int a,b;
+a = 10; b = 3;
+printf( "%d \n", a * b );
+printf( "%d \n", a / b );
+printf( "%d \n", a + b );
+printf( "%d \n", a - b );
+printf( "%d \n", a % b );
+return 0;
+}</pre>
+<p><img alt="" height="153" src="./../images/007.png" width="250"/></p>
+<p></p>
+<p>(8)位元運算元</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include&lt;stdio.h&gt;
+void main()
+{
+int a,b;
+a = 15;
+b = 1;
+printf("%d \n", a | b ); /* a OR b */
+printf("%d \n", a &amp; b ); /* a AND b */
+printf("%d \n", a ^ b ); /* a XOR b */
+printf("%d \n", a &lt;&lt; 1 ); /* a 位元左移 1 位 */
+printf("%d \n", a &gt;&gt; 1 ); /* a 位元右移一位 */
+printf("%d \n", ~a ); /* A 的補數運算 */
+}</pre>
+<p><img alt="" height="138" src="./../images/008.png" width="250"/></p>
+<p></p>
+<p>(9)邏輯運算元</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+void main()
+{
+int a;
+a = 3;
+printf("%d\n", !a );
+a = 0;
+printf("%d\n", !a );
+}</pre>
+<p><img alt="" height="72" src="./../images/009.png" width="250"/><br/><br/></p>
+<p></p>
+<p>(10)Logical AND</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+void main()
+{
+printf("%d\n", 1 &amp;&amp; 3 );
+printf("%d\n", 0 &amp;&amp; 0 );
+printf("%d\n", 2 &amp;&amp; 2 );
+}</pre>
+<p><img alt="" height="88" src="./../images/010.png" width="250"/></p>
 <p></p>
 <p>(11)</p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt; // Include standard input/output library<span></span>
@@ -822,8 +619,7 @@ int 測試（int x，int y）</span></span><span></span><span style="vertical-al
 }</span></span><span></span>
 </pre>
 <p><img caption="false" height="74" src="./../images/20.png" width="200"/></p>
-<p></p>
-<br />w16 << <a href='w16.html'>Previous</a> <a href='ANSIC.html'>Next</a> >> ANSIC</div>
+<p></p><br />w16 << <a href='w16.html'>Previous</a> <a href='ANSIC.html'>Next</a> >> ANSIC</div>
         
     <!-- footer -->
       <div class="container">
