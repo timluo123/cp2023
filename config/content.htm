@@ -1474,6 +1474,7 @@ int main() {
 }</pre>
 <p><br/><br/><br/><img alt="" height="300" src="/images/motion_plot.png" width="400"/></p>
 <h1>c_EX</h1>
+<h2>Exercises1</h2>
 <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">(1)C 標準輸出函數</span></span></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 void main()
@@ -1600,356 +1601,160 @@ printf("%d\n", 2 &amp;&amp; 2 );
 }</pre>
 <p><img alt="" height="88" src="/images/010.png" width="250"/></p>
 <p></p>
-<p>(11)</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt; // Include standard input/output library<span></span>
-<span></span>
-int test(int x, int y); // Declare the function 'test' with two integer parameters<span></span>
-<span></span>
-int main(void)<span></span>
-{<span></span>
-    // Call the function 'test' with arguments 1 and 2 and print the result<span></span>
-    printf("%d", test(1, 2));<span></span>
-<span></span>
-    // Print a newline for formatting<span></span>
-    printf("\n");<span></span>
-<span></span>
-    // Call the function 'test' with arguments 2 and 2 and print the result<span></span>
-    printf("%d", test(2, 2));<span></span>
-}<span></span>
-// Function definition for 'test'<span></span>
-int test(int x, int y)<span></span>
-{<span></span>
-    // Conditional expression: If x is equal to y, return (x + y) multiplied by 3, otherwise return x + y<span></span>
-    return x == y ? (x + y) * 3 : x + y;<span></span>
-}<span></span>
-</pre>
-<p><img caption="false" height="59" src="/images/11.png" width="200"/></p>
+<h2>Exercises2</h2>
+<p>(1)<span>Logical OR</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+void main()
+{
+printf("%d\n", 1 || 0 );
+printf("%d\n", 0 || 0 );
+printf("%d\n", 2 || 2 );
+}</pre>
 <p></p>
-<p>(12)</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;<span></span>
-<span></span>
-int main()  <span></span>
-{  <span></span>
-    int ang1, ang2, ang3; /* Three angles of a triangle */<span></span>
-  <span></span>
-    /* Read two angles of the triangle from the user separated by a comma */  <span></span>
-    printf("Input two angles of the triangle separated by a comma: ");  <span></span>
-<span></span>
-    // Check the return value of scanf<span></span>
-    if (scanf("%d, %d", &amp;ang1, &amp;ang2) != 2) {<span></span>
-        // If the expected number of inputs is not read, print an error message<span></span>
-        printf("Error: Invalid input format.\n");<span></span>
-        return 1; // Return a non-zero value to indicate an error<span></span>
-    }<span></span>
-  <span></span>
-    ang3 = 180 - (ang1 + ang2);  /* Calculate the third angle */<span></span>
-  <span></span>
-    printf("Third angle of the triangle: %d\n", ang3);  <span></span>
-  <span></span>
-    return 0;  <span></span>
-}<span></span>
+<p><img alt="" height="115" src="/images/011.png" width="250"/></p>
+<p>(2)<span>sizeof 範例</span></p>
+<p>#include &lt;stdio.h&gt;<br/>void main()<br/>{<br/>char a;<br/>printf( " The size of int is %d \n", sizeof(int) );<br/>printf( " The size of char a is %d \n", sizeof(a) );<br/>}</p>
+<p><img alt="" height="179" src="/images/012.png" width="250"/></p>
+<p>(3)<span>if 範例</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main() {
+    char ch; 
+    printf("input a char: ");
+    scanf("%c", &amp;ch);
+    if (ch == 'a') {
+        printf("You pressed 'a'\n");
+    }
+    return 0;
+}
 </pre>
-<p><img caption="false" height="76" src="/images/12.png" width="200"/></p>
-<p></p>
-<p>(13)</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt; // Include standard input/output library<span></span>
-<span></span>
-int test(int x, int y); // Declare the function 'test' with two integer parameters<span></span>
-<span></span>
-int main(void)<span></span>
-{<span></span>
-    // Call the function 'test' with arguments 25 and 5, and print the result<span></span>
-    printf("%d", test(25, 5));<span></span>
-<span></span>
-    // Print a newline for formatting<span></span>
-    printf("\n");<span></span>
-<span></span>
-    // Call the function 'test' with arguments 20 and 30, and print the result<span></span>
-    printf("%d", test(20, 30));<span></span>
-<span></span>
-    // Print a newline for formatting<span></span>
-    printf("\n");<span></span>
-<span></span>
-    // Call the function 'test' with arguments 20 and 25, and print the result<span></span>
-    printf("%d", test(20, 25));<span></span>
-}<span></span>
-<span></span>
-// Function definition for 'test'<span></span>
-int test(int x, int y)<span></span>
-{<span></span>
-    // Return 1 (true) if any of the following conditions are true:<span></span>
-    // 1. x is equal to 30<span></span>
-    // 2. y is equal to 30<span></span>
-    // 3. the sum of x and y is equal to 30<span></span>
-    return x == 30 || y == 30 || (x + y == 30);<span></span>
-}<span></span>
+<p><img alt="" height="84" src="/images/013.png" width="250"/><br/><br/></p>
+<p>(4)<span>if 與 else 範例</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main() {
+    char ch; 
+    printf("input a char: ");
+    scanf("%c", &amp;ch);
+    if (ch == 'a') {
+        printf("You pressed 'a'\n");
+    } else {
+        printf("You didn't press 'a'\n");
+    }
+    return 0;
+}
 </pre>
-<p><img caption="false" height="74" src="/images/13.png" width="200"/></p>
-<p>(14)</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // Include standard input/output library<span></span>
-#include &lt;stdlib.h&gt; // Include standard library for absolute value function<span></span>
-<span></span>
-int test(int x); // Declare the function 'test' with an integer parameter<span></span>
-<span></span>
-int main(void)<span></span>
-{<span></span>
-    // Call the function 'test' with argument 103 and print the result<span></span>
-    printf("%d", test(103));<span></span>
-<span></span>
-    // Print a newline for formatting<span></span>
-    printf("\n");<span></span>
-<span></span>
-    // Call the function 'test' with argument 90 and print the result<span></span>
-    printf("%d", test(90));<span></span>
-<span></span>
-    // Print a newline for formatting<span></span>
-    printf("\n");<span></span>
-<span></span>
-    // Call the function 'test' with argument 89 and print the result<span></span>
-    printf("%d", test(89));<span></span>
-}<span></span>
-<span></span>
-// Function definition for 'test'<span></span>
-int test(int x)<span></span>
-{<span></span>
-    // Check if the absolute difference between 'x' and 100 is less than or equal to 10,<span></span>
-    // or if the absolute difference between 'x' and 200 is less than or equal to 10.<span></span>
-    // Return 1 (true) if either condition is true, otherwise return 0 (false).<span></span>
-    if (abs(x - 100) &lt;= 10 || abs(x - 200) &lt;= 10)<span></span>
-        return 1;<span></span>
-    return 0;<span></span>
-}<span></span>
+<p><img alt="" height="84" src="/images/014.png" width="250"/><br/><br/></p>
+<p><span>(5)if 與 else 範例2</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+ 
+int main() {
+    int i; 
+    printf("input an integer: ");
+    scanf("%d", &amp;i);
+ 
+    if (i &lt; 100) {
+        printf("i &lt; 100\n");
+    } else {
+        if ((i &gt;= 100) &amp;&amp; (i &lt; 200)) {
+            printf("i &gt;= 100 and i &lt; 200\n");
+        } else {
+            printf("i &gt;= 200\n");
+        }
+    }
+ 
+    return 0;
+}</pre>
+<p><img alt="" height="84" src="/images/015.png" width="250"/><br/><br/></p>
+<p><span>(6)switch - case 範例</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+ 
+int main() {
+    char c;
+    printf("Input a char: ");
+    scanf(" %c", &amp;c); // 加入一個空格在 %c 前，以排除之前的輸入緩衝區中的換行符號
+ 
+    switch(c) {
+        case 'a':
+            printf("You pressed 'a'\n");
+            break;
+        case 'b':
+            printf("You pressed 'b'\n");
+            break;
+        case 'c':
+            printf("You pressed 'c'\n");
+            break;
+        default:
+            printf("Not 'a', 'b', or 'c'\n");
+            break;
+    }
+ 
+    return 0;
+}
 </pre>
-<p><img caption="false" height="75" src="/images/14.png" width="200"/></p>
-<p><span>(15)</span></p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // Include standard input/output library<span></span>
-#include &lt;stdlib.h&gt; // Include standard library for modulo operation<span></span>
-<span></span>
-int test(int n); // Declare the function 'test' with an integer parameter<span></span>
-<span></span>
-int main(void)<span></span>
-{<span></span>
-    // Call the function 'test' with argument 3 and print the result<span></span>
-    printf("%d", test(3));<span></span>
-<span></span>
-    // Print a newline for formatting<span></span>
-    printf("\n");<span></span>
-<span></span>
-    // Call the function 'test' with argument 14 and print the result<span></span>
-    printf("%d", test(14));<span></span>
-<span></span>
-    // Print a newline for formatting<span></span>
-    printf("\n");<span></span>
-<span></span>
-    // Call the function 'test' with argument 12 and print the result<span></span>
-    printf("%d", test(12));<span></span>
-<span></span>
-    // Print a newline for formatting<span></span>
-    printf("\n");<span></span>
-<span></span>
-    // Call the function 'test' with argument 37 and print the result<span></span>
-    printf("%d", test(37));<span></span>
-}<span></span>
-<span></span>
-// Function definition for 'test'<span></span>
-int test(int n)<span></span>
-{<span></span>
-    // Check if 'n' is divisible by 3 or if 'n' is divisible by 7.<span></span>
-    // Return 1 (true) if either condition is true, otherwise return 0 (false).<span></span>
-    return n % 3 == 0 || n % 7 == 0;<span></span>
-}<span></span>
-</pre>
-<p><span><img caption="false" height="92" src="/images/15.png" width="200"/></span></p>
-<p><span>(16)</span></p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // Include standard input/output library<span></span>
-#include &lt;stdlib.h&gt; // Include standard library for absolute value function<span></span>
-<span></span>
-int test(int temp1, int temp2); // Declare the function 'test' with two integer parameters<span></span>
-<span></span>
-int main(void)<span></span>
-{<span></span>
-    // Call the function 'test' with arguments 120 and -1, and print the result<span></span>
-    printf("%d", test(120, -1));<span></span>
-<span></span>
-    // Print a newline for formatting<span></span>
-    printf("\n");<span></span>
-<span></span>
-    // Call the function 'test' with arguments -1 and 120, and print the result<span></span>
-    printf("%d", test(-1, 120));<span></span>
-<span></span>
-    // Print a newline for formatting<span></span>
-    printf("\n");<span></span>
-<span></span>
-    // Call the function 'test' with arguments 2 and 120, and print the result<span></span>
-    printf("%d", test(2, 120));<span></span>
-}<span></span>
-<span></span>
-// Function definition for 'test'<span></span>
-int test(int temp1, int temp2)<span></span>
-{<span></span>
-    // Check if either of the following conditions are true:<span></span>
-    // 1. temp1 is less than 0 and temp2 is greater than 100<span></span>
-    // 2. temp2 is less than 0 and temp1 is greater than 100<span></span>
-    // Return 1 (true) if either condition is true, otherwise return 0 (false).<span></span>
-    return temp1 &lt; 0 &amp;&amp; temp2 &gt; 100 || temp2 &lt; 0 &amp;&amp; temp1 &gt; 100;<span></span>
-}<span></span>
-</pre>
-<p><span><img caption="false" height="75" src="/images/16.png" width="200"/></span></p>
-<p><span>(17)</span></p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // Include standard input/output library<span></span>
-#include &lt;stdlib.h&gt; // Include standard library for absolute value function<span></span>
-<span></span>
-int test(int x, int y); // Declare the function 'test' with two integer parameters<span></span>
-<span></span>
-int main(void)<span></span>
-{<span></span>
-    // Call the function 'test' with arguments 100 and 199, and print the result<span></span>
-    printf("%d", test(100, 199));<span></span>
-<span></span>
-    // Print a newline for formatting<span></span>
-    printf("\n");<span></span>
-<span></span>
-    // Call the function 'test' with arguments 250 and 300, and print the result<span></span>
-    printf("%d", test(250, 300));<span></span>
-<span></span>
-    // Print a newline for formatting<span></span>
-    printf("\n");<span></span>
-<span></span>
-    // Call the function 'test' with arguments 105 and 190, and print the result<span></span>
-    printf("%d", test(105, 190));<span></span>
-}<span></span>
-<span></span>
-// Function definition for 'test'<span></span>
-int test(int x, int y)<span></span>
-{<span></span>
-    // Check if either of the following conditions are true:<span></span>
-    // 1. x is between 100 and 200 (inclusive)<span></span>
-    // 2. y is between 100 and 200 (inclusive)<span></span>
-    // Return 1 (true) if either condition is true, otherwise return 0 (false).<span></span>
-    return (x &gt;= 100 &amp;&amp; x &lt;= 200) || (y &gt;= 100 &amp;&amp; y &lt;= 200);<span></span>
-}<span></span>
-</pre>
-<p><span><img caption="false" height="75" src="/images/17.png" width="200"/></span></p>
-<p><span>(18)</span></p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // Include standard input/output library<span></span>
-#include &lt;stdlib.h&gt; // Include standard library for additional functions<span></span>
-<span></span>
-// Declare the function 'test' with three integer parameters<span></span>
-int test(int x, int y, int z);<span></span>
-<span></span>
-int main(void)<span></span>
-{<span></span>
-    // Call the function 'test' with arguments 11, 20, and 12, and print the result<span></span>
-    printf("%d", test(11, 20, 12));<span></span>
-<span></span>
-    // Print a newline for formatting<span></span>
-    printf("\n");<span></span>
-<span></span>
-    // Call the function 'test' with arguments 30, 30, and 17, and print the result<span></span>
-    printf("%d", test(30, 30, 17));<span></span>
-<span></span>
-    // Print a newline for formatting<span></span>
-    printf("\n");<span></span>
-<span></span>
-    // Call the function 'test' with arguments 25, 35, and 50, and print the result<span></span>
-    printf("%d", test(25, 35, 50));<span></span>
-<span></span>
-    // Print a newline for formatting<span></span>
-    printf("\n");<span></span>
-<span></span>
-    // Call the function 'test' with arguments 15, 12, and 8, and print the result<span></span>
-    printf("%d", test(15, 12, 8));<span></span>
-}<span></span>
-<span></span>
-// Function definition for 'test'<span></span>
-int test(int x, int y, int z)<span></span>
-{<span></span>
-    // Check if either of the following conditions are true for any of the variables (x, y, or z):<span></span>
-    // 1. The variable is between 20 and 50 (inclusive)<span></span>
-    // Return 1 (true) if any condition is true, otherwise return 0 (false).<span></span>
-    return (x &gt;= 20 &amp;&amp; x &lt;= 50) || (y &gt;= 20 &amp;&amp; y &lt;= 50) || (z &gt;= 20 &amp;&amp; z &lt;= 50);<span></span>
-}<span></span>
-</pre>
-<p><span><img caption="false" height="90" src="/images/18.png" width="200"/></span></p>
-<p><span>(19)</span></p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // Include standard input/output library<span></span>
-#include &lt;stdlib.h&gt; // Include standard library for additional functions<span></span>
-<span></span>
-// Declare the function 'test' with two integer parameters<span></span>
-int test(int x, int y);<span></span>
-<span></span>
-int main(void)<span></span>
-{<span></span>
-    // Call the function 'test' with arguments 20 and 84, and print the result<span></span>
-    printf("%d", test(20, 84));<span></span>
-<span></span>
-    // Print a newline for formatting<span></span>
-    printf("\n");<span></span>
-<span></span>
-    // Call the function 'test' with arguments 14 and 50, and print the result<span></span>
-    printf("%d", test(14, 50));<span></span>
-<span></span>
-    // Print a newline for formatting<span></span>
-    printf("\n");<span></span>
-<span></span>
-    // Call the function 'test' with arguments 11 and 45, and print the result<span></span>
-    printf("%d", test(11, 45));<span></span>
-<span></span>
-    // Print a newline for formatting<span></span>
-    printf("\n");<span></span>
-<span></span>
-    // Call the function 'test' with arguments 25 and 40, and print the result<span></span>
-    printf("%d", test(25, 40));<span></span>
-}<span></span>
-<span></span>
-// Function definition for 'test'<span></span>
-int test(int x, int y)<span></span>
-{<span></span>
-    // Check if either of the following conditions are true:<span></span>
-    // 1. x is less than or equal to 20 OR y is greater than or equal to 50<span></span>
-    // 2. x is less than or equal to 20 OR y is greater than or equal to 50<span></span>
-    // If any of the conditions are true, return 1 (true). Otherwise, return 0 (false).<span></span>
-    return (x &lt;= 20 || y &gt;= 50) || (x &lt;= 20 || y &gt;= 50);<span></span>
-}<span></span>
-</pre>
-<p><span><img caption="false" height="89" src="/images/19.png" width="200"/></span></p>
-<p><span>(20)</span></p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // Include standard input/output library<span></span>
-#include &lt;stdlib.h&gt; // Include standard library for additional functions<span></span>
-<span></span>
-// Declare the function 'test' with two integer parameters<span></span>
-int test(int x, int y);<span></span>
-<span></span>
-int main(void)<span></span>
-{<span></span>
-    // Call the function 'test' with arguments 78 and 95, and print the result<span></span>
-    printf("%d", test(78, 95));<span></span>
-<span></span>
-    // Print a newline for formatting<span></span>
-    printf("\n");<span></span>
-<span></span>
-    // Call the function 'test' with arguments 95 and 95, and print the result<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    printf("%d", 測試(95, 95));</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 列印換行符號以進行格式化</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    printf("\n");</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 使用參數 99 和 70 呼叫函數“test”，並列印結果</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    printf("%d", 測試(99, 70));</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-}</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// 'test' 的函數定義</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-int 測試（int x，int y）</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-{</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    整數 n = 100；</span><span style="vertical-align: inherit;">// 定義變數 'n' 並為其賦值 100</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int val = abs(x - n); </span><span style="vertical-align: inherit;">// 計算 'x' 和 'n' 之間的絕對差並將其儲存在 'val' 中</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int val2 = abs(y - n); </span><span style="vertical-align: inherit;">// 計算 'y' 和 'n' 之間的絕對差並將其儲存在 'val2' 中</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 檢查「val」是否等於「val2」。</span><span style="vertical-align: inherit;">如果為 true，則傳回 0。否則，如果 'val' 小於 'val2'，則傳回 'x'，否則傳回 'y'。</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    返回 val == val2 ？</span><span style="vertical-align: inherit;">0 : (val &lt; val2 ? x : y);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-}</span></span><span></span>
-</pre>
-<p><img caption="false" height="74" src="/images/20.png" width="200"/></p>
+<p><br/><img alt="" height="114" src="/images/016.png" width="250"/><br/><br/></p>
+<p><span>(7)switch - case 範例</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+ 
+int main() {
+    char c;
+    printf("Input a char: ");
+    scanf(" %c", &amp;c);
+ 
+    switch(c) {
+        case 'a':
+            printf("You pressed 'a'\n");
+            break;
+        case 'b':
+            printf("You pressed 'b'\n");
+            break;
+        case 'c':
+            printf("You pressed 'c'\n");
+            break;
+        default:
+            printf("Not 'a', 'b', or 'c'\n");
+            break;
+    }
+ 
+    return 0;
+}</pre>
+<p><br/><img alt="" height="84" src="/images/017.png" width="250"/></p>
+<p><span>(8)Program 1 - for</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include&lt;stdio.h&gt;
+ 
+void main() {
+    int i;
+    for (i = 0; i &lt; 6; i++) {
+        printf("%d\n", i); /* 印出 i */
+    }
+}</pre>
+<p><br/><img caption="false" height="139" src="/images/018.png" width="200"/></p>
+<p><span>(9)Program 2 - for</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+void main()
+{
+int i, j;
+for ( i = 0, j = 10; i &lt; 6; i++, j++ )
+{
+printf( "i = %d, ", i );
+printf( "j = %d \n", j );
+}
+}</pre>
+<p><img caption="false" height="133" src="/images/019.png" width="200"/><br/><br/></p>
+<p><span>(10)Program 3 - for</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+void main()
+{
+int i, j;
+j = 10; /* 迴圈外先設定初值 */
+for ( i = 0; i &lt; 6; i++ )
+{
+printf( "i = %d, ", i );
+printf( "j = %d \n", j );
+j++; /* 迴圈後加上變更運算式 */
+}
+}</pre>
+<p><img caption="false" height="136" src="/images/020.png" width="200"/><br/><br/></p>
 <p></p><h1>ANSIC</h1>
 <p>(1)計算球體體積</p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;

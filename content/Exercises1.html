@@ -142,96 +142,134 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">美國 << <a href='美國.html'>Previous</a> <a href='w7.html'>Next</a> >> w7<br /><h1>台灣</h1>
+    <div id="tipue_search_content">c_EX << <a href='c_EX.html'>Previous</a> <a href='Exercises2.html'>Next</a> >> Exercises2<br /><h1>Exercises1</h1>
+<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">(1)C 標準輸出函數</span></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+void main()
+{
+ /* 印出 Hello */
+printf("Hello World!");
+}</pre>
+<p><img caption="false" height="68" src="./../images/001.png" width="250"/></p>
+<p><span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">(2 </span></span></span><span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">)C 標準輸出函數</span></span></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int main()
+{
+/* 印出 Hello World! Bye Bye */
+printf("Hello World! ");
+printf("Bye ");
+printf("Bye");
+return 0;
+}</pre>
+<p><img alt="" height="43" src="./../images/002.png" width="250"/><img caption="false" height="0" src="./../images/motion_plot.png" width="500"/></p>
+<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">(3)c變數宣告</span></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int main()
+{
+int a = 1;
+int A = 8;
+int b = 2, c;
+c = A - a + b;
+/* 輸出 a, A, b, c 到螢幕 */
+printf( "a = %d, A = %d, b = %d, c = %d ", a, A, b, c );
+return 0;
+}
+</pre>
+<p><img caption="false" height="41" src="./../images/003.png" width="300"/><br/><br/></p>
+<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">(4)C 的浮點數運算</span></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+void main()
+{
+float a = 0.5;
+double b = 1.2;
+int c = 3;
+b = b + a + c;
+/* 輸出 a, b, c 到螢幕 */
+printf( " a = %3.1f, b = %3.1f, c = %d ", a ,b, c );
+}</pre>
+<p><img caption="false" height="44" src="./../images/004.png" width="300"/><br/><br/></p>
+<p>(5)C 字元型態</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int main()
+{
+char x, y;
+x = 'a';
+y = (char)97;
+/* 輸出 x, y, x, 最後一個是以 ASCII 值顯示 y */
+printf( " x = %c, y = %c, ASCII of y = %d", x, y, y );
+return 0;
+}</pre>
+<p><img caption="false" height="40" src="./../images/005.png" width="300"/><br/><br/></p>
+<p>(6)常數數字表示法</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main() {
+    int a = 64;
+    int b = 0x40;
+    long c = 64L;
+
+    printf("%d,%d,%ld", a, b, c);  // 使用 %ld 來打印 long 整數型別的變數 c
+
+    return 0;
+}
+</pre>
 <p></p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span><span>#include &lt;stdio.h&gt;</span></span><span></span><span><span>
-#include &lt;gd.h&gt;</span></span><span></span><span><span>
-#include &lt;數學.h&gt;</span></span><span></span>
-<span></span><span><span>
-無效draw_roc_flag（gdImagePtr img）；</span></span><span></span>
-void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, int white, int red, int blue);<span></span>
-<span></span>
-int main() {<span></span>
-    // width 3: height 2<span></span>
-    int width = 1200;<span></span>
-    int height = (int)(width*2.0 / 3.0);<span></span>
-<span></span>
-    gdImagePtr img = gdImageCreateTrueColor(width, height);<span></span>
-    gdImageAlphaBlending(img, 0);<span></span>
-<span></span>
-    draw_roc_flag(img);<span></span>
-<span></span>
-    FILE *outputFile = fopen("./roc_flag.png", "wb");<span></span>
-    if (outputFile == NULL) {<span></span>
-        fprintf(stderr, "Error opening the output file.\n");<span></span>
-        return 1;<span></span>
-    }<span></span>
-    gdImagePngEx(img, outputFile, 9);<span></span>
-    fclose(outputFile);<span></span>
-    gdImageDestroy(img);<span></span>
-    return 0;<span></span>
-}<span></span>
-<span></span>
-void draw_roc_flag(gdImagePtr img) {<span></span>
-    int width = gdImageSX(img);<span></span>
-    int height = gdImageSY(img);<span></span>
-    int red, white, blue;<span></span>
-    int center_x = (int)(width/4);<span></span>
-    int center_y = (int)(height/4);<span></span>
-    int sun_radius = (int)(width/8);<span></span>
-<span></span>
-    // Colors for the flag<span></span>
-    red = gdImageColorAllocate(img, 242, 0, 0); // Red color<span></span>
-    white = gdImageColorAllocate(img, 255, 255, 255); // White stripes<span></span>
-    blue = gdImageColorAllocate(img, 0, 41, 204); // Blue<span></span>
-<span></span>
-    // 繪製紅色矩形區域<span></span>
-    gdImageFilledRectangle(img, 0, 0, width, height, red);<span></span>
-<span></span>
-    // 繪製藍色矩形區域<span></span>
-    gdImageFilledRectangle(img, 0, 0, (int)(width/2.0), (int)(height/2.0), blue);<span></span>
-<span></span>
-    // 繪製太陽<span></span>
-    draw_white_sun(img, center_x, center_y, sun_radius, white, red, blue);<span></span>
-}<span></span>
-void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, int white, int red, int blue) {<span></span>
-    float angle = 0;<span></span>
-    int numRays = 12; // 光芒的數量<span></span>
-<span></span>
-    gdPoint points[3]; // 三個頂點的陣列<span></span>
-<span></span>
-    for (int i = 0; i &lt; numRays; i++) {<span></span>
-        angle = i * (2 * M_PI / numRays);<span></span>
-        float x1 = center_x + cos(angle) * sun_radius;<span></span>
-        float y1 = center_y + sin(angle) * sun_radius;<span></span>
-<span></span>
-        // 調整兩個底邊頂點的位置<span></span>
-      float x2 = center_x + cos(angle + 0.35) * (sun_radius * 0.5);<span></span>
-      float y2 = center_y + sin(angle + 0.35) * (sun_radius * 0.5);<span></span>
-      float x3 = center_x + cos(angle - 0.35) * (sun_radius * 0.5);<span></span>
-      float y3 = center_y + sin(angle - 0.35) * (sun_radius * 0.5);<span></span>
-<span></span>
-        // 設定多邊形的三個頂點<span></span>
-        points[0].x = (int)x1;<span></span>
-        points[0].y = (int)y1;<span></span>
-        points[1].x = (int)x2;<span></span>
-        points[1].y = (int)y2;<span></span>
-        points[2].x = (int)x3;<span></span>
-        points[2].y = (int)y3;<span></span>
-<span></span>
-        gdImageFilledPolygon(img, points, 3, white);<span></span>
-    }<span></span>
-  //外圈<span></span><span><span>
-  gdImageFilledEllipse(img, center_x, center_y, sun_radius * 1.2, sun_radius * 1.2, 藍色);</span></span><span></span>
-  <span></span><span><span>
-    // 相似太陽內部</span></span><span></span><span><span>
-    gdImageFilledEllipse(img, center_x, center_y, sun_radius * 1.1, sun_radius * 1.1, 白色);</span></span><span></span><span><span>
-}</span></span></pre>
-<p><img caption="false" height="367" src="./../images/roc_flag.png" width="550"/></p>
+<p><img caption="false" height="60" src="./../images/006.png" width="250"/></p>
 <p></p>
-<p><span><span>清除</span></span></p>
-<p><br/><span><span>cd 下載</span></span><br/><span><span>cc gd_roc_flag.c -lgd -lm </span></span><br/><span><span>./a.out</span></span></p>
-<br />美國 << <a href='美國.html'>Previous</a> <a href='w7.html'>Next</a> >> w7</div>
+<p>(7)算術運算元</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include&lt;stdio.h&gt;
+int main()
+{
+int a,b;
+a = 10; b = 3;
+printf( "%d \n", a * b );
+printf( "%d \n", a / b );
+printf( "%d \n", a + b );
+printf( "%d \n", a - b );
+printf( "%d \n", a % b );
+return 0;
+}</pre>
+<p><img alt="" height="153" src="./../images/007.png" width="250"/></p>
+<p></p>
+<p>(8)位元運算元</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include&lt;stdio.h&gt;
+void main()
+{
+int a,b;
+a = 15;
+b = 1;
+printf("%d \n", a | b ); /* a OR b */
+printf("%d \n", a &amp; b ); /* a AND b */
+printf("%d \n", a ^ b ); /* a XOR b */
+printf("%d \n", a &lt;&lt; 1 ); /* a 位元左移 1 位 */
+printf("%d \n", a &gt;&gt; 1 ); /* a 位元右移一位 */
+printf("%d \n", ~a ); /* A 的補數運算 */
+}</pre>
+<p><img alt="" height="138" src="./../images/008.png" width="250"/></p>
+<p></p>
+<p>(9)邏輯運算元</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+void main()
+{
+int a;
+a = 3;
+printf("%d\n", !a );
+a = 0;
+printf("%d\n", !a );
+}</pre>
+<p><img alt="" height="72" src="./../images/009.png" width="250"/><br/><br/></p>
+<p></p>
+<p>(10)Logical AND</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+void main()
+{
+printf("%d\n", 1 &amp;&amp; 3 );
+printf("%d\n", 0 &amp;&amp; 0 );
+printf("%d\n", 2 &amp;&amp; 2 );
+}</pre>
+<p><img alt="" height="88" src="./../images/010.png" width="250"/></p>
+<p></p>
+<br />c_EX << <a href='c_EX.html'>Previous</a> <a href='Exercises2.html'>Next</a> >> Exercises2</div>
         
     <!-- footer -->
       <div class="container">

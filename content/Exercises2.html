@@ -142,96 +142,161 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">美國 << <a href='美國.html'>Previous</a> <a href='w7.html'>Next</a> >> w7<br /><h1>台灣</h1>
+    <div id="tipue_search_content">Exercises1 << <a href='Exercises1.html'>Previous</a> <a href='ANSIC.html'>Next</a> >> ANSIC<br /><h1>Exercises2</h1>
+<p>(1)<span>Logical OR</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+void main()
+{
+printf("%d\n", 1 || 0 );
+printf("%d\n", 0 || 0 );
+printf("%d\n", 2 || 2 );
+}</pre>
 <p></p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span><span>#include &lt;stdio.h&gt;</span></span><span></span><span><span>
-#include &lt;gd.h&gt;</span></span><span></span><span><span>
-#include &lt;數學.h&gt;</span></span><span></span>
-<span></span><span><span>
-無效draw_roc_flag（gdImagePtr img）；</span></span><span></span>
-void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, int white, int red, int blue);<span></span>
-<span></span>
-int main() {<span></span>
-    // width 3: height 2<span></span>
-    int width = 1200;<span></span>
-    int height = (int)(width*2.0 / 3.0);<span></span>
-<span></span>
-    gdImagePtr img = gdImageCreateTrueColor(width, height);<span></span>
-    gdImageAlphaBlending(img, 0);<span></span>
-<span></span>
-    draw_roc_flag(img);<span></span>
-<span></span>
-    FILE *outputFile = fopen("./roc_flag.png", "wb");<span></span>
-    if (outputFile == NULL) {<span></span>
-        fprintf(stderr, "Error opening the output file.\n");<span></span>
-        return 1;<span></span>
-    }<span></span>
-    gdImagePngEx(img, outputFile, 9);<span></span>
-    fclose(outputFile);<span></span>
-    gdImageDestroy(img);<span></span>
-    return 0;<span></span>
-}<span></span>
-<span></span>
-void draw_roc_flag(gdImagePtr img) {<span></span>
-    int width = gdImageSX(img);<span></span>
-    int height = gdImageSY(img);<span></span>
-    int red, white, blue;<span></span>
-    int center_x = (int)(width/4);<span></span>
-    int center_y = (int)(height/4);<span></span>
-    int sun_radius = (int)(width/8);<span></span>
-<span></span>
-    // Colors for the flag<span></span>
-    red = gdImageColorAllocate(img, 242, 0, 0); // Red color<span></span>
-    white = gdImageColorAllocate(img, 255, 255, 255); // White stripes<span></span>
-    blue = gdImageColorAllocate(img, 0, 41, 204); // Blue<span></span>
-<span></span>
-    // 繪製紅色矩形區域<span></span>
-    gdImageFilledRectangle(img, 0, 0, width, height, red);<span></span>
-<span></span>
-    // 繪製藍色矩形區域<span></span>
-    gdImageFilledRectangle(img, 0, 0, (int)(width/2.0), (int)(height/2.0), blue);<span></span>
-<span></span>
-    // 繪製太陽<span></span>
-    draw_white_sun(img, center_x, center_y, sun_radius, white, red, blue);<span></span>
-}<span></span>
-void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, int white, int red, int blue) {<span></span>
-    float angle = 0;<span></span>
-    int numRays = 12; // 光芒的數量<span></span>
-<span></span>
-    gdPoint points[3]; // 三個頂點的陣列<span></span>
-<span></span>
-    for (int i = 0; i &lt; numRays; i++) {<span></span>
-        angle = i * (2 * M_PI / numRays);<span></span>
-        float x1 = center_x + cos(angle) * sun_radius;<span></span>
-        float y1 = center_y + sin(angle) * sun_radius;<span></span>
-<span></span>
-        // 調整兩個底邊頂點的位置<span></span>
-      float x2 = center_x + cos(angle + 0.35) * (sun_radius * 0.5);<span></span>
-      float y2 = center_y + sin(angle + 0.35) * (sun_radius * 0.5);<span></span>
-      float x3 = center_x + cos(angle - 0.35) * (sun_radius * 0.5);<span></span>
-      float y3 = center_y + sin(angle - 0.35) * (sun_radius * 0.5);<span></span>
-<span></span>
-        // 設定多邊形的三個頂點<span></span>
-        points[0].x = (int)x1;<span></span>
-        points[0].y = (int)y1;<span></span>
-        points[1].x = (int)x2;<span></span>
-        points[1].y = (int)y2;<span></span>
-        points[2].x = (int)x3;<span></span>
-        points[2].y = (int)y3;<span></span>
-<span></span>
-        gdImageFilledPolygon(img, points, 3, white);<span></span>
-    }<span></span>
-  //外圈<span></span><span><span>
-  gdImageFilledEllipse(img, center_x, center_y, sun_radius * 1.2, sun_radius * 1.2, 藍色);</span></span><span></span>
-  <span></span><span><span>
-    // 相似太陽內部</span></span><span></span><span><span>
-    gdImageFilledEllipse(img, center_x, center_y, sun_radius * 1.1, sun_radius * 1.1, 白色);</span></span><span></span><span><span>
-}</span></span></pre>
-<p><img caption="false" height="367" src="./../images/roc_flag.png" width="550"/></p>
-<p></p>
-<p><span><span>清除</span></span></p>
-<p><br/><span><span>cd 下載</span></span><br/><span><span>cc gd_roc_flag.c -lgd -lm </span></span><br/><span><span>./a.out</span></span></p>
-<br />美國 << <a href='美國.html'>Previous</a> <a href='w7.html'>Next</a> >> w7</div>
+<p><img alt="" height="115" src="./../images/011.png" width="250"/></p>
+<p>(2)<span>sizeof 範例</span></p>
+<p>#include &lt;stdio.h&gt;<br/>void main()<br/>{<br/>char a;<br/>printf( " The size of int is %d \n", sizeof(int) );<br/>printf( " The size of char a is %d \n", sizeof(a) );<br/>}</p>
+<p><img alt="" height="179" src="./../images/012.png" width="250"/></p>
+<p>(3)<span>if 範例</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main() {
+    char ch; 
+    printf("input a char: ");
+    scanf("%c", &amp;ch);
+    if (ch == 'a') {
+        printf("You pressed 'a'\n");
+    }
+    return 0;
+}
+</pre>
+<p><img alt="" height="84" src="./../images/013.png" width="250"/><br/><br/></p>
+<p>(4)<span>if 與 else 範例</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main() {
+    char ch; 
+    printf("input a char: ");
+    scanf("%c", &amp;ch);
+    if (ch == 'a') {
+        printf("You pressed 'a'\n");
+    } else {
+        printf("You didn't press 'a'\n");
+    }
+    return 0;
+}
+</pre>
+<p><img alt="" height="84" src="./../images/014.png" width="250"/><br/><br/></p>
+<p><span>(5)if 與 else 範例2</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+ 
+int main() {
+    int i; 
+    printf("input an integer: ");
+    scanf("%d", &amp;i);
+ 
+    if (i &lt; 100) {
+        printf("i &lt; 100\n");
+    } else {
+        if ((i &gt;= 100) &amp;&amp; (i &lt; 200)) {
+            printf("i &gt;= 100 and i &lt; 200\n");
+        } else {
+            printf("i &gt;= 200\n");
+        }
+    }
+ 
+    return 0;
+}</pre>
+<p><img alt="" height="84" src="./../images/015.png" width="250"/><br/><br/></p>
+<p><span>(6)switch - case 範例</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+ 
+int main() {
+    char c;
+    printf("Input a char: ");
+    scanf(" %c", &amp;c); // 加入一個空格在 %c 前，以排除之前的輸入緩衝區中的換行符號
+ 
+    switch(c) {
+        case 'a':
+            printf("You pressed 'a'\n");
+            break;
+        case 'b':
+            printf("You pressed 'b'\n");
+            break;
+        case 'c':
+            printf("You pressed 'c'\n");
+            break;
+        default:
+            printf("Not 'a', 'b', or 'c'\n");
+            break;
+    }
+ 
+    return 0;
+}
+</pre>
+<p><br/><img alt="" height="114" src="./../images/016.png" width="250"/><br/><br/></p>
+<p><span>(7)switch - case 範例</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+ 
+int main() {
+    char c;
+    printf("Input a char: ");
+    scanf(" %c", &amp;c);
+ 
+    switch(c) {
+        case 'a':
+            printf("You pressed 'a'\n");
+            break;
+        case 'b':
+            printf("You pressed 'b'\n");
+            break;
+        case 'c':
+            printf("You pressed 'c'\n");
+            break;
+        default:
+            printf("Not 'a', 'b', or 'c'\n");
+            break;
+    }
+ 
+    return 0;
+}</pre>
+<p><br/><img alt="" height="84" src="./../images/017.png" width="250"/></p>
+<p><span>(8)Program 1 - for</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include&lt;stdio.h&gt;
+ 
+void main() {
+    int i;
+    for (i = 0; i &lt; 6; i++) {
+        printf("%d\n", i); /* 印出 i */
+    }
+}</pre>
+<p><br/><img caption="false" height="139" src="./../images/018.png" width="200"/></p>
+<p><span>(9)Program 2 - for</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+void main()
+{
+int i, j;
+for ( i = 0, j = 10; i &lt; 6; i++, j++ )
+{
+printf( "i = %d, ", i );
+printf( "j = %d \n", j );
+}
+}</pre>
+<p><img caption="false" height="133" src="./../images/019.png" width="200"/><br/><br/></p>
+<p><span>(10)Program 3 - for</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+void main()
+{
+int i, j;
+j = 10; /* 迴圈外先設定初值 */
+for ( i = 0; i &lt; 6; i++ )
+{
+printf( "i = %d, ", i );
+printf( "j = %d \n", j );
+j++; /* 迴圈後加上變更運算式 */
+}
+}</pre>
+<p><img caption="false" height="136" src="./../images/020.png" width="200"/><br/><br/></p>
+<p></p><br />Exercises1 << <a href='Exercises1.html'>Previous</a> <a href='ANSIC.html'>Next</a> >> ANSIC</div>
         
     <!-- footer -->
       <div class="container">
